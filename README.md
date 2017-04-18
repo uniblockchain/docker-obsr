@@ -6,13 +6,13 @@ is a proprietary backup service provider.
 + Safely stop: `docker exec CONTAINER_NAME ahsay-stop`
 
 ###Ports:
-+ http listener is at 8080
-+ https is at 8443.
++ http listener is on 8080
++ https listener is on 8443.
 
 ###Paths
 + Configuration is at: **/ahsay/conf/** and **/ahsay/system/**
 + User data:  **/ahsay/user/**
-+ Logs: **/ahsay/user/**
++ Logs: **/ahsay/logs/**
 
 ###Notes:
 + The application runs as the limited user "ahsay" (uid 400)
