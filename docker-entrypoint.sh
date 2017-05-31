@@ -1,37 +1,69 @@
 #!/bin/bash
+# This script is compatible with cbs, obsr, and rdr
 
-yum update -y
-yum install -y net-tools
+# Enfore existence of /cbs, /obsr, or /rdr
+if [ -d "/cbs" ]; then
+    PLATFORM=cbs
+elif [ -d "/obsr" ]; then
+    PLATFORM=obsr
+elif [ -d "/rdr" ]; then
+    PLATFORM=rdr
+else
+    echo "/cbs, /obsr, or /rdr folder must exist!"
+    exit 1;
+fi
 
-# Create Ahsay Group if not exist
+
+# Create fake ifconfig
+cat > /usr/bin/ifconfig << 'EOF'
+#!/bin/bash
+
+echo "$@" >> /tmp/gotcha
+MAC=$(cat /sys/class/net/eth*/address)
+echo "    ether $MAC"
+
+EOF
+chmod 755 /usr/bin/ifconfig
+
+
+# Create Safe shutdown script (avoid corrupting Profile.xml files)
+cat > /usr/bin/ahsay-shutdown << EOF
+#!/bin/bash
+
+pgrep --uid 400 -f /$PLATFORM/java/bin/java > /var/run/$PLATFORM.pid
+su -m ahsay -c /$PLATFORM/bin/shutdown.sh
+
+EOF
+chmod 755 /usr/bin/ahsay-shutdown
+
+
+# Create ahsay group if not exist
 getent group ahsay &>/dev/null || \
     groupadd --gid 400 ahsay
 
-# Create Ahsay User if not exist
+
+# Create ahsay user if not exist
 id -u ahsay &>/dev/null || \
     useradd --uid 400 --gid 400 --no-create-home ahsay
 
-# Tweak Ahsay startup to use "catalina run" (interactive)
-sed -e 's/catalina.sh" start.*/catalina.sh" run/g' -i /ahsay/bin/startup.sh
-sed -e 's/nohup//g' -i /ahsay/bin/startup.sh
 
-# Listen on ports > 1024
-sed -e 's/port="80"/port="8080"/g; s/port="443"/port="8443"/g' -i /ahsay/conf/server.xml
+# Change catalina.sh to run interactively
+sed -e 's/catalina.sh" start.*/catalina.sh" run/g' -i /$PLATFORM/bin/startup.sh
+sed -e 's/nohup//g' -i /$PLATFORM/bin/startup.sh
+
+
+# Listen on ports 8080 and 8443
+sed -e 's/port="80"/port="8080"/g; s/port="443"/port="8443"/g' -i /$PLATFORM/conf/server.xml
+
 
 # Add request hostname into logs
-sed -e "s/pattern=\"common\"/pattern='%h %l %u %t %v \"%r\" %s %b'/g;" -i /ahsay/conf/server.xml
+sed -e "s/pattern=\"common\"/pattern='%h %l %u %t %v \"%r\" %s %b'/g;" -i /$PLATFORM/conf/server.xml
+
 
 # Restrict Ciphers https://forum.ahsay.com/viewtopic.php?f=82&t=13520
-#sed -e 's/sslProtocols="TLSv1"/sslProtocols="TLSv1" ciphers="SSL_RSA_WITH_RC4_128_MD5,SSL_RSA_WITH_RC4_128_SHA,TLS_RSA_WITH_AES_128_CBC_SHA,TLS_RSA_WITH_AES_256_CBC_SHA,SSL_RSA_WITH_3DES_EDE_CBC_SHA"/g' -i /ahsay/conf/server.xml
+grep -q "ciphers" /$PLATFORM/conf/server.xml || \
+    sed -e 's/sslProtocols="TLSv1"/sslProtocols="TLSv1" ciphers="SSL_RSA_WITH_RC4_128_MD5,SSL_RSA_WITH_RC4_128_SHA,TLS_RSA_WITH_AES_128_CBC_SHA,TLS_RSA_WITH_AES_256_CBC_SHA,SSL_RSA_WITH_3DES_EDE_CBC_SHA"/g' -i /$PLATFORM/conf/server.xml
 
-# Ease use of shutdown, eg: 'docker exec CONTAINER ahsay-shutdown'
-echo '#!/bin/sh' > /usr/sbin/ahsay-shutdown
-echo "pgrep --uid 400 -f /ahsay/java/bin/java > /var/run/obsr.pid" >> /usr/sbin/ahsay-shutdown
-echo "pgrep --uid 400 -f /ahsay/java/bin/java > /var/run/rdr.pid" >> /usr/sbin/ahsay-shutdown
-echo "pgrep --uid 400 -f /ahsay/java/bin/java > /var/run/cbs.pid" >> /usr/sbin/ahsay-shutdown
-echo "pgrep --uid 400 -f /ahsay/java/bin/java > /var/run/$PLATFORM.pid" >> /usr/sbin/ahsay-shutdown
-echo "su -m ahsay -c /ahsay/bin/shutdown.sh" >> /usr/sbin/ahsay-shutdown
-chmod +x /usr/sbin/ahsay-shutdown
 
-# Start OBS as ahsay user
-su -m ahsay -c /ahsay/bin/startup.sh
+# Start app
+su -m ahsay -c /$PLATFORM/bin/startup.sh

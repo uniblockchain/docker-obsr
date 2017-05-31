@@ -1,2 +1,8 @@
 obsr-nix-6.27.0.0/
 obsr-nix-hotfix-6.27.0.2/
+conf/
+logs/
+system/
+users/
+rps-system/
+rcvshome/
