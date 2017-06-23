@@ -1,8 +1,12 @@
 obsr-nix-6.27.0.0/
 obsr-nix-hotfix-6.27.0.2/
+obsr-nix-6.29.0.0.tar.gz
+nginx/certs/_.keepitsafe.com/
+nginx/certs/dhparam1024.pem
 conf/
 logs/
 system/
 users/
 rps-system/
 rcvshome/
+.dockerignore

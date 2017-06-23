@@ -1,4 +1,4 @@
-# AhsayOBSR v6.27.0.2
+# AhsayOBSR v6.29.0.0
 is a proprietary backup service provider.
 
 ### How to:
@@ -6,10 +6,10 @@ is a proprietary backup service provider.
 + Safely stop: `docker exec CONTAINER_NAME ahsay-shutdown`
 
 ### Ports:
-+ http listener is on 8080
-+ https listener is on 8443.
++ http listener is on **8080**
++ https listener is on **8443**.
 
-### Paths
+### Paths:
 + OBSR Configuration: **/obsr/conf/**
 + OBSR/Catalina logs: **/obsr/logs/**
 + OBS System logs and policies: **/obsr/system/**
@@ -18,8 +18,8 @@ is a proprietary backup service provider.
 + RPS reciever home: **/obsr/rcvshome/**
 
 ### Notes:
-+ The application runs as the limited user "ahsay" (uid 400)
-+ Agents downloads and java-x86 have been removed.
++ The application runs as the limited user "ahsay" (400:400)
++ Agents downloads and java-x86 have been removed in favor of java-x64.
 + Catalina is started with the 'run' command to prevent daemonizing. Likewise, `nohup` has been removed from *startup.sh*
-+ This does not have SSLv3 enabled (default since 6.21.2.0) and therefore will not work with clients lower than 6.21.2.0
-+ Weak cipher suites have been removed
++ SSLv2Hello is enabled to provide backwards compatibity for older OBC agents (<= 6.21.0.0)
++ `docker stop` (SIGTERM) is caught and redirected at `catalina.sh stop` for a safe shutdown
