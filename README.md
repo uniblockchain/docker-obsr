@@ -13,7 +13,7 @@ is a proprietary backup service provider.
 + OBSR Configuration: **/obsr/conf/**
 + OBSR/Catalina logs: **/obsr/logs/**
 + OBS System logs and policies: **/obsr/system/**
-+ OBS Users: **/obsr/users/**
++ OBS Users: **/obsr/user/**
 + RPS System logs: **/obsr/rps-system/**
 + RPS reciever home: **/obsr/rcvshome/**
 
