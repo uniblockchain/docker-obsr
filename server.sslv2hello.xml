@@ -33,7 +33,8 @@
         <!-- Make Tomcat swallow nginx proxy ip -->
         <Valve className="org.apache.catalina.valves.RemoteIpValve"
             remoteIpHeader="X-Forwarded-For"
-            internalProxies="172.1[6-9]\.\d+\.\d+, 172.2[0-9]\.\d+\.\d+, 172.3[0-1]\.\d+\.\d+, 10\.\d+\.\d+\.\d+" />
+            internalProxies="172.1[6-9]\.\d+\.\d+, 172.2[0-9]\.\d+\.\d+,
+            172.3[0-1]\.\d+\.\d+, 10\.\d+\.\d+\.\d+" />
 
       </Host>
 
