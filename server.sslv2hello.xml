@@ -2,8 +2,15 @@
 
   <Service name="Tomcat-Standalone">
 
-    <!-- SSLv2Hello enabled. Legacy OBC clients WILL be able to connect -->
-    <!-- Insecure Cipher Suites are no longer included as of Tomcat 6.0.44 -->
+    <!-- http listener -->
+    <Connector address="0.0.0.0" port="8080" maxHttpHeaderSize="8192"
+        socketBuffer="65536" maxThreads="500" minSpareThreads="50"
+        maxSpareThreads="50" maxKeepAliveRequests="200" enableLookups="false"
+        redirectPort="443" acceptCount="200" connectionTimeout="60000"
+        disableUploadTimeout="true" URIEncoding="utf-8"/>
+
+    <!-- https listener.
+      SSLv2Hello enabled: Legacy OBC clients WILL be able to connect -->
     <Connector address="0.0.0.0" port="8443" maxHttpHeaderSize="8192"
         socketBuffer="65536" maxThreads="500" minSpareThreads="50"
         maxSpareThreads="50" maxKeepAliveRequests="200" enableLookups="false"
@@ -12,14 +19,6 @@
         secure="true" keystoreFile="conf/keystore" keystorePass="changeit"
         clientAuth="false" sslEnabledProtocols="TLSv1,SSLv2Hello"
         URIEncoding="utf-8"/>
-
-
-    <Connector address="0.0.0.0" port="8080" maxHttpHeaderSize="8192"
-        socketBuffer="65536" maxThreads="500" minSpareThreads="50"
-        maxSpareThreads="50" maxKeepAliveRequests="200" enableLookups="false"
-        redirectPort="443" acceptCount="200" connectionTimeout="60000"
-        disableUploadTimeout="true" URIEncoding="utf-8"/>
-
 
     <Engine name="Standalone" defaultHost="localhost">
 
