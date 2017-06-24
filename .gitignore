@@ -1,4 +1,6 @@
 .dockerignore
-obsr-nix*/
-obsr*.tar.gz
+obsr/
+obsr/java-linux-x86/*
+obsr/webapps/obs/download/*
+obsr/webapps/obs/liveUpdate/*
 nginx/certs/dhparam1024.pem
