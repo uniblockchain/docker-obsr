@@ -1,31 +1,30 @@
-FROM centos:latest as OBSR
+FROM centos:latest
 EXPOSE 8080 8443
 WORKDIR /obsr
 
+
 # 'ifconfig' is a fake tool that simply echos the machines MAC address.
-#     This is nesseary for the OBSR licensing.
-ADD ifconfig /usr/bin/
+#     This is necessary for the OBSR licensing.
+COPY ifconfig /usr/bin/
 
 
-# Downloads the OBSR installer from the official Ahsay download page
+# Bootstrap OBSR and SIGTERM receiver
+COPY docker-entrypoint.sh /
+
+
+# Download the *nix installer directly from ahsay.com (600 MB).
 #ADD http://ahsay-dn.ahsay.com/v6/obsr/62900/obsr-nix.tar.gz ./
 #RUN tar xzf obsr-nix.tar.gz \
 #    && rm -f obsr-nix.tar.gz
 
 
-# Alternative to the above, this copies a nearly-the-same file from a local
-#   path. This local file does not have java x86 nor the agent downloads
-ADD obsr-nix-6.29.0.0.tar.xz docker-entrypoint.sh ./
-
-
-# This modified server.xml has the following changes from default:
-#  * Listens on ports 8080, 8443
-#  * Replaced depreciated "sslProtocols" with new "sslEnabledProtocols"
-#  * "sslEnabledProtocols" has SSLv2Hello enabled for OBC < v6.21.2.0
-#        compatibility
-#  * Tomcat access logging includes hostname
-#  * X-Forwarded-For IPs are trusted for reverse proxies (eg nginx)
-ADD server.sslv2hello.xml conf/server.xml
+# Alternative to the above, this copies a nearly-the-same file with four
+#  space-saving exclusions (43 MB):
+#  *  java-linux-x86
+#  *  webapps/obs/liveUpdate
+#  *  webapps/obs/doc
+#  *  webapps/obs/download
+ADD obsr-nix-6.29.0.0.tar.xz ./
 
 
 # Create the limited user what will be used to run the OBSR application
@@ -39,14 +38,4 @@ RUN groupadd --gid 400 ahsay \
 USER ahsay
 
 
-# Modify catalina.sh to run interactively
-# Remove `nohup`
-# Change CATALINA_PID location to /obsr/obsr.pid
-RUN sed -e 's/catalina.sh" start.*/catalina.sh" run/g' \
-    -e 's/nohup//g' \
-    -e 's/\/var\/run\/obsr\.pid/\/obsr\/obsr.pid/g' \
-    -i bin/startup.sh \
-    && sed -e 's/\/var\/run\/obsr\.pid/\/obsr\/obsr.pid/g' -i bin/shutdown.sh
-
-
-ENTRYPOINT ["/obsr/docker-entrypoint.sh"]
+ENTRYPOINT ["/docker-entrypoint.sh"]
