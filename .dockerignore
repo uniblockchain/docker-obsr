@@ -10,3 +10,5 @@ obsr/temp/*
 obsr/tomcat/logs/*
 obsr/tomcat/temp/*
 obsr/tomcat/work/*
+
+.git
