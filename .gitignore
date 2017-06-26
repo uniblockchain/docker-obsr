@@ -12,6 +12,6 @@ obsr/tomcat/temp/*
 obsr/tomcat/work/*
 
 # Security related
-nginx/certs*
+nginx/certs/*
 !nginx/certs/lebshama
-!nginx/certs/dhparam1024.pems
+!nginx/certs/dhparam1024.pem
