@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+   
+<!DOCTYPE web-app
+    PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+    "http://java.sun.com/dtd/web-app_2_3.dtd">
+ 
+<web-app>  
+
+  <filter>
+    <filter-name>LocalhostOnly</filter-name>
+    <filter-class>com.ahsay.ars.www.IPFilter</filter-class>
+    <init-param>
+      <param-name>Range1</param-name>
+      <param-value>localhost</param-value>
+    </init-param>
+  </filter>
+  <filter-mapping>
+    <filter-name>LocalhostOnly</filter-name>
+    <url-pattern>/api/*</url-pattern>
+  </filter-mapping>
+
+  <filter>
+    <filter-name>encodingFilter</filter-name> 
+    <filter-class>com.ahsay.ars.www.EncodingFilter</filter-class> 
+  <init-param>
+    <param-name>encoding</param-name> 
+    <param-value>UTF8</param-value> 
+  </init-param>
+  <init-param>
+    <param-name>forceEncoding</param-name> 
+    <param-value>true</param-value> 
+  </init-param>
+  </filter>
+  <filter-mapping>
+    <filter-name>encodingFilter</filter-name> 
+    <url-pattern>/*</url-pattern> 
+  </filter-mapping>
+  
+  
+  <listener>
+    <listener-class>com.ahsay.ars.www.ContextListener</listener-class>
+  </listener>
+
+  <!-- Action Servlet Configuration -->
+  <servlet>
+    <servlet-name>action</servlet-name>
+    <servlet-class>org.apache.struts.action.ActionServlet</servlet-class>
+    <init-param>
+      <param-name>config</param-name>
+      <param-value>/WEB-INF/struts-config.xml</param-value>
+    </init-param>
+    <init-param>
+      <param-name>convertNull</param-name>
+      <param-value>true</param-value>
+    </init-param>
+    <init-param>
+      <param-name>validate</param-name>
+      <param-value>true</param-value>
+    </init-param>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+
+
+  <!-- Backup Action -->
+  <servlet>
+    <servlet-name>UserLogon</servlet-name>
+    <jsp-file>/jsp/user/index.jsp</jsp-file>
+  </servlet>
+  <servlet>
+    <servlet-name>SystemLogon</servlet-name>
+    <servlet-class>com.ahsay.obs.www.system.logon</servlet-class>
+  </servlet>
+
+  <!-- Action Servlet Mapping -->
+    <servlet>
+        <servlet-name>jsp.jsp.js_005fvariable_jsp</servlet-name>
+        <servlet-class>jsp.jsp.js_005fvariable_jsp</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>jsp.jsp.selectLocale_jsp</servlet-name>
+        <servlet-class>jsp.jsp.selectLocale_jsp</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>jsp.jsp.system.copyright_jsp</servlet-name>
+        <servlet-class>jsp.jsp.system.copyright_jsp</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>jsp.jsp.system.index_jsp</servlet-name>
+        <servlet-class>jsp.jsp.system.index_jsp</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>jsp.jsp.system.logon_jsp</servlet-name>
+        <servlet-class>jsp.jsp.system.logon_jsp</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>jsp.jsp.system.menu_jsp</servlet-name>
+        <servlet-class>jsp.jsp.system.menu_jsp</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>jsp.jsp.system.redirect2Logon_jsp</servlet-name>
+        <servlet-class>jsp.jsp.system.redirect2Logon_jsp</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>jsp.jsp.system.recv.addRecv_jsp</servlet-name>
+        <servlet-class>jsp.jsp.system.recv.addRecv_jsp</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>jsp.jsp.system.recv.editRecv_jsp</servlet-name>
+        <servlet-class>jsp.jsp.system.recv.editRecv_jsp</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>jsp.jsp.system.recv.editRecvRetention_jsp</servlet-name>
+        <servlet-class>jsp.jsp.system.recv.editRecvRetention_jsp</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>jsp.jsp.system.recv.index_jsp</servlet-name>
+        <servlet-class>jsp.jsp.system.recv.index_jsp</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>jsp.jsp.system.recv.listRecv_jsp</servlet-name>
+        <servlet-class>jsp.jsp.system.recv.listRecv_jsp</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>jsp.jsp.system.recv.menu_jsp</servlet-name>
+        <servlet-class>jsp.jsp.system.recv.menu_jsp</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>jsp.jsp.system.recv.showRecvFiles_jsp</servlet-name>
+        <servlet-class>jsp.jsp.system.recv.showRecvFiles_jsp</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>jsp.jsp.system.recv.showRecvLog_jsp</servlet-name>
+        <servlet-class>jsp.jsp.system.recv.showRecvLog_jsp</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>jsp.jsp.system.recv.showRecvRetention_jsp</servlet-name>
+        <servlet-class>jsp.jsp.system.recv.showRecvRetention_jsp</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>jsp.jsp.system.config.config_jsp</servlet-name>
+        <servlet-class>jsp.jsp.system.config.config_jsp</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>jsp.jsp.system.config.index_jsp</servlet-name>
+        <servlet-class>jsp.jsp.system.config.index_jsp</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>jsp.jsp.system.config.license_jsp</servlet-name>
+        <servlet-class>jsp.jsp.system.config.license_jsp</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>jsp.jsp.system.config.menu_jsp</servlet-name>
+        <servlet-class>jsp.jsp.system.config.menu_jsp</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>jsp.jsp.system.config.systemLog_jsp</servlet-name>
+        <servlet-class>jsp.jsp.system.config.systemLog_jsp</servlet-class>
+    </servlet>
+  <servlet-mapping>
+    <servlet-name>action</servlet-name>
+    <url-pattern>*.do</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>UserLogon</servlet-name>
+    <url-pattern>/en/user/index.jsp</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SystemLogon</servlet-name>
+    <url-pattern>/en/system/index.jsp</url-pattern>
+  </servlet-mapping>
+
+
+  <!-- The Welcome File List -->
+    <servlet-mapping>
+        <servlet-name>jsp.jsp.js_005fvariable_jsp</servlet-name>
+        <url-pattern>/jsp/js_variable.jsp</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>jsp.jsp.selectLocale_jsp</servlet-name>
+        <url-pattern>/jsp/selectLocale.jsp</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>jsp.jsp.system.copyright_jsp</servlet-name>
+        <url-pattern>/jsp/system/copyright.jsp</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>jsp.jsp.system.index_jsp</servlet-name>
+        <url-pattern>/jsp/system/index.jsp</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>jsp.jsp.system.logon_jsp</servlet-name>
+        <url-pattern>/jsp/system/logon.jsp</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>jsp.jsp.system.menu_jsp</servlet-name>
+        <url-pattern>/jsp/system/menu.jsp</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>jsp.jsp.system.redirect2Logon_jsp</servlet-name>
+        <url-pattern>/jsp/system/redirect2Logon.jsp</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>jsp.jsp.system.recv.addRecv_jsp</servlet-name>
+        <url-pattern>/jsp/system/recv/addRecv.jsp</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>jsp.jsp.system.recv.editRecv_jsp</servlet-name>
+        <url-pattern>/jsp/system/recv/editRecv.jsp</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>jsp.jsp.system.recv.editRecvRetention_jsp</servlet-name>
+        <url-pattern>/jsp/system/recv/editRecvRetention.jsp</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>jsp.jsp.system.recv.index_jsp</servlet-name>
+        <url-pattern>/jsp/system/recv/index.jsp</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>jsp.jsp.system.recv.listRecv_jsp</servlet-name>
+        <url-pattern>/jsp/system/recv/listRecv.jsp</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>jsp.jsp.system.recv.menu_jsp</servlet-name>
+        <url-pattern>/jsp/system/recv/menu.jsp</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>jsp.jsp.system.recv.showRecvFiles_jsp</servlet-name>
+        <url-pattern>/jsp/system/recv/showRecvFiles.jsp</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>jsp.jsp.system.recv.showRecvLog_jsp</servlet-name>
+        <url-pattern>/jsp/system/recv/showRecvLog.jsp</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>jsp.jsp.system.recv.showRecvRetention_jsp</servlet-name>
+        <url-pattern>/jsp/system/recv/showRecvRetention.jsp</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>jsp.jsp.system.config.config_jsp</servlet-name>
+        <url-pattern>/jsp/system/config/config.jsp</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>jsp.jsp.system.config.index_jsp</servlet-name>
+        <url-pattern>/jsp/system/config/index.jsp</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>jsp.jsp.system.config.license_jsp</servlet-name>
+        <url-pattern>/jsp/system/config/license.jsp</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>jsp.jsp.system.config.menu_jsp</servlet-name>
+        <url-pattern>/jsp/system/config/menu.jsp</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>jsp.jsp.system.config.systemLog_jsp</servlet-name>
+        <url-pattern>/jsp/system/config/systemLog.jsp</url-pattern>
+    </servlet-mapping>
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+
+  <!-- ========================================================================== -->
+  <!-- ========================= Enforce SSL ==================================== -->
+  <!-- ========================================================================== -->
+  <!-- 
+  <security-constraint> 
+    <web-resource-collection> 
+      <web-resource-name>Automatic SLL Forwarding</web-resource-name> 
+      <url-pattern>/jsp/system/*</url-pattern> 
+    </web-resource-collection> 
+    <user-data-constraint> 
+      <transport-guarantee>CONFIDENTIAL</transport-guarantee> 
+    </user-data-constraint> 
+  </security-constraint>
+  -->
+
+</web-app>

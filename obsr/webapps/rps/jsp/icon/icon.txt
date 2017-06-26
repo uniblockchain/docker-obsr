@@ -1,0 +1,197 @@
+abr
+aca - acg, acs
+acf
+aco - act
+acv - atf
+acw
+ade
+adn
+ado - ahs, atn, ava, axt, ffo
+adp
+ahu - asv, cha
+aif - aifc, aiff, avi, asf, asx, au, cda, ivf, m3u, mid, midi, mp3, mpg, m1v, mp2, mp2v, mpa, mpe, mpeg, mpv2, rmi, snd, wav, wax, wm, wma, wmd, wmp, wms, wmv, wmx, wmz, wvx
+aim
+ais
+alv
+amp
+ams
+api
+apl - 8ba, 8bc, 8be, 8bf, 8bi, 8bp, 8bs, 8bx, 8by, 8li
+ani - asa, awx, cdx, cur, drv, hta, ico, ivt, jod, otf, p10, p7m, pkg, pko, psw, rat, spl, swf, sys, tlb
+asp - ast
+audiocd
+bat
+bkf
+blg
+blt
+bmp
+bsc
+c
+cab
+cat
+cdf
+cdp
+cer - crt, der, p7r,p7b, spc
+chm
+cht
+cil
+clp
+cnf
+cov
+cpl
+cpp - cxx
+crl
+csf
+csh
+csv
+db - 386, chk, ocx, sdb, vxd
+desklink
+dib
+dif - slk
+divx
+dll
+doc
+dochtml - dothtml
+dot
+dsm
+dsn
+dsp - dsw
+dun - pbk, rnk
+dvd
+eml - userprofile
+exe
+fav
+fdf - xfdf
+fon
+fphtml
+fpweb
+gif - emf, png, wmf
+gix - gfi, gfx, gim, gna, gnx, gwx, gwz
+gra
+grd
+grp
+h
+hlp - msrcincident
+hpp - hxx
+hpf - pnq, scm, uin
+ht
+htm - html, htw, htx, stm, url
+htt
+htx
+icc - icm, msc
+iii - 323, uls
+ini - css, inf
+ins - isp
+iqy
+it
+its
+jar - jnlp, sst, p7s
+jpg - jfif, jpe, jpeg
+java - idl, vep
+js - jse
+livereg
+lwv
+mad
+maf
+mag
+mam
+mapimail
+maq
+mar
+mas
+mat
+mav
+maw
+mcr - que
+mda
+mdb
+mdbhtml
+mde
+mdn
+mdp
+mdt
+mdw
+mdz
+mht - mhtml
+mmm
+mov - qt
+msg - oft
+msi - msp
+msstyles
+mswmm
+nfo
+nmw
+nws
+obj - idb, ilk, pch, pdb, res, sbr
+odl
+opx
+oqy
+oss
+p7s
+pdf - pdx
+pfm
+pfx - p12
+pma - pmc, pml, pmr, pmw
+pmg
+pot
+pothtml
+ppa
+pps
+ppt
+ppthtml
+prf
+psd - eps, pxr, raw
+psf
+psp
+pt
+pwz
+qds
+ra - ram, rjs, rm, rmm, rsml, rv, smi, smil, ssm
+rar - ace, arj, r00, r01, r02, r03 ..., r29, xxe
+rct - rc
+rdp
+reg
+rmf
+rqy
+rtf
+sct - wsc
+shb - shs
+snp
+sql
+stl
+svg - svgz
+tif - dcx, pcx, tiff, wif, xif
+ttc
+ttf
+txt - dic, exc, log, scp, wtx
+udl
+vbs - vbe, wsf
+vcf - p7c
+wab
+wbk
+webpnp
+wht
+wiz
+wizhtml
+wri
+wsh
+x3d
+xbm
+xla
+xlb
+xlc
+xld
+xlk
+xll
+xlm
+xls
+xlshtml
+xlt
+xlthtml
+xlv
+xlw
+xm - s3m
+xml
+xsl
+zap
+zip - gz, lha, lzh, tar, tgz, uu, uue

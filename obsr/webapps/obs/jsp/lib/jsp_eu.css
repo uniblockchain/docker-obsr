@@ -1,0 +1,675 @@
+/* by Vincent */
+/***** ***** ***** ***** ***** ***** ***** ***** ***** ****** ***** *****/
+/* body font Setting */
+body {
+	font-family: Verdana, Arial, Helvetica;
+	font-size: 11px
+}
+
+/* td (table data) font Setting */
+td {
+	font-family: Verdana, Arial, Helvetica;
+	font-size: 11px
+}
+
+/* li (list item) font Setting */
+li {
+	font-family: Verdana, Arial, Helvetica;
+	font-size: 11px
+}
+
+a:link {color: #f6871f}
+a:visited {color: #f6871f}
+
+/***** ***** ***** ***** ***** ***** ***** ***** ***** ****** ***** User: Installation Guide *****/
+/* INSTALLATION GUIDE page - background color; text color, weight */
+body.installguidebody {
+	background-color: #ffffee;
+	color: #000000;
+	font-weight: normal
+}
+/* index (Select OS) - background color; text color, weight */
+.installguide_index {
+	background-color: #006699;
+	color: #ffffff;
+	font-weight: bold
+}
+/* index border color */
+.installguide_indexborder {background-color: #000000}
+
+
+/* title - text color, weight */
+.installguide_title {
+	color: #006699;
+	font-weight: bold
+}
+/* sub title - background color; text color, weight */
+.installguide_subtitle {
+	background-color: #666655;
+	color: #ffffff;
+	font-weight: bold
+}
+
+/* user input - text color, weight */
+.installguide_userinput {
+	color: #ff0000;
+	font-weight: normal
+}
+/* command prompt message - text color, weight */
+.installguide_promptmsg {
+	color: #0000ff;
+	font-weight: normal
+}
+
+/***** ***** ***** ***** ***** ***** ***** ***** ***** ****** ***** User: Body *****/
+/* USER CONTENT page - background color; text color, weight */
+body.userbody {
+	background-color: #ffffff;
+	color: #095798;
+	font-weight: normal
+}
+
+.userbody a:visited {
+	color: #f6871f;
+}
+
+/***** ***** ***** ***** ***** ***** ***** ****** ***** ***** ***** User: Menu *****/
+/* MENU page - background color; text color, weight */
+body.usermenu {
+	background-color: #ffffff;
+	color: #000000;
+	font-weight: normal
+}
+/* menu bar - background color; text color, weight */
+.usermenu_menubar {
+	background-color: #ff9900;
+	color: #000000;
+	font-weight: normal
+}
+/* menu bar border color */
+.usermenu_barborder {background-color: #f6871f}
+/* menu bar selection item - text color, weight */
+.usermenu_selectionitem {
+	color: #000000;
+	font-weight: bold
+}
+a:link.usermenu_selectionitem {
+	color: #555555;
+	font-weight: normal
+}
+a:visited.usermenu_selectionitem {
+	color: #555555;
+	font-weight: normal
+}
+a:hover.usermenu_selectionitem {
+	color: #aa1133;
+	font-weight: normal;
+	text-decoration: none
+}
+
+/* menu bar Logout item - text color, weight */
+a:link.usermenu_logoutitem {
+	color: #555555;
+	font-weight: normal
+}
+a:visited.usermenu_logoutitem {
+	color: #555555;
+	font-weight: normal
+}
+a:hover.usermenu_logoutitem {
+	font-weight: bold;
+	text-decoration: none
+}
+
+/***** ***** ***** ***** ***** ***** ***** ***** ***** ****** ***** User: Warning Message *****/
+/* warning message - background color; text color, weight */
+.warnmsg {
+	background-color: #ff0000;
+	color: #ffffff;
+	font-weight: bold
+}
+
+/***** ***** ***** ***** ***** ***** ***** ***** ***** ****** ***** User: Note *****/
+/* Note: (heading) - text color, weight */
+.note_typetext {
+	color: #ff0000;
+	font-weight: bold
+}
+/* note content - text color, weight */
+.note_notetext {
+	color: #000000;
+	font-weight: normal
+}
+
+/***** ***** ***** ***** ***** ***** ***** ***** ***** ****** ***** User: Requirements *****/
+/* Requirements: (heading) - text color, weight */
+.requirements_typetext {
+	color: #ff0000;
+	font-weight: bold
+}
+/* requirements content - text color, weight */
+.requirements_requirementstext {
+	color: #000000;
+	font-weight: normal
+}
+
+/***** ***** ***** ***** ***** ***** ***** ***** ***** ****** ***** User: Troubleshooting *****/
+/* Troubleshooting: (heading) - text color, weight */
+.troubleshooting_typetext {
+	color: #737477;
+	font-weight: bold
+}
+/* troubleshooting content - text color, weight */
+.troubleshooting_requirementstext {
+	color: #000000;
+	font-weight: normal
+}
+
+/***** ***** ***** ***** ***** ***** ***** ***** ***** ****** ***** User: Key Table *****/
+/* table background color */
+.keytable_background {background-color: #f0f0f0}
+/* separation line color */
+.keytable_line {background-color: #cccccc}
+
+/* Key: (heading) - text color, weight, decoration type */
+.keytable_typetext {
+	color: #095798;
+	font-weight: bold;
+	text-decoration: underline
+}
+/* key name - text color, weight */
+.keytable_keytext {
+	color: #095798;
+	font-weight: bold
+}
+/* key definition - text color, weight */
+.keytable_deftext {
+	color: #737477;
+	font-weight: normal
+}
+
+/* td (table data) padding */
+td.keytable_keytext {padding-left: 2mm}
+td.keytable_deftext {padding-left: 2mm}
+
+/***** ***** ***** ***** ***** ***** ***** ***** ***** ****** ***** User: Setting Table *****/
+/* table outline color */
+.settingtable_outline {background-color: #cccccc}
+/* title bar - background color; title text color, weight */
+.settingtable_titlebar {
+	background-color: #f0780a;
+	color: #ffffff;
+	font-weight: bold
+}
+/* type (sub title) bar - background color; title text color, weight */
+.settingtable_typebar {
+	background-color: #095798;
+	color: #ffffff;
+	font-weight: bold
+}
+/* table background color */
+.settingtable_background {background-color: #FEF6ED}
+/* control (button) bar background color */
+.settingtable_ctrlbackground {background-color: #737477}
+/* USER field name text - text color, weight */
+.settingtable_fieldtext {
+	color: #006699;
+	font-weight: bold
+}
+/* ADMIN field name - text color, weight */
+.settingtable_adminfieldtext {
+	color: #cc0000;
+	font-weight: bold
+}
+/* NORMAL value - text color, weight */
+.settingtable_valuetext {
+	color: #095798;
+	font-weight: normal
+}
+/* ENABLE value - text color, weight */
+.settingtable_valuetext_enable {
+	color: #095798;
+	font-weight: normal
+}
+/* DISABLE value - text color, weight */
+.settingtable_valuetext_disable {
+	color: #808080;
+	font-weight: normal
+}
+
+/* td (table data) padding */
+td.settingtable_titlebar {padding-left: 1mm}
+td.settingtable_typebar {padding-left: 1mm}
+
+/***** ***** ***** ***** ***** ***** ***** ***** ***** ****** ***** User: Statistics Table *****/
+/* table outline color */
+.statable_outline {background-color: #cccccc}
+/* title bar - background color; title text color, weight */
+.statable_titlebar {
+	background-color: #FEF6ED;
+	color: #666666;
+	font-weight: bold
+}
+/* title bar - normal text color, weight */
+.statable_titlebartext {
+	color: #000000;
+	font-weight: normal
+}
+/* field name cell - background color; text color, weight */
+.statable_field {
+	background-color: #f0780a;
+	color: #ffffff;
+	font-weight: normal
+}
+/* value cell (odd row) - background color; text color, weight */
+.statable_value1 {
+	background-color: #ffffff;
+	color: #000000;
+	font-weight: normal
+}
+/* value cell (even row) - background color; text color, weight */
+.statable_value2 {
+	background-color: #f0f0f0;
+	color: #000000;
+	font-weight: normal
+}
+
+/* td (table data) padding */
+td.statable_titlebar {padding-top: 0.5mm; padding-left: 1mm}
+td.statable_field {padding-top: 0.5mm}
+
+/***** ***** ***** ***** ***** ***** ***** ***** ***** ****** ***** User: Explorer *****/
+/* table outline color */
+.explorer_outline {background-color: #cccccc}
+/* title bar - background color; title text color, weight */
+.explorer_titlebar {
+	background-color: #f0780a;
+	color: #ffffff;
+	font-weight: bold
+}
+/* title bar - normal text color, weight */
+.explorer_titletext {
+	color: #000000;
+	font-weight: normal
+}
+.explorer_titletext a,
+.explorer_titletext a:link, 
+.explorer_titletext a:visited {
+	color: #000000;
+	font-weight: normal
+}
+/* explorer background color */
+.explorer_background {background-color: #fef6ed}
+/* field name cell - background color; text color, weight */
+.explorer_field {
+	background-color: #f0780a;
+	color: #ffffff;
+	font-weight: bold
+}
+.explorer_field a,
+.explorer_field a:visited {
+	color: #ffffff;
+	font-weight: bold
+}
+/* value cell (odd row) - background color; text color, weight */
+.explorer_value1 {
+	background-color: #ffffee;
+	color: #000000;
+	font-weight: normal
+}
+/* value cell (even row) - background color; text color, weight */
+.explorer_value2 {
+	background-color: #eeeecc;
+	color: #000000;
+	font-weight: normal
+}
+
+/* td (table data) padding */
+td.explorer_field {padding-left: 1mm; padding-right: 1mm}
+td.explorer_value1 {padding-left: 1mm; padding-right: 1mm}
+td.explorer_value2 {padding-left: 1mm; padding-right: 1mm}
+
+/***** ***** ***** ***** ***** ***** ***** ****** ***** ***** ***** User: Information Table *****/
+/* table outline color */
+.infotable_outline {background-color: #cccccc}
+/* title bar - background color; title text color, weight */
+.infotable_titlebar {
+	background-color: #f6871f;
+	color: #ffffff;
+	font-weight: bold
+}
+/* content - background color; title text color, weight */
+.infotable_content {
+	background-color: #ffffee;
+	color: #000000;
+	font-weight: normal
+}
+/* sub title - text color, weight */
+.infotable_subtitle {
+	color: #aa1133;
+	font-weight: bold
+}
+
+/***** ***** ***** ***** ***** ***** ***** ****** ***** ***** ***** User: Report *****/
+/* table outline color */
+.report_outline {background-color: #cccccc}
+/* title bar - background color; title text color, weight */
+.report_titlebar {
+	background-color: #f0780a;
+	color: #ffffff;
+	font-weight: bold
+}
+/* sub title bar - background color; title text color, weight */
+.report_subtitlebar {
+	background-color: #fef6ed;
+	color: #000000;
+	font-weight: normal
+}
+/* sub title bar field name - text color, weight */
+.report_subtitlebarfield {
+	color: #3377aa;
+	font-weight: bold
+}
+/* content - background color; title text color, weight */
+.report_content {
+	background-color: #ffffff;
+	color: #000000;
+	font-weight: normal
+}
+
+/***** ***** ***** ***** ***** ***** ***** ****** ***** ***** ***** User: Input Form *****/
+/* form outline color */
+.inputform_outline {background-color: #335511}
+/* title bar - background color; title text color, weight */
+.inputform_titlebar {
+	background-color: #f6871f;
+	color: #fef6ed;
+	font-weight: bold
+}
+/* form background color */
+.inputform_background {background-color: #fef6ed}
+/* field name cell - background color; text color, weight */
+.inputform_field {
+	background-color: #fef6ed;
+	color: #095798;
+	font-weight: bold
+}
+/* normal text - background color; text color, weight */
+.inputform_text {
+	background-color: #ffffee;
+	color: #000000;
+	font-weight: normal
+}
+/* field separation line color */
+.inputform_fieldline {background-color: #fef6ed}
+
+/***** ***** ***** ***** ***** ***** ***** ***** ***** ****** ***** Admin: Body *****/
+/* ADMIN CONTENT page - background color; text color, weight */
+body.adminbody {
+	background-color: #ffffff;
+	color: #095798;
+	font-weight: normal
+}
+
+.adminbody a:visited {
+	color: #f6871f;
+}
+
+/***** ***** ***** ***** ***** ***** ***** ****** ***** ***** ***** Admin: Menu *****/
+/* MENU page - background color; text color, weight */
+body.adminmenu {
+	background-color: #ffffff;
+	color: #000000;
+	font-weight: normal
+}
+
+.adminmenu a:visited {
+	color: #f6871f;
+}
+
+
+/* menu bar - background color; text color, weight */
+.adminmenu_bar {
+	background-color: #ff9900;
+	color: #000000;
+	font-weight: normal
+}
+/* menu bar - border color */
+.adminmenu_barborder {background-color: #f6871f}
+/* manager item (e.g. Manager System) - text color, weight */
+.adminmenu_manageitem {
+	color: #000000;
+	font-weight: bold
+}
+/* menu bar admin item (e.g. Server Configuration) - text color, weight */
+.adminmenu_item {
+	color: #000000;
+	font-weight: bold
+}
+a:link.adminmenu_item {
+	color: #555555;
+	font-weight: normal
+}
+a:visited.adminmenu_item {
+	color: #555555;
+	font-weight: normal
+}
+a:hover.adminmenu_item {
+	color: #aa1133;
+	font-weight: normal;
+	text-decoration: none
+}
+
+/* menu bar Logout item - text color, weight */
+a:link.adminmenu_logoutitem {
+	color: #555555;
+	font-weight: normal
+}
+a:visited.adminmenu_logoutitem {
+	color: #555555;
+	font-weight: normal
+}
+a:hover.adminmenu_logoutitem {
+	font-weight: bold;
+	text-decoration: none
+}
+
+/***** ***** ***** ***** ***** ***** ***** ***** ***** ****** ***** Admin: Setting Table *****/
+/* table outline color */
+.adminsetting_outline {background-color: #cccccc}
+/* title bar - background color; title text color, weight */
+.adminsetting_titlebar {
+	background-color: #f0780a;
+	color: #ffffff;
+	font-weight: bold
+}
+
+.adminsetting_titlebar a,
+.adminsetting_titlebar a:link,
+.adminsetting_titlebar a:visited {
+	color: #ffffff;
+}
+/*titlebar-text*/
+.adminsetting_titlebartext {
+	background-color: #f0780a;
+	color: #717171;
+	font-weight: bold
+}
+
+.adminsetting_titlebartext a,
+.adminsetting_titlebartext a:link,
+.adminsetting_titlebartext a:visited {
+	color: #717171;
+}
+
+
+/* table background color */
+.adminsetting_background {background-color: #FEF6ED}
+/* field name - text color, weight */
+.adminsetting_fieldtext {
+	color: #000000;
+	font-weight: bold
+}
+/* value type name - text color, weight */
+.adminsetting_valuetypetext {
+	color: #095798;
+	font-weight: bold
+}
+/* value - text color, weight */
+.adminsetting_valuetext {
+	color: #095798;
+	font-weight: normal
+}
+/* separation line color */
+.adminsetting_separationline {background-color: #cccccc}
+
+/* td (table data) padding */
+td.adminsetting_titlebar {
+	padding-top: 1mm;
+	padding-left: 1mm;
+	padding-bottom: 1mm;
+	padding-right: 1mm
+}
+td.adminsetting_fieldtext {
+	padding-left: 0.5mm;
+	padding-right: 0.5mm
+}
+
+/***** ***** ***** ***** ***** ***** ***** ***** ***** ****** ***** Admin: Log Table *****/
+/* table outline color */
+.adminlog_outline {background-color: #cccccc}
+
+.adminlog_outline a,
+.adminlog_outline a:link,
+.adminlog_outline a:visited {
+	color: #095798;
+}
+
+/* title bar - background color; title text color, weight */
+.adminlog_titlebar {
+	background-color: #ffffee;
+	color: #666666;
+	font-weight: bold
+}
+/* field name cell - background color; text color, weight */
+.adminlog_field {
+	background-color: #f0780a;
+	color: #ffffff;
+	font-weight: bold
+}
+/* value cell (odd row) - background color; text color, weight */
+.adminlog_value1 {
+	background-color: #ffffcc;
+	color: #095798;
+	font-weight: normal
+}
+
+.adminlog_value1 a,
+.adminlog_value1 a:link,
+.adminlog_value1 a:visited {
+	color: #095798;
+}
+
+/* value cell (even row) - background color; text color, weight */
+.adminlog_value2 {
+	background-color: #fef6ed;
+	color: #095798;
+	font-weight: normal
+}
+
+.adminlog_value2 a,
+.adminlog_value2 a:link,
+.adminlog_value2 a:visited {
+	color: #095798;
+}
+
+.adminGroupPolicy_titlebar {
+	background-color: #783C05;
+	color: #ffffff;
+	font-weight: bold
+}
+
+/* td (table data) padding */
+td.adminlog_titlebar {padding-top: 1mm; padding-left: 1mm; padding-bottom: 1mm; padding-right: 1mm}
+td.adminlog_field {padding-left: 1mm; padding-right: 1mm}
+td.adminlog_value1 {padding-left: 1mm; padding-right: 1mm}
+td.adminlog_value2 {padding-left: 1mm; padding-right: 1mm}
+td.adminGroupPolicy_titlebar {padding-left: 1mm; padding-right: 1mm}
+
+/* Don't change these */
+.profileHeader	{ font-family: Verdana, Arial; font-size: 8pt; color: #FFFFFF; font-weight: bold } 
+.profileTitle	{ font-family: Verdana, Arial; font-size: 8pt; color: #0033CC } 
+.profileContent	{ font-family: Verdana, Arial; font-size: 8pt; color: #333333 } 
+.command		{ font-family: Verdana, Arial; font-size: 10pt; color: #0000FF } 
+
+ .statable_heading {
+	background-color: #f0780a;
+	color: #ffffff;
+	font-weight: bold
+}
+
+/*  2008-06-07 scherring added this to give default style for all select box */
+select {
+	font-family: Arial, Helvetica; 
+	font-weight: normal; 
+	font-size: 12px; 
+	height: 19px
+}
+
+/*  2011-07-04 #5105 added new style to support admin logon and admin copyright */
+/* 6546: Added ";" after font-weight: bold */
+.logoninputform_field {
+    background-color:#ffffff;
+	color: #095798;
+	font-weight: bold;
+	padding-left: 1mm;
+	padding-right: 1mm;
+	font-size:14px
+}
+
+.logon_background {
+    background-color: #ffffff
+}
+
+body.copyrightbody {
+	background-color: #ffffff;
+	color: #095798;
+	font-weight: normal
+}
+
+.copyright_text {
+    color: #000000;
+    font-family: Arial;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 11px;
+}
+
+/*  2011-08-15 #5105 added new style to support user logon and user copyright */
+/* 6768: Added ";" after font-weight: bold */
+.userlogoninputform_field {
+    background-color:#ffffff;
+	color: #095798;
+	font-weight: bold;
+	padding-left: 1mm;
+	padding-right: 1mm;
+	font-size:14px
+}
+
+.userlogon_background {
+    background-color: #ffffff
+}
+
+body.usercopyrightbody {
+	background-color: #ffffff;
+	color: #095798;
+	font-weight: normal
+}
+
+.usercopyright_text {
+    color: #000000;
+    font-family: Arial;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 11px;
+}

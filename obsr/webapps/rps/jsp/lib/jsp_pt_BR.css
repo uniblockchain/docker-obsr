@@ -1,0 +1,510 @@
+ /* by Vincent */ 
+ /***** ***** ***** ***** ***** ***** ***** ***** ***** ****** ***** *****/ 
+ /* body font Setting */ 
+ body { 
+ font-family: Verdana, Arial, Helvetica; 
+ font-size: 11px 
+ } 
+  
+ /* td (table data) font Setting */ 
+ td { 
+ font-family: Verdana, Arial, Helvetica; 
+ font-size: 11px 
+ } 
+  
+ /* li (list item) font Setting */ 
+ li { 
+ font-family: Verdana, Arial, Helvetica; 
+ font-size: 11px 
+ } 
+  
+ a:link {color: #1b5445} 
+ a:visited {color: #1b5445} 
+  
+ /***** ***** ***** ***** ***** ***** ***** ***** ***** ****** ***** User: Body *****/ 
+ /* USER CONTENT page - background color; text color, weight */ 
+ body.userbody { 
+ background-color: #ffffff; 
+ color: #000000; 
+ font-weight: normal 
+ } 
+  
+ /***** ***** ***** ***** ***** ***** ***** ****** ***** ***** ***** User: Menu *****/ 
+ /* MENU page - background color; text color, weight */ 
+ body.usermenu { 
+ background-color: #ffffff; 
+ color: #000000; 
+ font-weight: normal 
+ } 
+ /* menu bar - background color; text color, weight */ 
+ .usermenu_menubar { 
+ background-color: #FFCC00; 
+ color: #000000 
+ font-weight: normal 
+ } 
+ /* menu bar border color */ 
+ .usermenu_barborder {background-color: #000000} 
+  
+ /* menu bar selection item - text color, weight */ 
+ .usermenu_selectionitem { 
+ color: #aa1133; 
+ font-weight: bold 
+ } 
+ a:link.usermenu_selectionitem { 
+ color: #555555; 
+ font-weight: normal 
+ } 
+ a:visited.usermenu_selectionitem { 
+ color: #555555; 
+ font-weight: normal 
+ } 
+ a:hover.usermenu_selectionitem { 
+ color: #aa1133; 
+ font-weight: normal; 
+ text-decoration: none 
+ } 
+  
+ /* menu bar Logout item - text color, weight */ 
+ a:link.usermenu_logoutitem { 
+ color: #555555; 
+ font-weight: normal 
+ } 
+ a:visited.usermenu_logoutitem { 
+ color: #555555; 
+ font-weight: normal 
+ } 
+ a:hover.usermenu_logoutitem { 
+ font-weight: bold; 
+ text-decoration: none 
+ } 
+  
+ /***** ***** ***** ***** ***** ***** ***** ***** ***** ****** ***** User: Warning Message *****/ 
+ /* warning message - background color; text color, weight */ 
+ .warnmsg { 
+ background-color: #ff0000; 
+ color: #ffffff; 
+ font-weight: bold 
+ } 
+  
+ /***** ***** ***** ***** ***** ***** ***** ***** ***** ****** ***** User: Note *****/ 
+ /* Note: (heading) - text color, weight */ 
+ .note_typetext { 
+ color: #ff0000; 
+ font-weight: bold 
+ } 
+ /* note content - text color, weight */ 
+ .note_notetext { 
+ color: #000000; 
+ font-weight: normal 
+ } 
+  
+ /***** ***** ***** ***** ***** ***** ***** ***** ***** ****** ***** User: Requirements *****/ 
+ /* Requirements: (heading) - text color, weight */ 
+ .requirements_typetext { 
+ color: #ff0000; 
+ font-weight: bold 
+ } 
+ /* requirements content - text color, weight */ 
+ .requirements_requirementstext { 
+ color: #000000; 
+ font-weight: normal 
+ } 
+  
+ /***** ***** ***** ***** ***** ***** ***** ***** ***** ****** ***** User: Troubleshooting *****/ 
+ /* Troubleshooting: (heading) - text color, weight */ 
+ .troubleshooting_typetext { 
+ color: #996633; 
+ font-weight: bold 
+ } 
+ /* troubleshooting content - text color, weight */ 
+ .troubleshooting_requirementstext { 
+ color: #000000; 
+ font-weight: normal 
+ } 
+  
+ /***** ***** ***** ***** ***** ***** ***** ***** ***** ****** ***** User: Key Table *****/ 
+ /* table background color */ 
+ .keytable_background {background-color: #f0f0f0} 
+ /* separation line color */ 
+ .keytable_line {background-color: #cccccc} 
+  
+ /* Key: (heading) - text color, weight, decoration type */ 
+ .keytable_typetext { 
+ color: #336633; 
+ font-weight: bold; 
+ text-decoration: underline 
+ } 
+ /* key name - text color, weight */ 
+ .keytable_keytext { 
+ color: #88aa33; 
+ font-weight: bold 
+ } 
+ /* key definition - text color, weight */ 
+ .keytable_deftext { 
+ color: #000000; 
+ font-weight: normal 
+ } 
+  
+ /* td (table data) padding */ 
+ td.keytable_keytext {padding-left: 2mm} 
+ td.keytable_deftext {padding-left: 2mm} 
+  
+ /***** ***** ***** ***** ***** ***** ***** ***** ***** ****** ***** User: Setting Table *****/ 
+ /* table outline color */ 
+ .settingtable_outline {background-color: #336633} 
+ /* title bar - background color; title text color, weight */ 
+ .settingtable_titlebar { 
+ background-color: #dddddd; 
+ color: #336633; 
+ font-weight: bold 
+ } 
+ /* type (sub title) bar - background color; title text color, weight */ 
+ .settingtable_typebar { 
+ background-color: #cccc99; 
+ color: #336633; 
+ font-weight: bold 
+ } 
+ /* table background color */ 
+ .settingtable_background {background-color: #ffffcc} 
+ /* control (button) bar background color */ 
+ .settingtable_ctrlbackground {background-color: #ffffee} 
+ /* USER field name text - text color, weight */ 
+ .settingtable_fieldtext { 
+ color: #006699; 
+ font-weight: bold 
+ } 
+ /* ADMIN field name - text color, weight */ 
+ .settingtable_adminfieldtext { 
+ color: #cc0000; 
+ font-weight: bold 
+ } 
+ /* NORMAL value - text color, weight */ 
+ .settingtable_valuetext { 
+ color: #000000; 
+ font-weight: normal 
+ } 
+ /* ENABLE value - text color, weight */ 
+ .settingtable_valuetext_enable { 
+ color: #000000; 
+ font-weight: normal 
+ } 
+ /* DISABLE value - text color, weight */ 
+ .settingtable_valuetext_disable { 
+ color: #808080; 
+ font-weight: normal 
+ } 
+  
+ /* td (table data) padding */ 
+ td.settingtable_titlebar {padding-left: 1mm} 
+ td.settingtable_typebar {padding-left: 1mm} 
+  
+ /***** ***** ***** ***** ***** ***** ***** ***** ***** ****** ***** User: Statistics Table *****/ 
+ /* table outline color */ 
+ .statable_outline {background-color: #cccc99} 
+ /* title bar - background color; title text color, weight */ 
+ .statable_titlebar { 
+ background-color: #eeeecc; 
+ color: #336633; 
+ font-weight: bold 
+ } 
+ /* title bar - normal text color, weight */ 
+ .statable_titlebartext { 
+ color: #000000; 
+ font-weight: normal 
+ } 
+ /* field name cell - background color; text color, weight */ 
+ .statable_field { 
+ background-color: #336633; 
+ color: #ffffff; 
+ font-weight: normal 
+ } 
+ /* value cell (odd row) - background color; text color, weight */ 
+ .statable_value1 { 
+ background-color: #ffffee; 
+ color: #000000; 
+ font-weight: normal 
+ } 
+ /* value cell (even row) - background color; text color, weight */ 
+ .statable_value2 { 
+ background-color: #f0f0f0; 
+ color: #000000; 
+ font-weight: normal 
+ } 
+  
+ /* td (table data) padding */ 
+ td.statable_titlebar {padding-top: 0.5mm; padding-left: 1mm} 
+ td.statable_field {padding-top: 0.5mm} 
+  
+ /***** ***** ***** ***** ***** ***** ***** ***** ***** ****** ***** User: Explorer *****/ 
+ /* table outline color */ 
+ .explorer_outline {background-color: #000000} 
+ /* title bar - background color; title text color, weight */ 
+ .explorer_titlebar { 
+ background-color: #dddddd; 
+ color: #006699; 
+ font-weight: bold 
+ } 
+ /* title bar - normal text color, weight */ 
+ .explorer_titletext { 
+ color: #000000; 
+ font-weight: normal 
+ } 
+ /* explorer background color */ 
+ .explorer_background {background-color: #ffffee} 
+ /* field name cell - background color; text color, weight */ 
+ .explorer_field { 
+ background-color: #dddddd; 
+ color: #335511; 
+ font-weight: bold 
+ } 
+ /* value cell (odd row) - background color; text color, weight */ 
+ .explorer_value1 { 
+ background-color: #ffffee; 
+ color: #000000; 
+ font-weight: normal 
+ } 
+ /* value cell (even row) - background color; text color, weight */ 
+ .explorer_value2 { 
+ background-color: #eeeecc; 
+ color: #000000; 
+ font-weight: normal 
+ } 
+  
+ /* td (table data) padding */ 
+ td.explorer_field {padding-left: 1mm; padding-right: 1mm} 
+ td.explorer_value1 {padding-left: 1mm; padding-right: 1mm} 
+ td.explorer_value2 {padding-left: 1mm; padding-right: 1mm} 
+  
+ /***** ***** ***** ***** ***** ***** ***** ****** ***** ***** ***** User: Information Table *****/ 
+ /* table outline color */ 
+ .infotable_outline {background-color: #cc6633} 
+ /* title bar - background color; title text color, weight */ 
+ .infotable_titlebar { 
+ background-color: #cc6633; 
+ color: #ffffff; 
+ font-weight: bold 
+ } 
+ /* content - background color; title text color, weight */ 
+ .infotable_content { 
+ background-color: #ffffee; 
+ color: #000000; 
+ font-weight: normal 
+ } 
+ /* sub title - text color, weight */ 
+ .infotable_subtitle { 
+ color: #aa1133; 
+ font-weight: bold 
+ } 
+  
+ /***** ***** ***** ***** ***** ***** ***** ****** ***** ***** ***** User: Report *****/ 
+ /* table outline color */ 
+ .report_outline {background-color: #3377aa} 
+ /* title bar - background color; title text color, weight */ 
+ .report_titlebar { 
+ background-color: #3377aa; 
+ color: #ffffff; 
+ font-weight: bold 
+ } 
+ /* sub title bar - background color; title text color, weight */ 
+ .report_subtitlebar { 
+ background-color: #eeeeee; 
+ color: #000000; 
+ font-weight: normal 
+ } 
+ /* sub title bar field name - text color, weight */ 
+ .report_subtitlebarfield { 
+ color: #3377aa; 
+ font-weight: bold 
+ } 
+ /* content - background color; title text color, weight */ 
+ .report_content { 
+ background-color: #e0ebf5; 
+ color: #000000; 
+ font-weight: normal 
+ } 
+  
+ /***** ***** ***** ***** ***** ***** ***** ****** ***** ***** ***** User: Input Form *****/ 
+ /* form outline color */ 
+ .inputform_outline {background-color: #335511} 
+ /* title bar - background color; title text color, weight */ 
+ .inputform_titlebar { 
+ background-color: #cccc99; 
+ color: #335511; 
+ font-weight: bold 
+ } 
+ /* form background color */ 
+ .inputform_background {background-color: #eeeecc} 
+ /* field name cell - background color; text color, weight */ 
+ .inputform_field { 
+ background-color: #ffffee; 
+ color: #003399; 
+ font-weight: bold 
+ } 
+ /* normal text - background color; text color, weight */ 
+ .inputform_text { 
+ background-color: #ffffee; 
+ color: #000000; 
+ font-weight: normal 
+ } 
+ /* field separation line color */ 
+ .inputform_fieldline {background-color: #c0c0c0} 
+  
+ /***** ***** ***** ***** ***** ***** ***** ***** ***** ****** ***** Admin: Body *****/ 
+ /* ADMIN CONTENT page - background color; text color, weight */ 
+ body.adminbody { 
+ background-color: #ffffff; 
+ color: #1b5445; 
+ font-weight: normal 
+ } 
+  
+ /***** ***** ***** ***** ***** ***** ***** ****** ***** ***** ***** Admin: Menu *****/ 
+ /* MENU page - background color; text color, weight */ 
+ body.adminmenu { 
+ background-color: #ffffff; 
+ color: #1b5445; 
+ font-weight: normal 
+ } 
+ 
+.adminmenu a,
+.adminmenu a:link,
+.adminmenu a:visited { 
+ color: #1b5445; 
+ } 
+
+ 
+ /* menu bar - background color; text color, weight */ 
+ .adminmenu_bar { 
+ background-color: #92e1d0; 
+ color: #000000; 
+ font-weight: normal 
+ } 
+ /* menu bar - border color */ 
+ .adminmenu_barborder {background-color: #19c99c} 
+ /* manager item (e.g. Manager System) - text color, weight */ 
+ .adminmenu_manageitem { 
+ color: #555555; 
+ font-weight: bold 
+ } 
+ /* menu bar admin item (e.g. Server Configuration) - text color, weight */ 
+ .adminmenu_item { 
+ color: #000000; 
+ font-weight: bold 
+ } 
+ a:link.adminmenu_item { 
+ color: #555555; 
+ font-weight: normal 
+ } 
+ a:visited.adminmenu_item { 
+ color: #555555; 
+ font-weight: normal 
+ } 
+ a:hover.adminmenu_item { 
+ color: #14ac83; 
+ font-weight: normal; 
+ text-decoration: none 
+ } 
+  
+ /* menu bar Logout item - text color, weight */ 
+ a:link.adminmenu_logoutitem { 
+ color: #555555; 
+ font-weight: normal 
+ } 
+ a:visited.adminmenu_logoutitem { 
+ color: #555555; 
+ font-weight: normal 
+ } 
+ a:hover.adminmenu_logoutitem { 
+ font-weight: bold; 
+ text-decoration: none 
+ } 
+  
+ /***** ***** ***** ***** ***** ***** ***** ***** ***** ****** ***** Admin: Setting Table *****/ 
+ /* table outline color */ 
+ .adminsetting_outline {background-color: #cccccc} 
+ /* title bar - background color; title text color, weight */ 
+ .adminsetting_titlebar { 
+ background-color: #ffffdd; 
+ color: #1b5445; 
+ font-weight: bold 
+ } 
+ /* table background color */ 
+ .adminsetting_background {background-color: #ffffff} 
+ /* field name - text color, weight */ 
+ .adminsetting_fieldtext { 
+ color: #000000; 
+ font-weight: bold 
+ } 
+ /* value type name - text color, weight */ 
+ .adminsetting_valuetypetext { 
+ color: #0000ff; 
+ font-weight: bold 
+ } 
+ /* value - text color, weight */ 
+ .adminsetting_valuetext { 
+ color: #000000; 
+ font-weight: normal 
+ } 
+ /* separation line color */ 
+ .adminsetting_separationline {background-color: #cccccc} 
+  
+ /* td (table data) padding */ 
+ td.adminsetting_titlebar { 
+ padding-top: 1mm; 
+ padding-left: 1mm; 
+ padding-bottom: 1mm; 
+ padding-right: 1mm 
+ } 
+ td.adminsetting_fieldtext { 
+ padding-left: 0.5mm; 
+ padding-right: 0.5mm 
+ } 
+  
+ /***** ***** ***** ***** ***** ***** ***** ***** ***** ****** ***** Admin: Log Table *****/ 
+ /* table outline color */ 
+ .adminlog_outline {background-color: #dddddd} 
+ /* title bar - background color; title text color, weight */ 
+ .adminlog_titlebar { 
+ background-color: #ffffee; 
+ color: #666666; 
+ font-weight: bold 
+ } 
+ /* field name cell - background color; text color, weight */ 
+ .adminlog_field { 
+ background-color: #1b5445; 
+ color: #ffffff; 
+ font-weight: bold 
+ } 
+ /* value cell (odd row) - background color; text color, weight */ 
+ .adminlog_value1 { 
+ background-color: #ffffcc; 
+ color: #000000; 
+ font-weight: normal 
+ } 
+ /* value cell (even row) - background color; text color, weight */ 
+ .adminlog_value2 { 
+ background-color: #fef6ed; 
+ color: #000000; 
+ font-weight: normal 
+ } 
+  
+ /* td (table data) padding */ 
+ td.adminlog_titlebar {padding-top: 1mm; padding-left: 1mm; padding-bottom: 1mm; padding-right: 1mm} 
+ td.adminlog_field {padding-left: 1mm; padding-right: 1mm} 
+ td.adminlog_value1 {padding-left: 1mm; padding-right: 1mm} 
+ td.adminlog_value2 {padding-left: 1mm; padding-right: 1mm} 
+  
+  
+ /* Don't change these */ 
+ .profileHeader	{ font-family: Verdana, Arial; font-size: 8pt; color: #FFFFFF; font-weight: bold } 
+ .profileTitle	{ font-family: Verdana, Arial; font-size: 8pt; color: #0033CC } 
+ .profileContent	{ font-family: Verdana, Arial; font-size: 8pt; color: #333333 } 
+ .command		{ font-family: Verdana, Arial; font-size: 10pt; color: #0000FF } 
+  
+
+/*  2008-06-07 scherring added this to give default style for all select box */
+select {
+	font-family: Arial, Helvetica; 
+	font-weight: normal; 
+	font-size: 12px; 
+	height: 19px
+}

@@ -1,0 +1,51 @@
+#!/bin/bash
+#
+# obs: Startup AhsayOBSandAhsayRPS (Ahsay Offsite Backup Server and Replication Server)
+#
+# chkconfig: 2345 95 95
+#
+# description: Running AhsayOBSandAhsayRPS on system startup
+#
+#
+
+# [Ahsay Offsite Backup Server and Replication Server] (version 6.29.0.0)
+
+OBSR_HOME=@sed.product.home@
+OBSR_USER=@sed.user.name@
+
+export OBSR_HOME OBSR_USER
+
+case "$1" in
+ start)
+    echo ""
+    echo "Starting up [ Ahsay Offsite Backup Server and Replication Server ]"
+    if [ root = ${OBSR_USER} ];
+    then
+      /bin/sh ${OBSR_HOME}/bin/startup.sh
+    else
+      su ${OBSR_USER} -c "/bin/sh ${OBSR_HOME}/bin/startup.sh"
+    fi
+    
+    sleep 5
+    echo "[ Ahsay Offsite Backup Server and Replication Server ] is running"
+    ;;
+
+ stop)
+    echo ""
+    echo "Shutting down [ Ahsay Offsite Backup Server and Replication Server ]"
+    if [ root = ${OBSR_USER} ] ;
+    then
+      /bin/sh ${OBSR_HOME}/bin/shutdown.sh
+    else
+      su ${OBSR_USER} -c "/bin/sh ${OBSR_HOME}/bin/shutdown.sh"
+    fi
+    
+    sleep 5
+    echo "[ Ahsay Offsite Backup Server and Replication Server ] is stopped"
+    ;;
+
+    *)
+    echo $"usage: $0 {start|stop}";;
+esac
+
+exit 1

@@ -1,0 +1,29 @@
+<Server port="8014" shutdown="SHUTDOWN">
+
+  <Service name="Tomcat-Standalone">
+
+    <!-- Define a non-SSL HTTP/1.1 Connector on port 80 -->
+    <Connector address="0.0.0.0" port="80" maxHttpHeaderSize="8192" socketBuffer="65536"
+               maxThreads="500" minSpareThreads="50" maxSpareThreads="50" maxKeepAliveRequests="200"
+               enableLookups="false" redirectPort="443" acceptCount="200"
+               connectionTimeout="60000" disableUploadTimeout="true" URIEncoding="utf-8"/>
+
+    <!-- Define a SSL HTTP/1.1 Connector on port 443 -->
+    <Connector address="0.0.0.0" port="443" maxHttpHeaderSize="8192" socketBuffer="65536"
+               maxThreads="500" minSpareThreads="50" maxSpareThreads="50" maxKeepAliveRequests="200"
+               enableLookups="false" redirectPort="443" acceptCount="200"
+               connectionTimeout="60000" disableUploadTimeout="true" SSLEnabled="true"
+               scheme="https" secure="true" keystoreFile="conf/keystore"
+               keystorePass="changeit" clientAuth="false" sslProtocols="TLSv1" URIEncoding="utf-8"/>
+
+    <Engine name="Standalone" defaultHost="localhost" >
+      <Host name="localhost" appBase="webapps" unpackWARs="true" autoDeploy="false" liveDeploy="false">
+        <Valve className="org.apache.catalina.valves.AccessLogValve"
+               directory="${tc.log.path}" prefix="access_log." suffix=".log"
+               pattern="common"/>
+      </Host>
+    </Engine>
+
+  </Service>
+
+</Server>

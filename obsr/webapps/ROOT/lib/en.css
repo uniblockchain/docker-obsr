@@ -1,0 +1,33 @@
+/*By Barry*/
+
+a {text-decoration:underline}
+a:hover {text-decoration:none}
+
+ol {list-style-type:square; margin:0px; padding:0px 0px 0px 28px; text-align:justify}
+ul {list-style-type:square; margin:0px; padding:0px 0px 0px 13px; text-align:justify}
+
+/* Navigation Frame */
+td.lNavigation {background-color:fef6ed;}
+
+div.titleLine {width:100%; height:1px; background-color:FFFFFF}
+div.stepLine {width:190px; height:1px; background-color:FFFFFF}
+.step    {font-size:9pt; font-weight:bold; font-family:arial,helvetica,sans-serif; background-color:#f8a135; color:000000; padding:2px 5px}
+div.Title  {font-size:9pt; font-weight:bold; font-family:arial,helvetica,sans-serif; background-color:#095798; color:FFFFFF; padding:2px 5px }
+
+.Title  {font-size:9pt; font-weight:bold; font-family:arial,helvetica,sans-serif; color:FFFFFF; padding:2px 5px }
+a.TitleLink  {font-size:9pt; font-weight:bold; font-family:arial,helvetica,sans-serif; color:FFFFFF}
+
+.On {background-color:f8a135; font-weight:bold; padding:2px 5px}
+
+div.des   {font-size:8pt; font-family:arial,helvetica,sans-serif; background-color:BBE9FF; color:555555; padding:5px}
+div.notes {font-size:8pt; font-family:arial,helvetica,sans-serif; background-color:#fef6ed; color:000000; padding:5px; text-align: left }
+div.tbg   {background-color:BBE9FF; padding:5px 5px }
+div.list  {font-size:8pt; font-family:arial,helvetica,sans-serif; background-color:BBE9FF; color:555555; padding:0px 0px }
+
+a.stepLink {text-decoration:underline; color:000000}
+a.stepLink:hover {text-decoration:none; color:333333}
+
+select { font-family:arial,helvetica,sans-serif; height: 18px; font-size: 11px }
+input { font-family:arial,helvetica,sans-serif; height: 18px; font-size: 11px }
+form { margin:0px; padding:0px }
+p { margin:0px; padding:0px; text-align:justify }

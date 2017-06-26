@@ -1,0 +1,47 @@
+#!/bin/sh
+#
+# PROVIDE: @sed.script.name@
+# REQUIRE: NETWORKING SERVERS DAEMON
+# BEFORE: LOGIN
+# KEYWORD: Ahsay Offsite Backup Server and Replication Server
+
+# [Ahsay Offsite Backup Server and Replication Server] (version 6.29.0.0)
+
+. /etc/rc.subr
+
+name="@sed.script.name@"
+rcvar=`set_rcvar`
+extra_commands="usage"
+start_cmd="@sed.script.name@_start"
+stop_cmd="@sed.script.name@_stop"
+usage_cmd="@sed.script.name@_usage"
+
+@sed.script.name@_start()
+{
+    OBSR_HOME="@sed.product.home@"
+    OBSR_USER="@sed.user.name@"
+
+    echo ""
+    echo "Starting [ Ahsay Offsite Backup Server and Replication Server ]"
+    /bin/sh "${OBSR_HOME}/bin/startup.sh" &
+    echo "[ Ahsay Offsite Backup Server and Replication Server ] is running"
+}
+
+@sed.script.name@_stop()
+{
+    OBSR_HOME="@sed.product.home@"
+    OBSR_USER="@sed.user.name@"
+
+    echo ""
+    echo "Shut down [ Ahsay Offsite Backup Server and Replication Server ]"
+    /bin/sh "${OBSR_HOME}/bin/shutdown.sh" &
+    echo "[ Ahsay Offsite Backup Server and Replication Server ] is stopped"    
+}
+
+@sed.script.name@_usage()
+{
+    echo $"usage: $0 {start|stop}"
+}
+
+load_rc_config $name
+run_rc_command "$1"

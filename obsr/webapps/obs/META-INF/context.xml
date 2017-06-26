@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context privileged="true" path="/obs" debug="0" cookies="true" reloadable="false">
+	<Manager className="org.apache.catalina.session.StandardManager" distributable="false" />
+</Context>

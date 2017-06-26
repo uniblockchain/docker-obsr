@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<system-users>
+
+   <!-- Simply uncomment the followings and change the "name" and "password" attribute -->
+   <!-- to add read-only system web console account to your AhsayOBS.                  -->
+   <!--                                                                                -->
+   <!-- If you want to add another full control system account to your AhsayOBS, just  -->
+   <!-- change the "role" attribute from "read-only" to "admin".                       -->
+   <!--                                                                                -->
+   <!-- You need to restart the AhsayOBS service for changes within this file to take  -->
+   <!-- effort.                                                                        -->
+
+   <!-- 
+   <user name="Operator1" password="Password1" hashed-pwd="N" role="read-only" /> 
+   <user name="Operator2" password="Password2" hashed-pwd="N" role="read-only" /> 
+   <user name="Operator3" password="Password3" hashed-pwd="N" role="read-only" /> 
+   <user name="Operator4" password="Password4" hashed-pwd="N" role="read-only" /> 
+   <user name="Operator5" password="Password5" hashed-pwd="N" role="read-only" /> 
+   -->
+
+</system-users>

@@ -1,0 +1,42 @@
+#!/bin/sh
+#
+# PROVIDE: @sed.script.name@
+# REQUIRE: NETWORKING SERVERS DAEMON
+# BEFORE: LOGIN
+# KEYWORD: @nix.app.product.name@
+
+# [@nix.app.product.name@] (version @nix.app.product.version@)
+
+@sed.script.name@_start()
+{
+    OBSR_HOME="@sed.product.home@"
+    OBSR_USER="@sed.user.name@"
+
+    echo ""
+    echo "Starting [ @nix.app.product.name@ ]"
+    /bin/sh "${OBSR_HOME}/bin/startup.sh" &
+    echo "[ @nix.app.product.name@ ] is running"
+}
+
+@sed.script.name@_stop()
+{
+    OBSR_HOME="@sed.product.home@"
+    OBSR_USER="@sed.user.name@"
+
+    echo ""
+    echo "Shut down [ @nix.app.product.name@ ]"
+    /bin/sh "${OBSR_HOME}/bin/shutdown.sh" &
+    echo "[ @nix.app.product.name@ ] is stopped"    
+}
+
+@sed.script.name@_usage()
+{
+    echo $"usage: $0 {start|stop}"
+}
+
+case "$1" in
+    start)    @sed.script.name@_start ;;
+    stop)     @sed.script.name@_stop ;;
+    **)       @sed.script.name@_usage
+              exit 1 ;;
+esac

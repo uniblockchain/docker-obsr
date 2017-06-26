@@ -1,0 +1,3034 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+ 
+<!DOCTYPE struts-config PUBLIC
+       "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+       "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+
+<struts-config>
+
+  <!-- ==================================================================== -->
+  <!-- ===================== Form Bean Definitions ======================== -->
+  <!-- ==================================================================== -->
+
+  <form-beans>
+    <!-- ================================================================== -->
+    <!-- =================== User Form Bean Definitions =================== -->
+    <!-- ================================================================== -->
+
+    <!-- Registration form bean -->
+    <form-bean      name="registerForm"
+                    type="com.ahsay.obs.www.user.bean.RegisterForm"/>
+    <!-- Logon form bean -->
+    <form-bean      name="logonForm"
+                    type="com.ahsay.obs.www.user.bean.LogonForm"/>
+    <!-- Forgot Password form bean -->
+    <form-bean      name="getForgotPwdForm"
+                    type="com.ahsay.obs.www.user.bean.GetForgotPwdForm"/>
+    <!-- Edit User Profile form bean -->
+    <form-bean      name="editUserProfileForm"
+                    type="com.ahsay.obs.www.user.bean.EditUserProfileForm"/>
+    <!-- Edit Backup Set form bean -->
+    <form-bean      name="editBackupSetForm"
+                    type="com.ahsay.obs.www.user.bean.EditBackupSetForm"/>
+    <!-- Day Schedule bean -->
+    <form-bean      name="dayScheduleBean"
+                    type="com.ahsay.obs.www.user.bean.EditBackupSetForm.DayScheduleBean"/>
+    <!-- Week Schedule bean -->
+    <form-bean      name="weekScheduleBean"
+                    type="com.ahsay.obs.www.user.bean.EditBackupSetForm.WeekScheduleBean"/>
+    <!-- Month Schedule bean -->
+    <form-bean      name="monthScheduleBean"
+                    type="com.ahsay.obs.www.user.bean.EditBackupSetForm.MonthScheduleBean"/>
+    <!-- Custom Schedule bean -->
+    <form-bean      name="customScheduleBean"
+                    type="com.ahsay.obs.www.user.bean.EditBackupSetForm.CustomScheduleBean"/>
+    <!-- Filter bean -->
+    <form-bean      name="filterBean"
+                    type="com.ahsay.obs.www.user.bean.EditBackupSetForm.FilterBean"/>
+    <!-- Retention bean -->
+    <form-bean      name="retentionBean"
+                    type="com.ahsay.obs.www.user.bean.EditBackupSetForm.RetentionBean"/>
+    <!-- Archive bean -->
+    <form-bean      name="archiveBean"
+                    type="com.ahsay.obs.www.user.bean.EditBackupSetForm.ArchiveBean"/>
+    <!-- FastBackup bean -->
+    <form-bean      name="fastBackupBean"
+                    type="com.ahsay.obs.www.user.bean.EditBackupSetForm.FastBackupBean"/>
+    <!-- Sharing bean -->
+    <form-bean      name="sharingBean"
+                    type="com.ahsay.obs.www.user.bean.EditBackupSetForm.SharingBean"/>
+
+    <!-- Edit ACB Backup Set form bean -->
+    <form-bean      name="editAcbBackupSetForm"
+                    type="com.ahsay.obs.www.user.bean.EditAcbBackupSetForm"/>
+
+    <!-- Edit Schedule form bean -->
+    <form-bean      name="editScheduleForm"
+                    type="com.ahsay.obs.www.user.bean.EditScheduleForm"/>
+    <form-bean      name="editAcbScheduleForm"
+                    type="com.ahsay.obs.www.user.bean.EditAcbScheduleForm"/>
+    <!-- Edit Filter form bean -->
+    <form-bean      name="editFilterForm"
+                    type="com.ahsay.obs.www.user.bean.EditFilterForm"/>
+    <!-- Edit Filter form bean -->
+    <form-bean      name="editAcbFilterForm"
+                    type="com.ahsay.obs.www.user.bean.EditAcbFilterForm"/>
+    <!-- Backup Files form bean -->
+    <form-bean      name="showBackupFileForm"
+                    type="com.ahsay.obs.www.user.bean.ShowBackupFileForm"/>
+    <!-- Backup Summary form bean -->
+    <form-bean      name="showBackupReportForm"
+                    type="com.ahsay.obs.www.user.bean.ShowBackupReportForm"/>
+    <!-- Full Backup Report form bean -->
+    <form-bean      name="showBackupReportFullForm"
+                    type="com.ahsay.obs.www.user.bean.ShowBackupReportFullForm"/>
+    <!-- Show User Storage Statistics form bean -->
+    <form-bean      name="showUserStorageStatForm"
+                    type="com.ahsay.obs.www.user.bean.ShowUserStorageStatForm"/>
+    <!-- Show User Storage Statistics form bean -->
+    <form-bean      name="installAppletForm"
+                    type="com.ahsay.obs.www.user.bean.InstallAppletForm"/>
+	<!-- Show User Logs form bean -->
+    <form-bean      name="showUserLogForm"
+                    type="com.ahsay.obs.www.user.bean.ShowUserLogForm"/>
+
+    <!-- ================================================================== -->
+    <!-- ================= Report Form Bean Definitions =================== -->
+    <!-- ================================================================== -->
+    <!-- New User Report form bean -->
+    <form-bean      name="getNewUserReportForm"
+                    type="com.ahsay.obs.www.report.bean.GetNewUserReportForm"/>
+    <!-- Setting Change Report form bean -->
+    <form-bean      name="getSettingChangeReportForm"
+                    type="com.ahsay.obs.www.report.bean.GetSettingChangeReportForm"/>
+    <!-- Forgot Password Report form bean -->
+    <form-bean      name="getForgotPwdReportForm"
+                    type="com.ahsay.obs.www.report.bean.GetForgotPwdReportForm"/>
+    <!-- Inactive User Report form bean -->
+    <form-bean      name="getInactiveUserReportForm"
+                    type="com.ahsay.obs.www.report.bean.GetInactiveUserReportForm"/>
+    <!-- Trial User Reminder form bean -->
+    <form-bean      name="getTrialUserReminderForm"
+                    type="com.ahsay.obs.www.report.bean.GetTrialUserReminderForm"/>
+    <!-- Backup Job Reminder Report form bean -->
+    <form-bean      name="getOfflineBackupReminderReportForm"
+                    type="com.ahsay.obs.www.report.bean.GetOfflineBackupReminderReportForm"/>
+    <form-bean      name="getBackupQuotaReminderReportForm"
+                    type="com.ahsay.obs.www.report.bean.GetBackupQuotaReminderReportForm"/>
+    <form-bean      name="getBackupJobReminderReportForm"
+                    type="com.ahsay.obs.www.report.bean.GetBackupJobReminderReportForm"/>
+    <!-- File Restoring Summary Report form bean -->
+    <form-bean      name="getRestoreSummaryReportForm"
+                    type="com.ahsay.obs.www.report.bean.GetRestoreSummaryReportForm"/>
+    <!-- File Restoring Full Report form bean -->
+    <form-bean      name="getRestoreFullReportForm"
+                    type="com.ahsay.obs.www.report.bean.GetRestoreFullReportForm"/>
+    <!-- Backup Job Report form bean -->
+    <form-bean      name="getBackupJobSummaryReportForm"
+                    type="com.ahsay.obs.www.report.bean.GetBackupJobSummaryReportForm"/>
+    <!-- Backup Job Report form bean -->
+    <form-bean      name="getBackupJobFullReportForm"
+                    type="com.ahsay.obs.www.report.bean.GetBackupJobFullReportForm"/>
+    <!-- Error Report form bean -->
+    <form-bean      name="getErrorReportForm"
+                    type="com.ahsay.obs.www.report.bean.GetErrorReportForm"/>
+
+    <!-- Replication Issue Report form bean -->
+    <form-bean      name="getReplicationErrorReportForm"
+                    type="com.ahsay.obs.www.report.bean.GetReplicationErrorReportForm"/>					
+    <!-- Usage Report form bean -->
+    <form-bean      name="getUsageReportForm"
+                    type="com.ahsay.obs.www.report.bean.GetUsageReportForm"/>
+    <!-- Usage Report form bean -->
+    <form-bean      name="getUserSummaryReportForm"
+                    type="com.ahsay.obs.www.report.bean.GetUserSummaryReportForm"/>
+	<!-- Ldap incorrect password Report form bean -->
+    <form-bean      name="getLdapIncorrectPwdReportForm"
+                    type="com.ahsay.obs.www.report.bean.GetLdapIncorrectPwdReportForm"/>
+	<!-- Change Owner Reminder Report form bean -->
+    <form-bean      name="getChangeOwnerReminderReportForm"
+                    type="com.ahsay.obs.www.report.bean.GetChangeOwnerReminderReportForm"/>
+					
+    <!-- ================================================================== -->
+    <!-- ================= System Form Bean Definitions =================== -->
+    <!-- ================================================================== -->
+    <!-- System Logon Report form bean -->
+    <form-bean      name="systemLogonForm"
+                    type="com.ahsay.obs.www.system.LogonForm"/>
+    <!-- Server Configuration form bean -->
+    <form-bean      name="editServerConfigForm"
+                    type="com.ahsay.obs.www.system.config.EditServerConfigForm"/>
+    <!-- License Information form bean -->
+    <form-bean      name="editLicenseForm"
+                    type="com.ahsay.obs.www.system.config.EditLicenseForm"/>
+    <!-- Replication Configuration form bean -->
+    <form-bean      name="editReplicationConfigForm"
+                    type="com.ahsay.obs.www.system.config.EditReplicationConfigForm"/>
+    <!-- License Information form bean -->
+    <form-bean      name="editJobForm"
+                    type="com.ahsay.obs.www.system.config.EditJobForm"/>
+	<!-- System Diagnosis form bean -->
+    <form-bean      name="editSystemDiagnosisForm"
+                    type="com.ahsay.obs.www.system.config.EditSystemDiagnosisForm"/>
+	<!-- Show System Logs form bean -->
+    <form-bean      name="showSystemLogForm"
+                    type="com.ahsay.obs.www.system.log.ShowSystemLogForm"/>
+    <!-- Show Backup Jobs form bean -->
+    <form-bean      name="showBackupJobForm"
+                    type="com.ahsay.obs.www.system.log.ShowBackupJobForm"/>
+    <!-- Show Restore Files form bean -->
+    <form-bean      name="showRestoredFileForm"
+                    type="com.ahsay.obs.www.system.log.ShowRestoredFileForm"/>
+    <!-- Show Backup Error form bean -->
+    <form-bean      name="showBackupErrorForm"
+                    type="com.ahsay.obs.www.system.log.ShowBackupErrorForm"/>
+    <!-- Show System Logs form bean -->
+    <form-bean      name="showReplicationLogForm"
+                    type="com.ahsay.obs.www.system.log.ShowReplicationLogForm"/>
+    <!-- Add User form bean -->
+    <form-bean      name="addUserForm"
+                    type="com.ahsay.obs.www.system.user.AddUserForm"/>
+    <!-- List User form bean -->
+    <form-bean      name="listUserForm"
+                    type="com.ahsay.obs.www.system.user.ListUserForm"/>
+    <!-- Boardcast message form bean -->
+    <form-bean      name="broadCastMessageForm"
+                    type="com.ahsay.obs.www.system.user.BroadCastMessageForm"/>
+
+    <!-- Backup User form bean -->
+    <form-bean      name="backupUserForm"
+                    type="com.ahsay.obs.www.system.user.BackupUserForm"/>
+
+    <!-- Add or Eidt System User form bean -->
+    <form-bean      name="addSysUserForm"
+                    type="com.ahsay.obs.www.system.systemUser.AddSysUserForm"/>
+
+    <!-- List System User form bean -->
+    <form-bean      name="listSysUserForm"
+                    type="com.ahsay.obs.www.system.systemUser.ListSysUserForm"/>
+
+    <!-- List User Group form bean -->
+    <form-bean      name="editUserGroupForm"
+                    type="com.ahsay.obs.www.system.groupPolicy.userGroup.EditUserGroupForm"/>
+
+	<!-- List Function Area form bean -->
+    <form-bean      name="listAllFunctionAreaForm"
+                    type="com.ahsay.obs.www.system.groupPolicy.functionArea.ListAllFunctionAreaForm"/>
+					
+    <!-- Edit Policy Group  form bean -->
+    <form-bean      name="editPolicyGroupForm"
+                    type="com.ahsay.obs.www.system.groupPolicy.policyGroup.EditPolicyGroupForm"/>
+					
+    <!-- Edit System User Policy Group form bean -->
+    <form-bean      name="editSysUserPolicyGroupForm"
+                    type="com.ahsay.obs.www.system.groupPolicy.policyGroup.EditSysUserPolicyGroupForm"/>
+    <!-- end -->
+	<!--Edit Function Area form bean -->
+	<form-bean 		name="editFunctionAreaForm"
+					type="com.ahsay.obs.www.system.groupPolicy.policyGroup.EditFunctionAreaForm" />
+					
+	<!-- Show User  form bean -->
+    <form-bean      name="showUserForm"
+                    type="com.ahsay.obs.www.system.groupPolicy.listUser.ShowUserForm"/>
+					
+	<!-- Show Function Area  form bean -->
+    <form-bean      name="showMergedPoliciesForm"
+                    type="com.ahsay.obs.www.system.groupPolicy.listUser.ShowMergedPoliciesForm"/>
+					
+	<!-- List policy group and mapped user group form bean -->
+    <form-bean      name="listPolicyUserForm"
+                    type="com.ahsay.obs.www.system.groupPolicy.policyAssignment.ListPolicyUserForm"/>	
+
+	<!-- Edit  Global Filter form bean -->
+    <form-bean      name="editGlobalFilterForm"
+                    type="com.ahsay.obs.www.system.groupPolicy.policyGroup.EditGlobalFilterForm"/>
+					
+	<!-- Edit Acb Global Filter form bean -->
+    <form-bean      name="editAcbGlobalFilterForm"
+                    type="com.ahsay.obs.www.system.groupPolicy.policyGroup.EditAcbGlobalFilterForm"/>
+					
+	<!-- Auto Update form bean -->
+    <form-bean      name="autoUpdateForm"
+                    type="com.ahsay.obs.www.system.user.AutoUpdateForm"/>
+
+	<!-- Change Owenrship form bean -->
+    <form-bean      name="editChangeOwnershipForm"
+                    type="com.ahsay.obs.www.system.systemUser.EditChangeOwnershipForm"/>					
+					
+    <!-- ==================================================================== -->
+    <!-- ==================== Added since 5.2 for ACB  ====================== -->
+    <!-- ==================================================================== -->
+    <!-- Edit ACB configuration form bean -->
+    <form-bean      name="editAcbConfigForm"
+                    type="com.ahsay.obs.www.system.config.EditAcbConfigForm"/>
+    <!-- Edit ACB advertisement configuration form bean -->
+    <form-bean      name="editAdvertisementForm"
+                    type="com.ahsay.obs.www.system.config.EditAdvertisementForm"/>
+    <!-- Show advertising logs form bean -->
+    <form-bean      name="showAdvertisementLogForm"
+                    type="com.ahsay.obs.www.system.log.ShowAdvertisementLogForm"/>
+    </form-beans>
+
+  <!-- ==================================================================== -->
+  <!-- =================== Global Forward Definitions ===================== -->
+  <!-- ==================================================================== -->
+  <global-forwards>
+    <forward name="user-logoff"          path="/user/logout.do"/>
+    <forward name="user-logon"           path="/jsp/user/admin/redirect2Logon.jsp"/>
+    <forward name="multiuser"         	 path="/jsp/system/redirect2Logon.jsp?errMsg=jsp%2EnoMultiUser"/>
+    <forward name="system-logon"         path="/jsp/system/redirect2Logon.jsp"/>
+	<forward name="systemCannotAccess"   path="/jsp/system/redirect2Logon.jsp?errMsg=jsp%2EcannotAccess"/>
+	<forward name="userCannotAccess"     path="/jsp/user/redirect2Logon.jsp?errMsg=jsp%2EcannotAccess"/>
+  </global-forwards>
+
+  <!-- ==================================================================== -->
+  <!-- =================== Action Mapping Definitions ===================== -->
+  <!-- ==================================================================== -->
+  <action-mappings>
+
+    <!-- ================================================================== -->
+    <!-- =============== User Action Mapping Definitions ================== -->
+    <!-- ================================================================== -->
+    <!-- User In-File Delta Schedule Policy -->
+    <action    path="/user/editInfileDeltaAdvance"
+               type="com.ahsay.obs.www.user.EditInfileDeltaAdvance"
+               name="editBackupSetForm"
+              scope="session"
+           validate="false" >
+      <forward name="success"         path="/jsp/user/admin/editInfileDeltaAdvance.jsp" />
+      <forward name="failure"         path="/user/editBackupSet.do" />
+    </action>
+
+    <action    path="/user/updateInfileDeltaAdvance"
+               type="com.ahsay.obs.www.user.UpdateInfileDeltaAdvance"
+               name="editBackupSetForm"
+              scope="session"
+           validate="false" >
+      <forward name="success"         path="/user/editBackupSet.do" />
+      <forward name="failure"         path="/user/editInfileDeltaAdvance.do" />
+    </action>
+
+    <!-- User Custom Retention Policy -->
+    <action    path="/user/addSetting"
+               type="com.ahsay.obs.www.user.retention.AddSetting"
+               name="editBackupSetForm"
+              scope="session"
+           validate="false" >
+      <forward name="success"         path="/jsp/user/admin/editCustomRetention.jsp" 	/>
+      <forward name="failure"         path="/user/editBackupSet.do" 	/>
+    </action>
+
+    <action    path="/user/editSetting"
+               type="com.ahsay.obs.www.user.retention.EditSetting"
+               name="editBackupSetForm"
+              scope="session"
+           validate="false" >
+      <forward name="success"         path="/jsp/user/admin/editCustomRetention.jsp" 	/>
+      <forward name="failure"         path="/user/editBackupSet.do" 	/>
+    </action>
+
+    <action    path="/user/updateSetting"
+               type="com.ahsay.obs.www.user.retention.UpdateSetting"
+               name="editBackupSetForm"
+              scope="session"
+           validate="false" >
+      <forward name="success"         path="/user/editBackupSet.do" 	/>
+      <forward name="failure"         path="/jsp/user/admin/editCustomRetention.jsp" 	/>
+    </action>
+
+    <action    path="/user/removeSetting"
+               type="com.ahsay.obs.www.user.retention.RemoveSetting"
+               name="editBackupSetForm"
+              scope="session"
+           validate="false" >
+      <forward name="success"         path="/user/editBackupSet.do" 	/>
+      <forward name="failure"         path="/user/editBackupSet.do" 	/>
+      </action>
+
+    <!-- Process a user logon -->
+    <action    path="/user/logon"
+               type="com.ahsay.obs.www.user.Logon"
+               name="logonForm"
+              scope="session"
+           validate="false" >
+	  <forward name="acb"               path="/jsp/user/admin/index.jsp"/>
+      <forward name="success"           path="/jsp/user/admin/index.jsp"/>
+      <forward name="failure"           path="/jsp/user/index.jsp"/>
+    </action>
+
+    <!-- Process a user logout -->
+    <action    path="/user/logout"
+               type="com.ahsay.obs.www.user.Logout">
+      <forward name="success"           path="/jsp/user/index.jsp"/>
+      <forward name="failure"           path="/jsp/user/index.jsp"/>
+    </action>
+
+    <!-- Process a free registration -->
+    <action    path="/user/register"
+               type="com.ahsay.obs.www.user.Register"
+               name="registerForm"
+              scope="request">
+      <forward name="success"           path="/jsp/user/wizard/register/thanks.jsp"/>
+      <forward name="failure"           path="/jsp/user/wizard/register/register.jsp"/>
+    </action>
+
+     <!-- Process a free registration -->
+    <action    path="/user/registerFromCD"
+               type="com.ahsay.obs.www.user.RegisterFromCD"
+              scope="request">
+    </action>
+
+    <!-- Process a user logout -->
+    <action    path="/user/getForgotPwd"
+               type="com.ahsay.obs.www.user.GetForgotPwd"
+               name="getForgotPwdForm"
+              scope="request" >
+      <forward name="success"           path="/jsp/user/forgotPwd.jsp" />
+      <forward name="failure"           path="/jsp/user/forgotPwd.jsp" />
+    </action>
+
+    <!-- Edit User Profile -->
+    <action    path="/user/editUserProfile"
+               type="com.ahsay.obs.www.user.EditUserProfile"
+               name="editUserProfileForm"
+              scope="session"
+           validate="false">
+      <forward name="success"         path="/jsp/user/admin/userProfile.jsp"/>
+      <forward name="failure"         path="/jsp/user/admin/userProfile.jsp"/>
+    </action>
+
+    <!-- Update User Profile -->
+    <action    path="/user/updateUserProfile"
+               type="com.ahsay.obs.www.user.UpdateUserProfile"
+               name="editUserProfileForm"
+              scope="session"
+           validate="false">   
+      <forward name="success"         path="/user/editUserProfile.do"/>
+      <forward name="failure"         path="/user/editUserProfile.do"/>
+    </action>
+
+    <!-- Add Contact -->
+    <action    path="/user/addContact"
+               type="com.ahsay.obs.www.user.AddContact"
+               name="editUserProfileForm"
+              scope="session"
+           validate="false">
+      <forward name="success"         path="/user/editUserProfile.do"/>
+      <forward name="failure"         path="/user/editUserProfile.do"/>
+    </action>
+
+    <!-- Remove Contact -->
+    <action    path="/user/removeContact"
+               type="com.ahsay.obs.www.user.RemoveContact"
+               name="editUserProfileForm"
+              scope="session"
+           validate="false">
+      <forward name="success"         path="/user/editUserProfile.do"/>
+      <forward name="failure"         path="/user/editUserProfile.do"/>
+    </action>
+
+    <!-- Add backup set -->
+    <action    path="/user/addBackupSet"
+               type="com.ahsay.obs.www.user.AddBackupSet"
+               name="editBackupSetForm"
+              scope="session"
+           validate="false">
+      <forward name="success"         path="/user/editBackupSet.do" 	/>
+      <forward name="failure"         path="/user/editBackupSet.do" 	/>
+    </action>
+
+    <!-- Remove backup set -->
+    <action    path="/user/removeBackupSet"
+               type="com.ahsay.obs.www.user.RemoveBackupSet"
+               name="editBackupSetForm"
+              scope="session"
+           validate="false">
+      <forward name="success"         path="/user/editBackupSet.do" 	/>
+      <forward name="failure"         path="/user/editBackupSet.do" 	/>
+    </action>
+
+    <!-- Edit backup set -->
+    <action    path="/user/editBackupSet"
+               type="com.ahsay.obs.www.user.EditBackupSet"
+               name="editBackupSetForm"
+              scope="session"
+           validate="false">
+      <forward name="acb"             path="/user/editAcbBackupSet.do"/>
+      <forward name="success"         path="/jsp/user/admin/backupSet.jsp"/>
+      <forward name="failure"         path="/jsp/user/admin/backupSet.jsp"/>
+    </action>
+
+    <!-- Add Acb backup set -->
+    <action    path="/user/addAcbBackupSet"
+               type="com.ahsay.obs.www.user.AddAcbBackupSet"
+               name="editAcbBackupSetForm"
+              scope="session"
+           validate="false">
+      <forward name="success"         path="/user/editAcbBackupSet.do" 	/>
+      <forward name="failure"         path="/user/editAcbBackupSet.do" 	/>
+    </action>
+
+    <!-- Remove Acb backup set -->
+    <action    path="/user/removeAcbBackupSet"
+               type="com.ahsay.obs.www.user.RemoveAcbBackupSet"
+               name="editAcbBackupSetForm"
+              scope="session"
+           validate="false">
+      <forward name="success"         path="/user/editAcbBackupSet.do" 	/>
+      <forward name="failure"         path="/user/editAcbBackupSet.do" 	/>
+    </action>
+
+    <!-- Update acb backup set -->
+    <action    path="/user/updateBackupSet"
+               type="com.ahsay.obs.www.user.UpdateBackupSet"
+               name="editBackupSetForm"
+              scope="session"
+           validate="false">
+      <forward name="success"         path="/user/editBackupSet.do" 	/>
+      <forward name="failure"         path="/user/editBackupSet.do" 	/>
+    </action>
+
+    <!-- Edit acb backup set -->
+    <action    path="/user/editAcbBackupSet"
+               type="com.ahsay.obs.www.user.EditAcbBackupSet"
+               name="editAcbBackupSetForm"
+              scope="session"
+           validate="false">
+      <forward name="success"         path="/jsp/user/admin/acbBackupSet.jsp"/>
+      <forward name="failure"         path="/jsp/user/admin/acbBackupSet.jsp"/>
+    </action>
+
+    <!-- Update acb backup set -->
+    <action    path="/user/updateAcbBackupSet"
+               type="com.ahsay.obs.www.user.UpdateAcbBackupSet"
+               name="editAcbBackupSetForm"
+              scope="session"
+           validate="false">
+      <forward name="success"         path="/user/editAcbBackupSet.do" 	/>
+      <forward name="failure"         path="/user/editAcbBackupSet.do" 	/>
+    </action>
+
+    <!-- Add selected backup source -->
+    <action    path="/user/addSelectSrc"
+               type="com.ahsay.obs.www.user.AddSelectSrc"
+               name="editBackupSetForm"
+              scope="session"
+           validate="false">
+      <forward name="success"         path="/user/editBackupSet.do"/>
+      <forward name="failure"         path="/user/editBackupSet.do"/>
+    </action>
+
+    <!-- Remove selected backup source -->
+    <action    path="/user/removeSelectSrc"
+               type="com.ahsay.obs.www.user.RemoveSelectSrc"
+           validate="false">
+      <forward name="success"         path="/user/editBackupSet.do"/>
+      <forward name="failure"         path="/user/editBackupSet.do"/>
+    </action>
+
+    <!-- Add deselected backup source -->
+    <action    path="/user/addDeselectSrc"
+               type="com.ahsay.obs.www.user.AddDeselectSrc"
+               name="editBackupSetForm"
+              scope="session"
+           validate="false">
+      <forward name="success"         path="/user/editBackupSet.do"/>
+      <forward name="failure"         path="/user/editBackupSet.do"/>
+    </action>
+
+    <!-- Remove deselected backup source -->
+    <action    path="/user/removeDeselectSrc"
+               type="com.ahsay.obs.www.user.RemoveDeselectSrc"
+           validate="false">
+      <forward name="success"         path="/user/editBackupSet.do"/>
+      <forward name="failure"         path="/user/editBackupSet.do"/>
+    </action>
+
+    <!-- New backup schedule -->
+    <action    path="/user/newSchedule"
+               type="com.ahsay.obs.www.user.NewSchedule"
+               name="editScheduleForm"
+              scope="request"
+           validate="false">
+      <forward name="success"         path="/jsp/user/admin/newSchedule.jsp"/>
+      <forward name="failure"         path="/jsp/user/admin/newSchedule.jsp"/>
+	  <forward name="back"            path="/user/editBackupSet.do?mode=exceedDAGQuota"/>
+    </action>
+
+    <!-- Add backup schedule -->
+    <action    path="/user/addSchedule"
+               type="com.ahsay.obs.www.user.AddSchedule"
+               name="editScheduleForm"
+              scope="request"
+           validate="false">
+      <forward name="success"         path="/user/editBackupSet.do"/>
+      <forward name="failure"         path="/user/editBackupSet.do"/>
+    </action>
+
+    <!-- Remove backup schedule -->
+    <action    path="/user/removeSchedule"
+               type="com.ahsay.obs.www.user.RemoveSchedule"
+           validate="false">
+      <forward name="success"         path="/user/editBackupSet.do"/>
+      <forward name="failure"         path="/user/editBackupSet.do"/>
+    </action>
+
+    <!-- Edit backup schedule -->
+    <action    path="/user/editSchedule"
+               type="com.ahsay.obs.www.user.EditSchedule"
+               name="editScheduleForm"
+              scope="request"
+           validate="false">
+      <forward name="success"         path="/jsp/user/admin/editSchedule.jsp"/>
+      <forward name="failure"         path="/jsp/user/admin/editSchedule.jsp"/>
+    </action>
+
+    <!-- Update backup schedule -->
+    <action    path="/user/updateSchedule"
+               type="com.ahsay.obs.www.user.UpdateSchedule"
+               name="editScheduleForm"
+              scope="request"
+           validate="false">
+      <forward name="success"         path="/user/editBackupSet.do"/>
+      <forward name="failure"         path="/user/editBackupSet.do"/>
+    </action>
+
+    <!-- Add filter -->
+    <action    path="/user/newFilter"
+               type="com.ahsay.obs.www.user.NewFilter"
+               name="editFilterForm"
+              scope="session"
+           validate="false">
+      <forward name="success"         path="/jsp/user/admin/newFilter.jsp"/>
+      <forward name="failure"         path="/jsp/user/admin/newFilter.jsp"/>
+    </action>
+
+    <!-- Add filter -->
+    <action    path="/user/addFilter"
+               type="com.ahsay.obs.www.user.AddFilter"
+               name="editFilterForm"
+              scope="session"
+           validate="false">
+      <forward name="success"         path="/user/editBackupSet.do"/>
+      <forward name="failure"         path="/user/editBackupSet.do"/>
+    </action>
+
+    <!-- Remove filter -->
+    <action    path="/user/removeFilter"
+               type="com.ahsay.obs.www.user.RemoveFilter"
+           validate="false">
+      <forward name="success"         path="/user/editBackupSet.do"/>
+      <forward name="failure"         path="/user/editBackupSet.do"/>
+    </action>
+
+    <!-- Update filter -->
+    <action    path="/user/updateFilter"
+               type="com.ahsay.obs.www.user.UpdateFilter"
+               name="editFilterForm"
+              scope="session"
+           validate="false">
+      <forward name="success"         path="/user/editBackupSet.do"/>
+      <forward name="failure"         path="/user/editBackupSet.do"/>
+    </action>
+
+    <!-- Edit filter -->
+    <action    path="/user/editFilter"
+               type="com.ahsay.obs.www.user.EditFilter"
+               name="editFilterForm"
+              scope="session"
+           validate="false">
+      <forward name="success"         path="/jsp/user/admin/editFilter.jsp"/>
+      <forward name="failure"         path="/jsp/user/admin/editFilter.jsp"/>
+    </action>
+
+    <!-- Add an pre-command -->
+    <action    path="/user/addPreCmd"
+               type="com.ahsay.obs.www.user.AddPreCmd"
+               name="editBackupSetForm"
+              scope="session"
+           validate="false">
+      <forward name="success"         path="/user/editBackupSet.do"/>
+      <forward name="failure"         path="/user/editBackupSet.do"/>
+    </action>
+
+    <!-- Remove an pre-command -->
+    <action    path="/user/removePreCmd"
+               type="com.ahsay.obs.www.user.RemovePreCmd"
+           validate="false">
+      <forward name="success"         path="/user/editBackupSet.do"/>
+      <forward name="failure"         path="/user/editBackupSet.do"/>
+    </action>
+
+    <!-- Add an post-command -->
+    <action    path="/user/addPostCmd"
+               type="com.ahsay.obs.www.user.AddPostCmd"
+               name="editBackupSetForm"
+              scope="session"
+           validate="false">
+      <forward name="success"         path="/user/editBackupSet.do"/>
+      <forward name="failure"         path="/user/editBackupSet.do"/>
+    </action>
+
+    <!-- Remove an post-command -->
+    <action    path="/user/removePostCmd"
+               type="com.ahsay.obs.www.user.RemovePostCmd"
+           validate="false">
+      <forward name="success"         path="/user/editBackupSet.do"/>
+      <forward name="failure"         path="/user/editBackupSet.do"/>
+    </action>
+
+    <!-- Add a share -->
+    <action    path="/user/addAllowedIP"
+               type="com.ahsay.obs.www.user.AddAllowedIP"
+               name="editBackupSetForm"
+              scope="session"
+           validate="false">
+      <forward name="success"         path="/user/editBackupSet.do"/>
+      <forward name="failure"         path="/user/editBackupSet.do"/>
+    </action>
+
+    <!-- Remove a share -->
+    <action    path="/user/removeAllowedIP"
+               type="com.ahsay.obs.www.user.RemoveAllowedIP"
+           validate="false">
+      <forward name="success"         path="/user/editBackupSet.do"/>
+      <forward name="failure"         path="/user/editBackupSet.do"/>
+    </action>
+
+    <!-- Add a share -->
+    <action    path="/user/addShare"
+               type="com.ahsay.obs.www.user.AddShare"
+               name="editBackupSetForm"
+              scope="session"
+           validate="false">
+      <forward name="success"         path="/user/editBackupSet.do"/>
+      <forward name="failure"         path="/user/editBackupSet.do"/>
+    </action>
+
+    <!-- Remove a share -->
+    <action    path="/user/removeShare"
+               type="com.ahsay.obs.www.user.RemoveShare"
+           validate="false">
+      <forward name="success"         path="/user/editBackupSet.do"/>
+      <forward name="failure"         path="/user/editBackupSet.do"/>
+    </action>
+
+    <!-- Show backup files -->
+    <action    path="/user/showBackupFile"
+               type="com.ahsay.obs.www.user.ShowBackupFile"
+               name="showBackupFileForm"
+              scope="session"
+           validate="false">
+      <forward name="success"         path="/jsp/user/admin/backupFile.jsp"/>
+	  <forward name="search"          path="/jsp/user/admin/searchBackupFile.jsp"/>
+      <forward name="failure"         path="/jsp/user/admin/backupFile.jsp"/>
+    </action>
+
+    <!-- List all files under a given directory  -->
+    <action    path="/user/deleteFile"
+               type="com.ahsay.obs.www.user.DeleteFile"
+               name="showBackupFileForm"
+              scope="session"
+           validate="false">
+      <forward name="success"         path="/user/showBackupFile.do"/>
+      <forward name="failure"         path="/user/showBackupFile.do"/>
+    </action>
+
+    <!-- List all files under a given directory  -->
+    <action    path="/user/undeleteFile"
+               type="com.ahsay.obs.www.user.UndeleteFile"
+               name="showBackupFileForm"
+              scope="session"
+           validate="false">
+      <forward name="success"         path="/user/showBackupFile.do"/>
+      <forward name="failure"         path="/jsp/user/admin/backupFile.jsp"/>
+    </action>
+
+    <!-- Send the list of all files to be retored -->
+    <action    path="/user/installApplet"
+               type="com.ahsay.obs.www.user.InstallApplet"
+               name="installAppletForm"
+              scope="request"
+           validate="false">
+      <forward name="success"         path="/jsp/user/wizard/install/windows/installApplet.jsp" />
+      <forward name="failure"         path="/jsp/user/wizard/install/windows/installApplet.jsp" />
+    </action>
+
+    <!-- Show backup summary report -->
+    <action    path="/user/showBackupReport"
+               type="com.ahsay.obs.www.user.ShowBackupReport"
+               name="showBackupReportForm"
+              scope="session"
+           validate="false">
+      <forward name="success"         path="/jsp/user/admin/backupReport.jsp"/>
+      <forward name="switchBSet"      path="/user/showBackupReport.do"  />
+      <forward name="failure"         path="/jsp/user/admin/backupReport.jsp"/>
+    </action>
+
+    <!-- Show full backup report -->
+    <action    path="/user/showBackupReportFull"
+               type="com.ahsay.obs.www.user.ShowBackupReportFull"
+               name="showBackupReportFullForm"
+              scope="request"
+           validate="false">
+      <forward name="success"          path="/jsp/user/admin/backupReportFull.jsp"/>
+      <forward name="failure"          path="/jsp/user/admin/backupReportFull.jsp"/>
+    </action>
+
+    <!-- Show User Storage Statistics -->
+    <action    path="/user/showUserStorageStat"
+               type="com.ahsay.obs.www.user.ShowUserStorageStat"
+              scope="request"
+               name="showUserStorageStatForm">
+      <forward name="success"           path="/jsp/user/admin/storageStat.jsp"/>
+      <forward name="failure"           path="/jsp/user/admin/storageStat.jsp"/>
+    </action>
+	
+	<!-- Show user Logs -->
+    <action    path="/user/showUserLog"
+               type="com.ahsay.obs.www.user.ShowUserLog"
+               name="showUserLogForm"
+			validate="false">
+      <forward name="success"           path="/jsp/user/admin/userLog.jsp"/>
+      <forward name="failure"           path="/jsp/user/admin/userLog.jsp"/>
+    </action>
+
+	<!-- Add CDP selected backup source -->
+    <action    path="/user/addCdpSelectSrc"
+               type="com.ahsay.obs.www.user.AddCdpSelectSrc"
+               name="editBackupSetForm"
+              scope="session"
+           validate="false">
+      <forward name="success"         path="/user/editBackupSet.do"/>
+      <forward name="failure"         path="/user/editBackupSet.do"/>
+    </action>
+
+    <!-- Remove CDP selected backup source -->
+    <action    path="/user/removeCdpSelectSrc"
+               type="com.ahsay.obs.www.user.RemoveCdpSelectSrc"
+           validate="false">
+      <forward name="success"         path="/user/editBackupSet.do"/>
+      <forward name="failure"         path="/user/editBackupSet.do"/>
+    </action>
+	
+	<!-- Add CDP filter -->
+    <action    path="/user/newCdpFilter"
+               type="com.ahsay.obs.www.user.NewCdpFilter"
+               name="editFilterForm"
+              scope="session"
+           validate="false">
+      <forward name="success"         path="/jsp/user/admin/newCdpFilter.jsp"/>
+      <forward name="failure"         path="/jsp/user/admin/newCdpFilter.jsp"/>
+    </action>
+
+    <!-- Add Cdp filter -->
+    <action    path="/user/addCdpFilter"
+               type="com.ahsay.obs.www.user.AddCdpFilter"
+               name="editFilterForm"
+              scope="session"
+           validate="false">
+      <forward name="success"         path="/user/editBackupSet.do"/>
+      <forward name="failure"         path="/user/editBackupSet.do"/>
+    </action>
+
+    <!-- Remove Cdp filter -->
+    <action    path="/user/removeCdpFilter"
+               type="com.ahsay.obs.www.user.RemoveCdpFilter"
+           validate="false">
+      <forward name="success"         path="/user/editBackupSet.do"/>
+      <forward name="failure"         path="/user/editBackupSet.do"/>
+    </action>
+
+    <!-- Update Cdp filter -->
+    <action    path="/user/updateCdpFilter"
+               type="com.ahsay.obs.www.user.UpdateCdpFilter"
+               name="editFilterForm"
+              scope="session"
+           validate="false">
+      <forward name="success"         path="/user/editBackupSet.do"/>
+      <forward name="failure"         path="/user/editBackupSet.do"/>
+    </action>
+
+    <!-- Edit Cdp filter -->
+    <action    path="/user/editCdpFilter"
+               type="com.ahsay.obs.www.user.EditCdpFilter"
+               name="editFilterForm"
+              scope="session"
+           validate="false">
+      <forward name="success"         path="/jsp/user/admin/editCdpFilter.jsp"/>
+      <forward name="failure"         path="/jsp/user/admin/editCdpFilter.jsp"/>
+    </action>
+	
+	<!-- New Default Backup set -->
+    <action    path="/user/newDefaultBackupSet"
+               type="com.ahsay.obs.www.user.NewDefaultBackupSet"
+               name="editBackupSetForm"
+              scope="session"
+           validate="false">
+      <forward name="success"         path="/jsp/user/admin/newDefaultBackupSet.jsp"/>
+      <forward name="failure"         path="/jsp/user/admin/newDefaultBackupSet.jsp"/>
+    </action>
+	
+	<!-- New Acb Default Backup set -->
+    <action    path="/user/newAcbDefaultBackupSet"
+               type="com.ahsay.obs.www.user.NewAcbDefaultBackupSet"
+               name="editAcbBackupSetForm"
+              scope="session"
+           validate="false">
+      <forward name="success"         path="/jsp/user/admin/newAcbDefaultBackupSet.jsp"/>
+      <forward name="failure"         path="/jsp/user/admin/newAcbDefaultBackupSet.jsp"/>
+    </action>
+	
+	<!-- New Backup set -->
+    <action    path="/user/newBackupSet"
+               type="com.ahsay.obs.www.user.NewBackupSet"
+               name="editBackupSetForm"
+              scope="session"
+           validate="false">
+      <forward name="success"         path="/jsp/user/admin/newBackupSet.jsp"/>
+      <forward name="failure"         path="/jsp/user/admin/newBackupSet.jsp"/>
+    </action>
+	
+   
+    <!-- ================================================================== -->
+    <!-- ====== Restore Action Mapping Definitions For PRE v5.1.0.0 ======= -->
+    <!-- ================================================================== -->
+    <!-- Send the list of all files to be retored -->
+    <action    path="/user/restoreFile"
+               type="com.ahsay.obs.www.user.RestoreFile"
+               name="showBackupFileForm"
+              scope="session"
+           validate="false">
+      <forward name="success"         path="/jsp/user/admin/restoreFile.jsp" />
+      <forward name="failure"         path="/jsp/user/admin/backupFile.jsp"/>
+    </action>
+
+    <!-- Online restore a file from the server -->
+    <action    path="/restore/startRestore"
+               type="com.ahsay.obs.www.restore.obr.StartRestore"
+               name="showBackupFileForm"
+              scope="session"
+           validate="false">
+    </action>
+
+    <!-- List all files under a given directory  -->
+    <action    path="/restore/restoreFile"
+               type="com.ahsay.obs.www.restore.obr.RestoreFile">
+    </action>
+
+    <!-- Online restore a file from the server -->
+    <action    path="/restore/endRestore"
+               type="com.ahsay.obs.www.restore.obr.EndRestore">
+    </action>
+
+    <!-- List all files under a given directory  -->
+    <action    path="/restore/obm/listBackupJob"
+              scope="request"
+               type="com.ahsay.obs.www.restore.obm.ListBackupJob">
+    </action>
+    <!-- List all backup jobs for a given backup set -->
+    <action    path="/restore/obm/listBackupFile"
+              scope="request"
+               type="com.ahsay.obs.www.restore.obm.ListBackupFile">
+    </action>
+    <!-- Start restoring files from the server using OBM -->
+    <action    path="/restore/obm/startRestore"
+              scope="request"
+               type="com.ahsay.obs.www.restore.obm.StartRestore">
+    </action>
+    <!-- Restore a file from the server using OBM -->
+    <action    path="/restore/obm/restoreFile"
+              scope="request"
+               type="com.ahsay.obs.www.restore.obm.RestoreFile">
+    </action>
+    <!-- End restoring files from the server using OBM -->
+    <action    path="/restore/obm/endRestore"
+              scope="request"
+               type="com.ahsay.obs.www.restore.obm.EndRestore">
+    </action>
+
+    <!-- ================================================================== -->
+    <!-- ====== Restore Action Mapping Definitions For v5.1.0.0     ======= -->
+    <!-- ================================================================== -->
+    <!-- Online restore a file from the server -->
+    <action    path="/restore/obr51/startRestore"
+               type="com.ahsay.obs.www.restore.obr.StartRestore"
+               name="showBackupFileForm"
+              scope="session"
+           validate="false">
+    </action>
+
+    <!-- List all files under a given directory  -->
+    <action    path="/restore/obr51/restoreFile"
+               type="com.ahsay.obs.www.restore.obr.RestoreFile">
+    </action>
+
+    <!-- Online restore a file from the server -->
+    <action    path="/restore/obr51/endRestore"
+               type="com.ahsay.obs.www.restore.obr.EndRestore">
+    </action>
+    <!-- List all files under a given directory  -->
+    <action    path="/restore/obm51/listBackupJob"
+              scope="request"
+               type="com.ahsay.obs.www.restore.obm51.ListBackupJob">
+    </action>
+    <!-- List all backup jobs for a given backup set -->
+    <action    path="/restore/obm51/listBackupFile"
+              scope="request"
+               type="com.ahsay.obs.www.restore.obm51.ListBackupFile">
+    </action>
+    <!-- Start restoring files from the server using OBM -->
+    <action    path="/restore/obm51/startRestore"
+              scope="request"
+               type="com.ahsay.obs.www.restore.obm51.StartRestore">
+    </action>
+    <!-- Restore a file from the server using OBM -->
+    <action    path="/restore/obm51/restoreFile"
+              scope="request"
+               type="com.ahsay.obs.www.restore.obm51.RestoreFile">
+    </action>
+    <!-- End restoring files from the server using OBM -->
+    <action    path="/restore/obm51/endRestore"
+              scope="request"
+               type="com.ahsay.obs.www.restore.obm51.EndRestore">
+    </action>
+
+    <!-- ==================================================================== -->
+    <!-- ==================== Added since 5.2 for ACB  ====================== -->
+    <!-- ==================================================================== -->
+    <!-- Add selected backup source -->
+    <action    path="/user/addAcbSelectSrc"
+               type="com.ahsay.obs.www.user.AddAcbSelectSrc"
+               name="editAcbBackupSetForm"
+              scope="session"
+           validate="false">
+      <forward name="success"         path="/user/editAcbBackupSet.do"/>
+      <forward name="failure"         path="/user/editAcbBackupSet.do"/>
+    </action>
+
+    <!-- Remove selected backup source -->
+    <action    path="/user/removeAcbSelectSrc"
+               type="com.ahsay.obs.www.user.RemoveAcbSelectSrc"
+           validate="false">
+      <forward name="success"         path="/user/editAcbBackupSet.do"/>
+      <forward name="failure"         path="/user/editAcbBackupSet.do"/>
+    </action>
+
+    <!-- Add deselected backup source -->
+    <action    path="/user/addAcbDeselectSrc"
+               type="com.ahsay.obs.www.user.AddAcbDeselectSrc"
+               name="editAcbBackupSetForm"
+              scope="session"
+           validate="false">
+      <forward name="success"         path="/user/editAcbBackupSet.do"/>
+      <forward name="failure"         path="/user/editAcbBackupSet.do"/>
+    </action>
+
+    <!-- Remove deselected backup source -->
+    <action    path="/user/removeAcbDeselectSrc"
+               type="com.ahsay.obs.www.user.RemoveAcbDeselectSrc"
+           validate="false">
+      <forward name="success"         path="/user/editAcbBackupSet.do"/>
+      <forward name="failure"         path="/user/editAcbBackupSet.do"/>
+    </action>
+
+    <!-- New backup schedule -->
+    <action    path="/user/newAcbSchedule"
+               type="com.ahsay.obs.www.user.NewAcbSchedule"
+               name="editAcbScheduleForm"
+              scope="request"
+           validate="false">
+      <forward name="success"         path="/jsp/user/admin/newAcbSchedule.jsp"/>
+      <forward name="failure"         path="/jsp/user/admin/newAcbSchedule.jsp"/>
+    </action>
+
+    <!-- Add backup schedule -->
+    <action    path="/user/addAcbSchedule"
+               type="com.ahsay.obs.www.user.AddAcbSchedule"
+               name="editAcbScheduleForm"
+              scope="request"
+           validate="false">
+      <forward name="success"         path="/user/editBackupSet.do"/>
+      <forward name="failure"         path="/user/editBackupSet.do"/>
+    </action>
+
+    <!-- Remove backup schedule -->
+    <action    path="/user/removeAcbSchedule"
+               type="com.ahsay.obs.www.user.RemoveAcbSchedule"
+           validate="false">
+      <forward name="success"         path="/user/editBackupSet.do"/>
+      <forward name="failure"         path="/user/editBackupSet.do"/>
+    </action>
+
+    <!-- Edit backup schedule -->
+    <action    path="/user/editAcbSchedule"
+               type="com.ahsay.obs.www.user.EditAcbSchedule"
+               name="editAcbScheduleForm"
+              scope="request"
+           validate="false">
+      <forward name="success"         path="/jsp/user/admin/editAcbSchedule.jsp"/>
+      <forward name="failure"         path="/jsp/user/admin/editAcbSchedule.jsp"/>
+    </action>
+
+    <!-- Update backup schedule -->
+    <action    path="/user/updateAcbSchedule"
+               type="com.ahsay.obs.www.user.UpdateAcbSchedule"
+               name="editAcbScheduleForm"
+              scope="request"
+           validate="false">
+      <forward name="success"         path="/user/editBackupSet.do"/>
+      <forward name="failure"         path="/user/editBackupSet.do"/>
+    </action>
+
+    <!-- Add a share -->
+    <action    path="/user/addAcbAllowedIP"
+               type="com.ahsay.obs.www.user.AddAcbAllowedIP"
+               name="editAcbBackupSetForm"
+              scope="session"
+           validate="false">
+      <forward name="success"         path="/user/editAcbBackupSet.do"/>
+      <forward name="failure"         path="/user/editAcbBackupSet.do"/>
+    </action>
+
+    <!-- Remove a share -->
+    <action    path="/user/removeAcbAllowedIP"
+               type="com.ahsay.obs.www.user.RemoveAcbAllowedIP"
+           validate="false">
+      <forward name="success"         path="/user/editAcbBackupSet.do"/>
+      <forward name="failure"         path="/user/editAcbBackupSet.do"/>
+    </action>
+    <!-- Add Acb filter -->
+    <action    path="/user/newAcbFilter"
+               type="com.ahsay.obs.www.user.NewAcbFilter"
+               name="editAcbFilterForm"
+              scope="session"
+           validate="false">
+      <forward name="success"         path="/jsp/user/admin/newAcbFilter.jsp"/>
+      <forward name="failure"         path="/jsp/user/admin/newAcbFilter.jsp"/>
+    </action>
+
+    <!-- Add Acb filter -->
+    <action    path="/user/addAcbFilter"
+               type="com.ahsay.obs.www.user.AddAcbFilter"
+               name="editAcbFilterForm"
+              scope="session"
+           validate="false">
+      <forward name="success"         path="/user/editAcbBackupSet.do"/>
+      <forward name="failure"         path="/user/editAcbBackupSet.do"/>
+    </action>
+
+    <!-- Remove Acb filter -->
+    <action    path="/user/removeAcbFilter"
+               type="com.ahsay.obs.www.user.RemoveAcbFilter"
+           validate="false">
+      <forward name="success"         path="/user/editAcbBackupSet.do"/>
+      <forward name="failure"         path="/user/editAcbBackupSet.do"/>
+    </action>
+
+    <!-- Update Acb filter -->
+    <action    path="/user/updateAcbFilter"
+               type="com.ahsay.obs.www.user.UpdateAcbFilter"
+               name="editAcbFilterForm"
+              scope="session"
+           validate="false">
+      <forward name="success"         path="/user/editAcbBackupSet.do"/>
+      <forward name="failure"         path="/user/editAcbBackupSet.do"/>
+    </action>
+
+    <!-- Edit Acb filter -->
+    <action    path="/user/editAcbFilter"
+               type="com.ahsay.obs.www.user.EditAcbFilter"
+               name="editAcbFilterForm"
+              scope="session"
+           validate="false">
+      <forward name="success"         path="/jsp/user/admin/editAcbFilter.jsp"/>
+      <forward name="failure"         path="/jsp/user/admin/editAcbFilter.jsp"/>
+    </action>
+	
+    <!-- Edit ACB configuration -->
+    <action    path="/system/config/editAcbConfig"
+               type="com.ahsay.obs.www.system.config.EditAcbConfig"
+               name="editAcbConfigForm"
+              scope="session"
+           validate="false">
+      <forward name="success"         path="/jsp/system/config/acbConfig.jsp"/>
+      <forward name="failure"         path="/jsp/system/config/acbConfig.jsp"/>
+    </action>
+
+    <!-- Update ACB configuration -->
+    <action    path="/system/config/updateAcbConfig"
+               type="com.ahsay.obs.www.system.config.UpdateAcbConfig"
+               name="editAcbConfigForm"
+              scope="session"
+           validate="false">
+      <forward name="success"         path="/jsp/system/config/acbConfig.jsp"/>
+      <forward name="failure"         path="/jsp/system/config/acbConfig.jsp"/>
+    </action>
+
+    <!-- Edit an advertisment configuration -->
+    <action    path="/system/config/editAdvertisement"
+               type="com.ahsay.obs.www.system.config.EditAdvertisement"
+               name="editAdvertisementForm"
+              scope="session"
+           validate="false">
+      <forward name="success"         path="/jsp/system/config/advertisement.jsp"/>
+      <forward name="failure"         path="/jsp/system/config/advertisement.jsp"/>
+    </action>
+
+   <!-- Edit an advertisment configuration -->
+    <action    path="/system/config/updateAdvertisement"
+               type="com.ahsay.obs.www.system.config.UpdateAdvertisement"
+               name="editAdvertisementForm"
+              scope="session"
+           validate="false">
+      <forward name="success"         path="/jsp/system/config/acbConfig.jsp"/>
+      <forward name="failure"         path="/jsp/system/config/acbConfig.jsp"/>
+    </action>
+
+    <!-- Re-order the display sequence of advertismenta  -->
+    <action    path="/system/config/reorderAdvertisement"
+               type="com.ahsay.obs.www.system.config.ReorderAdvertisement"
+           validate="false">
+      <forward name="success"         path="/system/config/editAcbConfig.do"/>
+      <forward name="failure"         path="/system/config/editAcbConfig.do"/>
+    </action>
+
+    <!-- Update an advertisment -->
+    <action    path="/system/config/updateAdvertisement"
+               type="com.ahsay.obs.www.system.config.UpdateAdvertisement"
+               name="editAdvertisementForm"
+              scope="session"
+           validate="false">
+      <forward name="success"         path="/system/config/editAcbConfig.do"/>
+      <forward name="failure"         path="/system/config/editAcbConfig.do"/>
+    </action>
+
+    <!-- Remove an advertisment  -->
+    <action    path="/system/config/removeAdvertisement"
+               type="com.ahsay.obs.www.system.config.RemoveAdvertisement"
+           validate="false">
+      <forward name="success"         path="/system/config/editAcbConfig.do"/>
+      <forward name="failure"         path="/system/config/editAcbConfig.do"/>
+    </action>
+
+    <!-- Remove an advertisment  -->
+    <action    path="/system/config/resetAdvertisementStat"
+               type="com.ahsay.obs.www.system.config.ResetAdvertisementStat"
+               name="editAdvertisementForm"
+           validate="false">
+      <forward name="success"         path="/system/config/editAcbConfig.do"/>
+      <forward name="failure"         path="/system/config/editAcbConfig.do"/>
+    </action>
+
+    <!-- Remove an advertisment  -->
+    <action    path="/system/log/showAdvertisementLog"
+               type="com.ahsay.obs.www.system.log.ShowAdvertisementLog"
+               name="showAdvertisementLogForm"
+           validate="false">
+      <forward name="success"         path="/jsp/system/log/advertisementLog.jsp"/>
+      <forward name="failure"         path="/jsp/system/log/advertisementLog.jsp"/>
+    </action>
+
+    <!-- List all files under a given directory  -->
+    <action    path="/restore/obm5.2/listBackupJob"
+              scope="request"
+               type="com.ahsay.obs.www.restore.obm52.ListBackupJob">
+    </action>
+    <!-- List all backup jobs for a given backup set -->
+    <action    path="/restore/obm5.2/listBackupFile"
+              scope="request"
+               type="com.ahsay.obs.www.restore.obm52.ListBackupFile">
+    </action>
+    <!-- Start restoring files from the server using OBM -->
+    <action    path="/restore/obm5.2/startRestore"
+              scope="request"
+               type="com.ahsay.obs.www.restore.obm52.StartRestore">
+    </action>
+    <!-- Restore a file from the server using OBM -->
+    <action    path="/restore/obm5.2/restoreFile"
+              scope="request"
+               type="com.ahsay.obs.www.restore.obm52.RestoreFile">
+    </action>
+    <!-- End restoring files from the server using OBM -->
+    <action    path="/restore/obm5.2/endRestore"
+              scope="request"
+               type="com.ahsay.obs.www.restore.obm52.EndRestore">
+    </action>
+	
+	<!-- List all files under a given directory  -->
+    <action    path="/restore/obm5.5/listBackupJob"
+              scope="request"
+               type="com.ahsay.obs.www.restore.obm55.ListBackupJob">
+    </action>
+	
+	<!-- List all backup job dates  -->
+    <action    path="/restore/obm5.5/listBackupJobDate"
+              scope="request"
+               type="com.ahsay.obs.www.restore.obm55.ListBackupJobDate">
+    </action>
+	
+	<!-- List all backup job times under a given backup job date  -->
+    <action    path="/restore/obm5.5/listBackupJobTime"
+              scope="request"
+               type="com.ahsay.obs.www.restore.obm55.ListBackupJobTime">
+    </action>
+	
+    <!-- List all backup jobs for a given backup set -->
+    <action    path="/restore/obm5.5/listBackupFile"
+              scope="request"
+               type="com.ahsay.obs.www.restore.obm55.ListBackupFile">
+    </action>
+	
+    <!-- Start restoring files from the server using OBM -->
+    <action    path="/restore/obm5.5/startRestore"
+              scope="request"
+               type="com.ahsay.obs.www.restore.obm55.StartRestore">
+    </action>
+	
+    <!-- Restore a file from the server using OBM -->
+    <action    path="/restore/obm5.5/restoreFile"
+              scope="request"
+               type="com.ahsay.obs.www.restore.obm55.RestoreFile">
+    </action>
+	
+    <!-- End restoring files from the server using OBM -->
+    <action    path="/restore/obm5.5/endRestore"
+              scope="request"
+               type="com.ahsay.obs.www.restore.obm55.EndRestore">
+    </action>
+	
+	<!-- List backup sets with backup files  -->
+    <action    path="/restore/obm5.5/listBackupSet"
+              scope="request"
+               type="com.ahsay.obs.www.restore.obm55.ListBackupSet">
+    </action>
+
+	<!-- List all files under a given directory  -->
+    <action    path="/restore/obm6/listBackupJob"
+              scope="request"
+               type="com.ahsay.obs.www.restore.obm6.ListBackupJob">
+    </action>
+	
+	<!-- List all backup job dates  -->
+    <action    path="/restore/obm6/listBackupJobDate"
+              scope="request"
+               type="com.ahsay.obs.www.restore.obm6.ListBackupJobDate">
+    </action>
+	
+	<!-- List all backup job times under a given backup job date  -->
+    <action    path="/restore/obm6/listBackupJobTime"
+              scope="request"
+               type="com.ahsay.obs.www.restore.obm6.ListBackupJobTime">
+    </action>
+	
+    <!-- List all backup jobs for a given backup set -->
+    <action    path="/restore/obm6/listBackupFile"
+              scope="request"
+               type="com.ahsay.obs.www.restore.obm6.ListBackupFile">
+    </action>
+	
+    <!-- Start restoring files from the server using OBM -->
+    <action    path="/restore/obm6/startRestore"
+              scope="request"
+               type="com.ahsay.obs.www.restore.obm6.StartRestore">
+    </action>
+	
+    <!-- Restore a file from the server using OBM -->
+    <action    path="/restore/obm6/restoreFile"
+              scope="request"
+               type="com.ahsay.obs.www.restore.obm6.RestoreFile">
+    </action>
+	
+    <!-- End restoring files from the server using OBM -->
+    <action    path="/restore/obm6/endRestore"
+              scope="request"
+               type="com.ahsay.obs.www.restore.obm6.EndRestore">
+    </action>
+	
+	<!-- List backup sets with backup files  -->
+    <action    path="/restore/obm6/listBackupSet"
+              scope="request"
+               type="com.ahsay.obs.www.restore.obm6.ListBackupSet">
+    </action>
+
+	<!-- List all files under a given directory  -->
+    <action    path="/restore/obm6/cdpListBackupFile"
+              scope="request"
+               type="com.ahsay.obs.www.restore.obm6.ListBackupFile">
+    </action>
+	
+    <!-- List all files under a given directory  -->
+    <action    path="/restore/acb5.2/listBackupJob"
+              scope="request"
+               type="com.ahsay.obs.www.restore.obm52.ListBackupJob">
+    </action>
+
+    <!-- List all backup jobs for a given backup set -->
+    <action    path="/restore/acb5.2/listBackupFile"
+              scope="request"
+               type="com.ahsay.obs.www.restore.obm52.ListBackupFile">
+    </action>
+
+    <!-- Start restoring files from the server using OBM -->
+    <action    path="/restore/acb5.2/startRestore"
+              scope="request"
+               type="com.ahsay.obs.www.restore.obm52.StartRestore">
+    </action>
+
+    <!-- Restore a file from the server using OBM -->
+    <action    path="/restore/acb5.2/restoreFile"
+              scope="request"
+               type="com.ahsay.obs.www.restore.obm52.RestoreFile">
+    </action>
+
+    <!-- End restoring files from the server using OBM -->
+    <action    path="/restore/acb5.2/endRestore"
+              scope="request"
+               type="com.ahsay.obs.www.restore.obm52.EndRestore">
+    </action>
+
+	<!-- List all files under a given directory  -->
+    <action    path="/restore/acb5.5/listBackupJob"
+              scope="request"
+               type="com.ahsay.obs.www.restore.obm55.ListBackupJob">
+    </action>
+	
+	<!-- List all backup job dates  -->
+    <action    path="/restore/acb5.5/listBackupJobDate"
+              scope="request"
+               type="com.ahsay.obs.www.restore.obm55.ListBackupJobDate">
+    </action>
+	<!-- List all backup job times under a given backup job date  -->
+    <action    path="/restore/acb5.5/listBackupJobTime"
+              scope="request"
+               type="com.ahsay.obs.www.restore.obm55.ListBackupJobTime">
+    </action>
+
+    <!-- List all backup jobs for a given backup set -->
+    <action    path="/restore/acb5.5/listBackupFile"
+              scope="request"
+               type="com.ahsay.obs.www.restore.obm55.ListBackupFile">
+    </action>
+
+    <!-- Start restoring files from the server using OBM -->
+    <action    path="/restore/acb5.5/startRestore"
+              scope="request"
+               type="com.ahsay.obs.www.restore.obm55.StartRestore">
+    </action>
+
+    <!-- Restore a file from the server using OBM -->
+    <action    path="/restore/acb5.5/restoreFile"
+              scope="request"
+               type="com.ahsay.obs.www.restore.obm55.RestoreFile">
+    </action>
+
+    <!-- End restoring files from the server using OBM -->
+    <action    path="/restore/acb5.5/endRestore"
+              scope="request"
+               type="com.ahsay.obs.www.restore.obm55.EndRestore">
+    </action>
+	
+	<!-- List backup sets with backup files  -->
+    <action    path="/restore/acb5.5/listBackupSet"
+              scope="request"
+               type="com.ahsay.obs.www.restore.obm55.ListBackupSet">
+    </action>
+
+	<!-- List all files under a given directory  -->
+    <action    path="/restore/acb6/listBackupJob"
+              scope="request"
+               type="com.ahsay.obs.www.restore.obm6.ListBackupJob">
+    </action>
+	
+	<!-- List all backup job dates  -->
+    <action    path="/restore/acb6/listBackupJobDate"
+              scope="request"
+               type="com.ahsay.obs.www.restore.obm6.ListBackupJobDate">
+    </action>
+	
+	<!-- List all backup job times under a given backup job date  -->
+    <action    path="/restore/acb6/listBackupJobTime"
+              scope="request"
+               type="com.ahsay.obs.www.restore.obm6.ListBackupJobTime">
+    </action>
+
+    <!-- List all backup jobs for a given backup set -->
+    <action    path="/restore/acb6/listBackupFile"
+              scope="request"
+               type="com.ahsay.obs.www.restore.obm6.ListBackupFile">
+    </action>
+
+    <!-- Start restoring files from the server using OBM -->
+    <action    path="/restore/acb6/startRestore"
+              scope="request"
+               type="com.ahsay.obs.www.restore.obm6.StartRestore">
+    </action>
+
+    <!-- Restore a file from the server using OBM -->
+    <action    path="/restore/acb6/restoreFile"
+              scope="request"
+               type="com.ahsay.obs.www.restore.obm6.RestoreFile">
+    </action>
+
+    <!-- End restoring files from the server using OBM -->
+    <action    path="/restore/acb6/endRestore"
+              scope="request"
+               type="com.ahsay.obs.www.restore.obm6.EndRestore">
+    </action>
+	
+	<!-- List backup sets with backup files  -->
+    <action    path="/restore/acb6/listBackupSet"
+              scope="request"
+               type="com.ahsay.obs.www.restore.obm6.ListBackupSet">
+    </action>
+
+	<!-- List all files under a given directory  -->
+    <action    path="/restore/acb6/cdpListBackupFile"
+              scope="request"
+               type="com.ahsay.obs.www.restore.obm6.ListBackupFile">
+    </action>
+	
+    <!-- Remove an advertisment  -->
+    <action    path="/system/config/resetAdvertisementStat"
+               type="com.ahsay.obs.www.system.config.ResetAdvertisementStat"
+               name="editAdvertisementForm"
+           validate="false">
+      <forward name="success"         path="/system/config/editAcbConfig.do"/>
+      <forward name="failure"         path="/system/config/editAcbConfig.do"/>
+    </action>
+
+	<!-- Add ACB CDP selected backup source -->
+    <action    path="/user/addAcbCdpSelectSrc"
+               type="com.ahsay.obs.www.user.AddAcbCdpSelectSrc"
+               name="editAcbBackupSetForm"
+              scope="session"
+           validate="false">
+      <forward name="success"         path="/user/editAcbBackupSet.do"/>
+      <forward name="failure"         path="/user/editAcbBackupSet.do"/>
+    </action>
+
+    <!-- Remove ACB CDP selected backup source -->
+    <action    path="/user/removeAcbCdpSelectSrc"
+               type="com.ahsay.obs.www.user.RemoveAcbCdpSelectSrc"
+           validate="false">
+      <forward name="success"         path="/user/editAcbBackupSet.do"/>
+      <forward name="failure"         path="/user/editAcbBackupSet.do"/>
+    </action>
+	
+	<!-- Add ACB CDP filter -->
+    <action    path="/user/newAcbCdpFilter"
+               type="com.ahsay.obs.www.user.NewAcbCdpFilter"
+               name="editAcbFilterForm"
+              scope="session"
+           validate="false">
+      <forward name="success"         path="/jsp/user/admin/newAcbCdpFilter.jsp"/>
+      <forward name="failure"         path="/jsp/user/admin/newAcbCdpFilter.jsp"/>
+    </action>
+
+    <!-- Add ACB Cdp filter -->
+    <action    path="/user/addAcbCdpFilter"
+               type="com.ahsay.obs.www.user.AddAcbCdpFilter"
+               name="editAcbFilterForm"
+              scope="session"
+           validate="false">
+      <forward name="success"         path="/user/editAcbBackupSet.do"/>
+      <forward name="failure"         path="/user/editAcbBackupSet.do"/>
+    </action>
+
+    <!-- Remove ACB Cdp filter -->
+    <action    path="/user/removeAcbCdpFilter"
+               type="com.ahsay.obs.www.user.RemoveAcbCdpFilter"
+           validate="false">
+      <forward name="success"         path="/user/editAcbBackupSet.do"/>
+      <forward name="failure"         path="/user/editAcbBackupSet.do"/>
+    </action>
+
+    <!-- Update ACB Cdp filter -->
+    <action    path="/user/updateAcbCdpFilter"
+               type="com.ahsay.obs.www.user.UpdateAcbCdpFilter"
+               name="editAcbFilterForm"
+              scope="session"
+           validate="false">
+      <forward name="success"         path="/user/editAcbBackupSet.do"/>
+      <forward name="failure"         path="/user/editAcbBackupSet.do"/>
+    </action>
+
+    <!-- Edit Cdp filter -->
+    <action    path="/user/editAcbCdpFilter"
+               type="com.ahsay.obs.www.user.EditAcbCdpFilter"
+               name="editAcbFilterForm"
+              scope="session"
+           validate="false">
+      <forward name="success"         path="/jsp/user/admin/editAcbCdpFilter.jsp"/>
+      <forward name="failure"         path="/jsp/user/admin/editAcbCdpFilter.jsp"/>
+    </action>
+	
+    <!-- ==================================================================== -->
+    <!-- ==================== End: Added since 5.2 for ACB  ================= -->
+    <!-- ==================================================================== -->
+
+
+
+    <!-- ================================================================== -->
+    <!-- =============== Report Action Mapping Definitions ================ -->
+    <!-- ================================================================== -->
+    <!-- Generate Backup Quota Reminder Report -->
+    <action    path="/report/getBackupQuotaReminderReport"
+               type="com.ahsay.obs.www.report.GetBackupQuotaReminderReport"
+               name="getBackupQuotaReminderReportForm"
+              scope="request"
+           validate="false">
+      <forward name="success"          path="/jsp/report/backupQuotaReminder.jsp"/>
+      <forward name="failure"          path="/jsp/report/backupQuotaReminder.jsp"/>
+    </action>
+    <!-- Generate Offline Backup Reminder Report -->
+    <action    path="/report/getOfflineBackupReminderReport"
+               type="com.ahsay.obs.www.report.GetOfflineBackupReminderReport"
+               name="getOfflineBackupReminderReportForm"
+              scope="request"
+           validate="false">
+      <forward name="success"          path="/jsp/report/offlineBackupReminder.jsp"/>
+      <forward name="failure"          path="/jsp/report/offlineBackupReminder.jsp"/>
+    </action>
+
+    <action    path="/report/getNewUserReport"
+               type="com.ahsay.obs.www.report.GetNewUserReport"
+               name="getNewUserReportForm"
+              scope="request"
+           validate="false">
+      <forward name="success"          path="/jsp/report/newUser.jsp"/>
+      <forward name="failure"          path="/jsp/report/newUser.jsp"/>
+    </action>
+	
+	<action    path="/report/getLdapIncorrectPwdReport"
+               type="com.ahsay.obs.www.report.GetLdapIncorrectPwdReport"
+               name="getLdapIncorrectPwdReportForm"
+              scope="request"
+           validate="false">
+      <forward name="success"          path="/jsp/report/ldapIncorrectPwd.jsp"/>
+      <forward name="failure"          path="/jsp/report/ldapIncorrectPwd.jsp"/>
+    </action>
+	
+    <!-- Generate Setting Change Report -->
+    <action    path="/report/getSettingChangeReport"
+               type="com.ahsay.obs.www.report.GetSettingChangeReport"
+               name="getSettingChangeReportForm"
+              scope="request"
+           validate="false">
+      <forward name="success"          path="/jsp/report/settingChange.jsp"/>
+      <forward name="failure"          path="/jsp/report/settingChange.jsp"/>
+    </action>
+    <!-- Generate Backup Job Reminder Report -->
+    <action    path="/report/getBackupJobReminderReport"
+               type="com.ahsay.obs.www.report.GetBackupJobReminderReport"
+               name="getBackupJobReminderReportForm"
+              scope="request"
+           validate="false">
+      <forward name="success"          path="/jsp/report/backupJobReminder.jsp"/>
+      <forward name="failure"          path="/jsp/report/backupJobReminder.jsp"/>
+    </action>
+    <!-- Generate Inactive User Report -->
+    <action    path="/report/getInactiveUserReport"
+               type="com.ahsay.obs.www.report.GetInactiveUserReport"
+               name="getInactiveUserReportForm"
+              scope="request"
+           validate="false">
+      <forward name="success"          path="/jsp/report/inactiveUser.jsp"/>
+      <forward name="failure"          path="/jsp/report/inactiveUser.jsp"/>
+    </action>
+
+    <!-- Generate Trial User Reminder -->
+    <action    path="/report/getTrialUserReminder"
+               type="com.ahsay.obs.www.report.GetTrialUserReminder"
+               name="getTrialUserReminderForm"
+              scope="request"
+           validate="false">
+      <forward name="success"          path="/jsp/report/trialUserReminder.jsp"/>
+      <forward name="failure"          path="/jsp/report/trialUserReminder.jsp"/>
+    </action>
+
+    <!-- Generate Forgot Password Report -->
+    <action    path="/report/getForgotPwdReport"
+               type="com.ahsay.obs.www.report.GetForgotPwdReport"
+               name="getForgotPwdReportForm"
+              scope="request"
+           validate="false">
+      <forward name="success"          path="/jsp/report/forgotPwd.jsp" />
+      <forward name="failure"          path="/jsp/report/forgotPwd.jsp" />
+    </action>
+	
+    <!-- Generate File Restore Summary Report -->
+    <action    path="/report/getRestoreSummaryReport"
+               type="com.ahsay.obs.www.report.GetRestoreSummaryReport"
+               name="getRestoreSummaryReportForm"
+              scope="request"
+           validate="false">
+      <forward name="success"          path="/jsp/report/restoreSummary.jsp"/>
+      <forward name="failure"          path="/jsp/report/restoreSummary.jsp"/>
+    </action>
+
+    <!-- Generate File Restore Full Report -->
+    <action    path="/report/getRestoreFullReport"
+               type="com.ahsay.obs.www.report.GetRestoreFullReport"
+               name="getRestoreFullReportForm"
+              scope="request"
+           validate="false">
+      <forward name="success"          path="/jsp/report/restoreFull.jsp"/>
+      <forward name="failure"          path="/jsp/report/restoreFull.jsp"/>
+    </action>
+
+    <!-- Generate Backup Job Summary Report -->
+    <action    path="/report/getBackupJobSummaryReport"
+               type="com.ahsay.obs.www.report.GetBackupJobSummaryReport"
+               name="getBackupJobSummaryReportForm"
+              scope="request"
+           validate="false">
+      <forward name="success"          path="/jsp/report/backupJobSummary.jsp"/>
+      <forward name="failure"          path="/jsp/report/backupJobSummary.jsp"/>
+    </action>
+
+    <!-- Generate Backup Job Full Report -->
+    <action    path="/report/getBackupJobFullReport"
+               type="com.ahsay.obs.www.report.GetBackupJobFullReport"
+               name="getBackupJobFullReportForm"
+              scope="request"
+           validate="false">
+      <forward name="success"          path="/jsp/report/backupJobFull.jsp"/>
+      <forward name="failure"          path="/jsp/report/backupJobFull.jsp"/>
+    </action>
+
+    <!-- Generate Error Report -->
+    <action    path="/report/getErrorReport"
+               type="com.ahsay.obs.www.report.GetErrorReport"
+               name="getErrorReportForm"
+              scope="request"
+           validate="false">
+      <forward name="success"          path="/jsp/report/errorReport.jsp"/>
+      <forward name="failure"          path="/jsp/report/errorReport.jsp"/>
+    </action>
+
+    <!-- Generate Replication Error Report -->
+    <action    path="/report/getReplicationErrorReport"
+               type="com.ahsay.obs.www.report.GetReplicationErrorReport"
+               name="getReplicationErrorReportForm"
+              scope="request"
+           validate="false">
+      <forward name="success"          path="/jsp/report/repErrorReport.jsp"/>
+      <forward name="failure"          path="/jsp/report/repErrorReport.jsp"/>
+    </action>
+	
+    <!-- Generate Usage Report -->
+    <action    path="/report/getUsageReport"
+               type="com.ahsay.obs.www.report.GetUsageReport"
+               name="getUsageReportForm"
+              scope="request"
+           validate="false">
+      <forward name="success"          path="/jsp/report/usageReport.jsp"/>
+      <forward name="failure"          path="/jsp/report/usageReport.jsp"/>
+    </action>
+	
+	<!-- Generate Change Owner Reminder Report -->
+	<action    path="/report/getChangeOwnerReminderReport"
+               type="com.ahsay.obs.www.report.GetChangeOwnerReminderReport"
+               name="getChangeOwnerReminderReportForm"
+              scope="request"
+           validate="false">
+      <forward name="success"          path="/jsp/report/changeOwnerReminder.jsp"/>
+      <forward name="failure"          path="/jsp/report/changeOwnerReminder.jsp"/>
+    </action>
+
+    <!-- ================================================================== -->
+    <!-- =============== System Action Mapping Definitions ================ -->
+    <!-- ================================================================== -->
+    <!-- Adminstrative Logon -->
+    <action    path="/system/logon"
+               type="com.ahsay.obs.www.system.Logon"
+               name="systemLogonForm"
+              scope="session"
+           validate="false">
+      <forward name="config"          	path="/jsp/system/config/index.jsp"/>
+	  <forward name="log"           	path="/jsp/system/log/index.jsp"/>
+	  <forward name="user"           	path="/jsp/system/user/index.jsp"/>
+	  <forward name="groupPolicy"       path="/jsp/system/groupPolicy/index.jsp"/>
+	  <forward name="systemUser"        path="/jsp/system/systemUser/index.jsp"/>
+      <forward name="failure"           path="/jsp/system/index.jsp"/>
+    </action>
+
+    <!-- Adminstrative Logout -->
+    <action    path="/system/logout"
+               type="com.ahsay.obs.www.system.Logout"
+              scope="request"
+           validate="false">
+      <forward name="success"           path="/jsp/system/index.jsp"/>
+      <forward name="failure"           path="/jsp/system/index.jsp"/>
+    </action>
+
+    <!-- Edit Server Configuration -->
+    <action    path="/system/config/editServerConfig"
+               type="com.ahsay.obs.www.system.config.EditServerConfig"
+               name="editServerConfigForm"
+              scope="session"
+           validate="false">
+      <forward name="success"           path="/jsp/system/config/configuration.jsp"/>
+      <forward name="failure"           path="/jsp/system/config/configuration.jsp"/>
+    </action>
+
+    <!-- Update Server Configuration -->
+    <action    path="/system/config/updateServerConfig"
+               type="com.ahsay.obs.www.system.config.UpdateServerConfig"
+               name="editServerConfigForm"
+              scope="session"
+           validate="false">
+      <forward name="success"           path="/system/config/editServerConfig.do" />
+      <forward name="failure"           path="/system/config/editServerConfig.do" />
+    </action>
+
+    <!-- Edit License Configuration -->
+    <action    path="/system/config/editLicense"
+               type="com.ahsay.obs.www.system.config.EditLicense"
+               name="editLicenseForm"
+              scope="session"
+           validate="false">
+      <forward name="success"           path="/jsp/system/config/license.jsp"/>
+      <forward name="failure"           path="/jsp/system/config/license.jsp"/>
+    </action>
+
+    <!-- Update License Configuration -->
+    <action    path="/system/config/updateLicense"
+               type="com.ahsay.obs.www.system.config.UpdateLicense"
+               name="editLicenseForm"
+              scope="session"
+           validate="false">
+      <forward name="success"           path="/system/config/editLicense.do" />
+      <forward name="failure"           path="/system/config/editLicense.do" />
+    </action>
+
+    <!-- Edit System Job Configuration -->
+    <action    path="/system/config/editJob"
+               type="com.ahsay.obs.www.system.config.EditJob"
+               name="editJobForm"
+              scope="session"
+           validate="false">
+      <forward name="success"           path="/jsp/system/config/job.jsp"/>
+      <forward name="failure"           path="/jsp/system/config/job.jsp"/>
+    </action>
+
+    <!-- Update License Configuration -->
+    <action    path="/system/config/updateJob"
+               type="com.ahsay.obs.www.system.config.UpdateJob"
+               name="editJobForm"
+              scope="session"
+           validate="false">
+      <forward name="success"           path="/system/config/editJob.do" />
+      <forward name="failure"           path="/system/config/editJob.do" />
+    </action>
+
+    <!-- Edit Replication Configuration -->
+    <action    path="/system/config/editReplicationConfig"
+               type="com.ahsay.obs.www.system.config.EditReplicationConfig"
+               name="editReplicationConfigForm"
+              scope="session"
+           validate="false">
+      <forward name="success"           path="/jsp/system/config/replicationConfig.jsp" />
+      <forward name="failure"           path="/jsp/system/config/replicationConfig.jsp" />
+    </action>
+
+    <!-- Update Replication Configuration -->
+    <action    path="/system/config/updateReplicationConfig"
+               type="com.ahsay.obs.www.system.config.UpdateReplicationConfig"
+               name="editReplicationConfigForm"
+              scope="session"
+           validate="false">
+      <forward name="success"           path="/system/config/editReplicationConfig.do" />
+      <forward name="failure"           path="/system/config/editReplicationConfig.do" />
+    </action>
+	
+	<!-- Edit System Diagnosis -->
+    <action    path="/system/config/editSystemDiagnosis"
+               type="com.ahsay.obs.www.system.config.EditSystemDiagnosis"
+               name="editSystemDiagnosisForm"
+              scope="session"
+           validate="false">
+      <forward name="success"           path="/jsp/system/config/systemDiagnosis.jsp"/>
+      <forward name="failure"           path="/jsp/system/config/systemDiagnosis.jsp"/>
+    </action>
+	
+	<!-- Show System Files -->
+    <action    path="/system/config/showSystemFiles"
+               type="com.ahsay.obs.www.system.config.ShowSystemFiles"
+               name="editSystemDiagnosisForm"
+              scope="session"
+           validate="false">
+      <forward name="success"           path="/jsp/system/config/systemFiles.jsp"/>
+      <forward name="failure"           path="/jsp/system/config/systemFiles.jsp"/>
+    </action>
+	
+	<!-- Download System Files -->
+    <action    path="/system/config/downloadSystemFiles"
+               type="com.ahsay.obs.www.system.config.DownloadSystemFiles"
+               name="editSystemDiagnosisForm"
+              scope="session"
+           validate="false">
+      <forward name="success"           path="/system/config/showSystemFiles.do"/>
+      <forward name="failure"           path="/system/config/showSystemFiles.do"/>
+    </action>
+	
+    <!-- Show System Logs -->
+    <action    path="/system/log/showSystemLog"
+               type="com.ahsay.obs.www.system.log.ShowSystemLog"
+               name="showSystemLogForm"
+			validate="false">
+      <forward name="success"           path="/jsp/system/log/systemLog.jsp"/>
+      <forward name="failure"           path="/jsp/system/log/systemLog.jsp"/>
+    </action>
+
+    <!-- Show Backup Jobs -->
+    <action    path="/system/log/showBackupJob"
+               type="com.ahsay.obs.www.system.log.ShowBackupJob"
+               name="showBackupJobForm"
+              scope="request"
+           validate="false">
+      <forward name="success"           path="/jsp/system/log/backupJob.jsp"/>
+      <forward name="failure"           path="/jsp/system/log/backupJob.jsp"/>
+    </action>
+    <!-- Show Restored File -->
+
+    <action    path="/system/log/showRestoredFile"
+               type="com.ahsay.obs.www.system.log.ShowRestoredFile"
+               name="showRestoredFileForm"
+              scope="request"
+           validate="false">
+      <forward name="success"           path="/jsp/system/log/restoredFile.jsp"/>
+      <forward name="failure"           path="/jsp/system/log/restoredFile.jsp"/>
+    </action>
+
+    <!-- Show Backup Error -->
+    <action    path="/system/log/showBackupError"
+               type="com.ahsay.obs.www.system.log.ShowBackupError"
+               name="showBackupErrorForm"
+               validate="false">
+      <forward name="success"           path="/jsp/system/log/backupError.jsp"/>
+      <forward name="failure"           path="/jsp/system/log/backupError.jsp"/>
+    </action>
+
+    <!-- Show Replication Logs -->
+    <action    path="/system/log/showReplicationLog"
+               type="com.ahsay.obs.www.system.log.ShowReplicationLog"
+               name="showReplicationLogForm"
+               validate="false">
+      <forward name="success"           path="/jsp/system/log/replicationLog.jsp"/>
+      <forward name="failure"           path="/jsp/system/log/replicationLog.jsp"/>
+    </action>
+
+    <action    path="/system/user/reCalculateStorageInfo"
+               type="com.ahsay.obs.www.system.user.ReCalculateStorageInfo"
+               name="editUserProfileForm"
+              scope="session"
+           validate="false">
+      <forward name="success"           path="/user/editUserProfile.do"  />
+      <forward name="failure"           path="/system/user/showUser.do"/>
+    </action>
+
+    <action    path="/system/user/singleUserStorageRebuild"
+               type="com.ahsay.obs.www.system.user.SingleUsrStorageRebuild"
+               name="editUserProfileForm"
+              scope="session"
+           validate="false">
+      <forward name="success"           path="/user/editUserProfile.do"  />
+      <forward name="failure"           path="/system/user/showUser.do"/>
+    </action>
+
+    <!-- New User : Show add user form -->
+    <action    path="/system/user/editNewUser"
+               type="com.ahsay.obs.www.system.user.EditNewUser"
+               name="addUserForm"
+              scope="session"
+           validate="false">
+      <forward name="success"           path="/jsp/system/user/addUser.jsp"/>
+      <forward name="failure"           path="/jsp/system/user/addUser.jsp"/>
+    </action>
+
+    <!-- Add User -->
+    <action    path="/system/user/addUser"
+               type="com.ahsay.obs.www.system.user.AddUser"
+               name="addUserForm"
+              scope="session"
+           validate="false">
+      <forward name="success"           path="/system/user/showUser.do"  />
+      <forward name="failure"           path="/jsp/system/user/index.jsp?content=editNewUser"/>
+    </action>
+
+    <!-- Show User -->
+    <action    path="/system/user/showUser"
+               type="com.ahsay.obs.www.system.user.ShowUser"
+               name="addUserForm"
+              scope="session"
+           validate="false">
+      <forward name="success"           path="/jsp/system/user/index.jsp?content=editUserProfile"/>
+      <forward name="failure"           path="/jsp/system/user/index.jsp?content=listUser"/>
+    </action>
+
+    <!-- List User -->
+    <action    path="/system/user/listUser"
+               type="com.ahsay.obs.www.system.user.ListUser"
+               name="listUserForm"
+              scope="session"
+           validate="false">
+      <forward name="success"           path="/jsp/system/user/listUser.jsp"/>
+      <forward name="failure"           path="/jsp/system/user/listUser.jsp"/>
+    </action>
+
+    <!-- Remove User -->
+    <action    path="/system/user/removeUser"
+               type="com.ahsay.obs.www.system.user.RemoveUser"
+               name="listUserForm"
+              scope="session"
+           validate="false">
+      <forward name="success"           path="/system/user/listUser.do" />
+      <forward name="failure"           path="/system/user/listUser.do" />
+    </action>
+
+    <!-- Export Users Statistics -->
+    <action    path="/system/user/exportUsersStat"
+               type="com.ahsay.obs.www.system.user.ExportUsersStat"
+               name="listUserForm"
+              scope="session"
+           validate="false">
+    </action>
+
+    <!-- Edit Boardcast Message -->
+    <action    path="/system/user/editBroadCastMessage"
+               type="com.ahsay.obs.www.system.user.EditBroadCastMessage"
+               name="broadCastMessageForm"
+              scope="session"
+           validate="false">
+      <forward name="success"           path="/jsp/system/user/editBroadCastMessage.jsp" />
+      <forward name="failure"           path="/system/user/listUser.do" />
+    </action>
+
+    <!-- Send Boardcast Message -->
+    <action    path="/system/user/sendBroadCastMessage"
+               type="com.ahsay.obs.www.system.user.SendBroadCastMessage"
+               name="broadCastMessageForm"
+              scope="session"
+           validate="false">
+      <forward name="success"           path="/jsp/system/user/index.jsp?content=broadCastMsg" />
+      <forward name="failure"           path="/jsp/system/user/index.jsp?content=broadCastMsg" />
+    </action>
+
+    <!-- Get Documents User -->
+    <action    path="/www/getDocument"
+               type="com.ahsay.obs.www.GetDocument">
+    </action>
+	
+    <!-- Backup User -->
+    <action    path="/system/user/backupUser"
+               type="com.ahsay.obs.www.system.user.BackupUser"
+               name="backupUserForm"
+              scope="session"
+           validate="false">
+      <forward name="success"           path="/jsp/system/user/backupUser.jsp"/>
+      <forward name="failure"           path="/jsp/system/user/backupUser.jsp"/>
+    </action>
+
+	<!-- Auto Update -->
+    <action    path="/system/user/autoUpdate"
+               type="com.ahsay.obs.www.system.user.AutoUpdate"
+               name="autoUpdateForm"
+              scope="session"
+           validate="false">
+      <forward name="success"           path="/jsp/system/user/autoUpdate.jsp"/>
+      <forward name="failure"           path="/jsp/system/user/autoUpdate.jsp"/>
+    </action>	
+
+    <!-- Remove Adgroup -->
+    <action 	path="/system/config/removeAdGroup"
+				type="com.ahsay.obs.www.system.config.RemoveAdGroup"
+				validate="false">
+      <forward name="success"         path="/system/config/editAcbConfig.do" 	/>
+      <forward name="failure"         path="/system/config/editAcbConfig.do" 	/>
+	</action>
+
+	<action    path="/user/searchBackupFile"
+               type="com.ahsay.obs.www.user.SearchBackupFile"
+               name="showBackupFileForm"
+              scope="session"
+           validate="false">
+      <forward name="success"           path="/user/showBackupFile.do" />
+      <forward name="failure"           path="/user/showBackupFile.do" />
+    </action>
+
+	<action    path="/user/stopSearchingBackupFile"
+               type="com.ahsay.obs.www.user.SearchBackupFile"
+               name="showBackupFileForm"
+              scope="session"
+           validate="false">
+      <forward name="success"           path="/user/showBackupFile.do" />
+      <forward name="failure"           path="/user/showBackupFile.do" />
+    </action>
+	
+	<action    path="/user/viewSearchedBackupFile"
+               type="com.ahsay.obs.www.user.SearchBackupFile"
+               name="showBackupFileForm"
+              scope="session"
+           validate="false">
+      <forward name="success"           path="/user/showBackupFile.do" />
+      <forward name="failure"           path="/user/showBackupFile.do" />
+    </action>
+	
+	<!-- Backup file searching -->
+	<action    path="/obm5.5/file/GetSearchFileList"
+               type="com.ahsay.obs.obc55.GetSearchFileListRqt"
+               name="showBackupFileForm"
+              scope="session"
+           validate="false"/>
+		   
+	<!-- Backup file searching -->
+	<action    path="/obm5.5/file/StopSearchFileList"
+               type="com.ahsay.obs.obc55.StopSearchFileListRqt"
+               name="showBackupFileForm"
+              scope="session"
+           validate="false"/>
+		   
+	<!-- Backup file searching -->
+	<action    path="/obm5.5/file/RefreshSearchFileList"
+               type="com.ahsay.obs.obc55.RefreshSearchFileListRqt"
+               name="showBackupFileForm"
+              scope="session"
+           validate="false"/>
+
+	<!-- Backup file searching -->
+	<action    path="/acb5.5/file/GetSearchFileList"
+               type="com.ahsay.obs.obc55.GetSearchFileListRqt"
+               name="showBackupFileForm"
+              scope="session"
+           validate="false"/>
+		   
+	<!-- Backup file searching -->
+	<action    path="/acb5.5/file/StopSearchFileList"
+               type="com.ahsay.obs.obc55.StopSearchFileListRqt"
+               name="showBackupFileForm"
+              scope="session"
+           validate="false"/>
+		   
+	<!-- Backup file searching -->
+	<action    path="/acb5.5/file/RefreshSearchFileList"
+               type="com.ahsay.obs.obc55.RefreshSearchFileListRqt"
+               name="showBackupFileForm"
+              scope="session"
+           validate="false"/>
+
+	<!-- Backup file searching -->
+	<action    path="/obm6/file/GetSearchFileList"
+               type="com.ahsay.obs.obc6.GetSearchFileListRqt"
+               name="showBackupFileForm"
+              scope="session"
+           validate="false"/>
+		   
+	<!-- Backup file searching -->
+	<action    path="/obm6/file/StopSearchFileList"
+               type="com.ahsay.obs.obc6.StopSearchFileListRqt"
+               name="showBackupFileForm"
+              scope="session"
+           validate="false"/>
+		   
+	<!-- Backup file searching -->
+	<action    path="/obm6/file/RefreshSearchFileList"
+               type="com.ahsay.obs.obc6.RefreshSearchFileListRqt"
+               name="showBackupFileForm"
+              scope="session"
+           validate="false"/>
+
+	<!-- Backup file searching -->
+	<action    path="/acb6/file/GetSearchFileList"
+               type="com.ahsay.obs.obc6.GetSearchFileListRqt"
+               name="showBackupFileForm"
+              scope="session"
+           validate="false"/>
+		   
+	<!-- Backup file searching -->
+	<action    path="/acb6/file/StopSearchFileList"
+               type="com.ahsay.obs.obc6.StopSearchFileListRqt"
+               name="showBackupFileForm"
+              scope="session"
+           validate="false"/>
+		   
+	<!-- Backup file searching -->
+	<action    path="/acb6/file/RefreshSearchFileList"
+               type="com.ahsay.obs.obc6.RefreshSearchFileListRqt"
+               name="showBackupFileForm"
+              scope="session"
+           validate="false"/>
+		   
+	<!-- Get working local IP and port -->
+	<action    path="/system/ConnectorCheck"
+               type="com.ahsay.obs.www.ConnectorCheck">	   
+    </action>
+	
+    <!-- System user maintenance  -->
+    <action    path="/system/systemUser/listSysUser"
+               type="com.ahsay.obs.www.system.systemUser.ListSysUser"
+               name="listSysUserForm"
+              scope="session"
+           validate="false">
+      <forward name="success"           path="/jsp/system/systemUser/listSysUser.jsp"/>
+      <forward name="failure"           path="/jsp/system/systemUser/listSysUser.jsp"/>
+    </action>
+
+    <action  path="/system/systemUser/editNewSysUser"
+               type="com.ahsay.obs.www.system.systemUser.EditNewSysUser"
+               name="addSysUserForm"
+              scope="session"
+           validate="false">
+      <forward name="add"           	path="/jsp/system/systemUser/addSysUser.jsp"/>
+      <forward name="edit"           	path="/jsp/system/systemUser/editSysUser.jsp"/>
+      <forward name="failure"           path="/jsp/system/systemUser/addSysUser.jsp"/>
+    </action>
+
+    <action    path="/system/systemUser/addSysUser"
+               type="com.ahsay.obs.www.system.systemUser.AddSysUser"
+               name="addSysUserForm"
+              scope="session"
+           validate="false">
+      <forward name="success"           path="/jsp/system/systemUser/index.jsp?content=listSysUser" />
+      <forward name="failure"           path="/jsp/system/systemUser/index.jsp?content=addSysUser"/>
+    </action>
+
+    <action    path="/system/systemUser/updateSysUser"
+               type="com.ahsay.obs.www.system.systemUser.UpdateSysUser"
+               name="addSysUserForm"
+              scope="session"
+           validate="false">
+      <forward name="list"           path="/system/systemUser/listSysUser.do" />
+	  <forward name="myProfile"      path="/system/systemUser/editNewSysUser.do?mode=myProfile" />
+      <forward name="failure"        path="/system/systemUser/editNewSysUser.do?mode=edit"/>
+    </action>
+
+    <action    path="/system/systemUser/removeSysUser"
+               type="com.ahsay.obs.www.system.systemUser.RemoveSysUser"
+               name="listSysUserForm"
+              scope="session"
+           validate="false">
+      <forward name="success"           path="/system/systemUser/listSysUser.do" />
+      <forward name="failure"           path="/system/systemUser/listSysUser.do" />
+    </action>
+    <!-- end -->
+	
+	<!-- Change Ownership -->
+	<action    path="/system/systemUser/editChangeOwnership"
+               type="com.ahsay.obs.www.system.systemUser.EditChangeOwnership"
+               name="editChangeOwnershipForm"
+              scope="session"
+           validate="false">
+      <forward name="success"           path="/jsp/system/systemUser/changeOwnership.jsp"/>
+      <forward name="failure"           path="/jsp/system/systemUser/changeOwnership.jsp"/>
+    </action>
+	
+    <action    path="/system/systemUser/updateChangeOwnership"
+               type="com.ahsay.obs.www.system.systemUser.UpdateChangeOwnership"
+               name="editChangeOwnershipForm"
+              scope="session"
+           validate="false">
+      <forward name="success"           path="/system/systemUser/editChangeOwnership.do"/>
+      <forward name="failure"           path="/system/systemUser/editChangeOwnership.do"/>
+    </action>	
+	
+	<action    path="/system/groupPolicy/functionArea/listAllFunctionArea"
+               type="com.ahsay.obs.www.system.groupPolicy.functionArea.ListAllFunctionArea"
+               name="listAllFunctionAreaForm"
+              scope="session"
+           validate="false">
+      <forward name="success"           path="/jsp/system/groupPolicy/functionArea/listAllFunctionArea.jsp"/>
+      <forward name="failure"           path="/jsp/system/groupPolicy/functionArea/listAllFunctionArea.jsp"/>
+    </action>	
+	
+	<action    path="/system/groupPolicy/userGroup/editUserGroup"
+               type="com.ahsay.obs.www.system.groupPolicy.userGroup.EditUserGroup"
+               name="editUserGroupForm"
+              scope="session"
+           validate="false">
+      <forward name="success"           path="/jsp/system/groupPolicy/userGroup/editUserGroup.jsp"/>
+      <forward name="failure"           path="/jsp/system/groupPolicy/userGroup/editUserGroup.jsp"/>
+    </action>	
+
+	<action    path="/system/groupPolicy/userGroup/addUserGroup"
+               type="com.ahsay.obs.www.system.groupPolicy.userGroup.AddUserGroup"
+               name="editUserGroupForm"
+              scope="session"
+           validate="false">
+      <forward name="success"           path="/system/groupPolicy/userGroup/editUserGroup.do?new=true"/>
+      <forward name="failure"           path="/system/groupPolicy/userGroup/editUserGroup.do"/>
+    </action>	
+
+	<action    path="/system/groupPolicy/userGroup/removeUserGroup"
+               type="com.ahsay.obs.www.system.groupPolicy.userGroup.RemoveUserGroup"
+               name="editUserGroupForm"
+              scope="session"
+           validate="false">
+      <forward name="success"           path="/system/groupPolicy/userGroup/editUserGroup.do"/>
+      <forward name="failure"           path="/system/groupPolicy/userGroup/editUserGroup.do"/>
+    </action>	
+
+	<action    path="/system/groupPolicy/userGroup/updateUserGroup"
+               type="com.ahsay.obs.www.system.groupPolicy.userGroup.UpdateUserGroup"
+               name="editUserGroupForm"
+              scope="session"
+           validate="false">
+      <forward name="success"           path="/system/groupPolicy/userGroup/editUserGroup.do"/>
+      <forward name="failure"           path="/system/groupPolicy/userGroup/editUserGroup.do"/>
+    </action>		
+
+	<action    path="/system/groupPolicy/userGroup/removeUserFromGroup"
+               type="com.ahsay.obs.www.system.groupPolicy.userGroup.RemoveUser"
+               name="editUserGroupForm"
+              scope="session"
+           validate="false">
+      <forward name="success"           path="/system/groupPolicy/userGroup/editUserGroup.do"/>
+      <forward name="failure"           path="/system/groupPolicy/userGroup/editUserGroup.do"/>
+    </action>	
+	
+	<action    path="/system/groupPolicy/userGroup/listUserInUserGroup"
+               type="com.ahsay.obs.www.system.groupPolicy.userGroup.ListUserInUserGroup"
+               name="editUserGroupForm"
+              scope="session"
+           validate="false">
+      <forward name="success"           path="/jsp/system/groupPolicy/userGroup/assignUsers.jsp"/>
+      <forward name="failure"           path="/jsp/system/groupPolicy/userGroup/assignUsers.jsp"/>
+	</action>
+	
+	<action    path="/system/groupPolicy/userGroup/assignUsers"
+               type="com.ahsay.obs.www.system.groupPolicy.userGroup.AssignUsers"
+               name="editUserGroupForm"
+              scope="session"
+           validate="false">
+      <forward name="success"           path="/system/groupPolicy/userGroup/editUserGroup.do"/>
+	  <forward name="failure"           path="/system/groupPolicy/userGroup/listUserInUserGroup.do?update=fail"/>
+	</action>
+	
+	<action    path="/system/groupPolicy/policyGroup/addPolicyGroup"
+               type="com.ahsay.obs.www.system.groupPolicy.policyGroup.AddPolicyGroup"
+               name="editPolicyGroupForm"
+              scope="session"
+           validate="false">
+      <forward name="success"           path="/system/groupPolicy/policyGroup/editPolicyGroup.do"/>
+      <forward name="failure"           path="/system/groupPolicy/policyGroup/editPolicyGroup.do"/>
+    </action>
+	
+	<action    path="/system/groupPolicy/policyGroup/removePolicyGroup"
+               type="com.ahsay.obs.www.system.groupPolicy.policyGroup.RemovePolicyGroup"
+               name="editPolicyGroupForm"
+              scope="session"
+           validate="false">
+      <forward name="success"           path="/system/groupPolicy/policyGroup/editPolicyGroup.do"/>
+      <forward name="failure"           path="/system/groupPolicy/policyGroup/editPolicyGroup.do"/>
+    </action>
+	
+	
+	<action    path="/system/groupPolicy/policyGroup/editPolicyGroup"
+               type="com.ahsay.obs.www.system.groupPolicy.policyGroup.EditPolicyGroup"
+               name="editPolicyGroupForm"
+              scope="session"
+           validate="false">
+      <forward name="success"           path="/jsp/system/groupPolicy/policyGroup/editPolicyGroup.jsp"/>
+      <forward name="failure"           path="/jsp/system/groupPolicy/policyGroup/editPolicyGroup.jsp"/>
+    </action>
+	
+	<action    path="/system/groupPolicy/policyGroup/updatePolicyGroup"
+               type="com.ahsay.obs.www.system.groupPolicy.policyGroup.UpdatePolicyGroup"
+               name="editPolicyGroupForm"
+              scope="session"
+           validate="false">
+      <forward name="success"           path="/system/groupPolicy/policyGroup/editPolicyGroup.do"/>
+      <forward name="failure"           path="/system/groupPolicy/policyGroup/editPolicyGroup.do"/>
+    </action>
+
+    <!-- Add system User Policy Group -->
+    <action    path="/system/groupPolicy/policyGroup/addSysUserPolicyGroup"
+        type="com.ahsay.obs.www.system.groupPolicy.policyGroup.AddSysUserPolicyGroup"
+        name="editSysUserPolicyGroupForm"
+        scope="session"
+        validate="false">
+        <forward name="success"           path="/system/groupPolicy/policyGroup/editSysUserPolicyGroup.do"/>
+        <forward name="failure"           path="/system/groupPolicy/policyGroup/editSysUserPolicyGroup.do"/>
+    </action>
+
+	<!-- Edit system User Policy Group -->
+    <action    path="/system/groupPolicy/policyGroup/editSysUserPolicyGroup"
+        type="com.ahsay.obs.www.system.groupPolicy.policyGroup.EditSysUserPolicyGroup"
+        name="editSysUserPolicyGroupForm"
+        scope="session"
+        validate="false">
+        <forward name="success"           path="/jsp/system/groupPolicy/policyGroup/editSysUserPolicyGroup.jsp"/>
+        <forward name="failure"           path="/jsp/system/groupPolicy/policyGroup/editSysUserPolicyGroup.jsp"/>
+    </action>
+
+	<!-- Update system User Policy Group -->
+    <action    path="/system/groupPolicy/policyGroup/updateSysUserPolicyGroup"
+        type="com.ahsay.obs.www.system.groupPolicy.policyGroup.UpdateSysUserPolicyGroup"
+        name="editSysUserPolicyGroupForm"
+        scope="session"
+        validate="false">
+        <forward name="success"           path="/system/groupPolicy/policyGroup/editSysUserPolicyGroup.do"/>
+        <forward name="failure"           path="/system/groupPolicy/policyGroup/editSysUserPolicyGroup.do"/>
+    </action>
+
+	<!-- Remove system User Policy Group -->
+    <action    path="/system/groupPolicy/policyGroup/removeSysUserPolicyGroup"
+        type="com.ahsay.obs.www.system.groupPolicy.policyGroup.RemoveSysUserPolicyGroup"
+        name="editSysUserPolicyGroupForm"
+        scope="session"
+        validate="false">
+        <forward name="success"           path="/system/groupPolicy/policyGroup/editSysUserPolicyGroup.do"/>
+        <forward name="failure"           path="/system/groupPolicy/policyGroup/editSysUserPolicyGroup.do"/>
+    </action>
+
+	<action    path="/system/groupPolicy/policyGroup/removeFunctionArea"
+               type="com.ahsay.obs.www.system.groupPolicy.policyGroup.RemoveFunctionArea"
+               name="editPolicyGroupForm"
+              scope="session"
+           validate="false">
+      <forward name="success"           path="/system/groupPolicy/policyGroup/editPolicyGroup.do"/>
+	  <forward name="sysUserSuccess"    path="/system/groupPolicy/policyGroup/editSysUserPolicyGroup.do"/>
+      <forward name="failure"           path="/system/groupPolicy/policyGroup/editPolicyGroup.do"/>
+    </action>
+		
+	<action    path="/system/groupPolicy/policyGroup/editFunctionArea"
+               type="com.ahsay.obs.www.system.groupPolicy.policyGroup.EditFunctionArea"
+               name="editFunctionAreaForm"
+              scope="session"
+           validate="false">
+      <forward name="success"           path="/jsp/system/groupPolicy/policyGroup/editFunctionArea.jsp"/>
+      <forward name="failure"           path="/jsp/system/groupPolicy/policyGroup/editFunctionArea.jsp"/>
+    </action>	
+	
+	<action    path="/system/groupPolicy/policyGroup/updateFunctionArea"
+               type="com.ahsay.obs.www.system.groupPolicy.policyGroup.UpdateFunctionArea"
+               name="editFunctionAreaForm"
+              scope="session"
+           validate="false">
+      <forward name="success"           path="/system/groupPolicy/policyGroup/editPolicyGroup.do"/>
+      <forward name="sysUserSuccess"    path="/system/groupPolicy/policyGroup/editSysUserPolicyGroup.do"/>
+      <forward name="failure"           path="/system/groupPolicy/policyGroup/editFunctionArea.do"/>
+    </action>
+	
+	<action    path="/system/groupPolicy/listUser/showUser"
+               type="com.ahsay.obs.www.system.groupPolicy.listUser.ShowUser"
+               name="showUserForm"
+              scope="session"
+           validate="false">
+      <forward name="success"           path="/jsp/system/groupPolicy/listUser/showUser.jsp"/>
+      <forward name="failure"           path="/jsp/system/groupPolicy/listUser/showUser.jsp"/>
+    </action>
+	
+	<action    path="/system/groupPolicy/listUser/showMergedPolicies"
+               type="com.ahsay.obs.www.system.groupPolicy.listUser.ShowMergedPolicies"
+               name="showMergedPoliciesForm"
+              scope="session"
+           validate="false">
+      <forward name="success"           path="/jsp/system/groupPolicy/listUser/showMergedPolicies.jsp"/>
+      <forward name="failure"           path="/jsp/system/groupPolicy/listUser/showMergedPolicies.jsp"/>
+    </action>
+
+    <action    path="/user/defaultBackupSet"
+               type="com.ahsay.obs.www.user.DefaultBackupSet"
+               name="editBackupSetForm"
+              scope="session"
+           validate="false" >
+	  <forward name="acbDefault"        	  path="/user/editAcbBackupSet.do?category=D" />
+      <forward name="obmDefault"         path="/user/editBackupSet.do?category=D" />
+	  <forward name="acbEnforce"        	  path="/user/editAcbBackupSet.do?category=E" />
+      <forward name="obmEnforce"         path="/user/editBackupSet.do?category=E" />
+      <forward name="failure"         path="/user/editBackupSet.do" />
+    </action>
+
+	<action    path="/system/groupPolicy/userGroup/removePolicyFromGroup"
+               type="com.ahsay.obs.www.system.groupPolicy.userGroup.RemovePolicy"
+               name="editUserGroupForm"
+              scope="session"
+           validate="false">
+      <forward name="success"           path="/system/groupPolicy/userGroup/editUserGroup.do"/>
+      <forward name="failure"           path="/system/groupPolicy/userGroup/editUserGroup.do"/>
+    </action>	
+	
+	<action    path="/system/groupPolicy/policyAssignment/applyPolicyGroupToUserGroup"
+               type="com.ahsay.obs.www.system.groupPolicy.policyAssignment.ApplyPolicyGroupToUserGroup"
+               name="listPolicyUserForm"
+              scope="session"
+           validate="false">
+      <forward name="success"           path="/jsp/system/groupPolicy/policyAssignment/ApplyPolicyGroupToUserGroup.jsp"/>
+      <forward name="update"            path="/system/groupPolicy/policyAssignment/listPolicyUser.do"/>
+	  <forward name="failure"           path="/jsp/system/groupPolicy/policyAssignment/ApplyPolicyGroupToUserGroup.jsp"/>
+    </action>	
+		
+	<action    path="/system/groupPolicy/policyAssignment/listPolicyUser"
+               type="com.ahsay.obs.www.system.groupPolicy.policyAssignment.ListPolicyUser"
+               name="listPolicyUserForm"
+              scope="session"
+           validate="false">
+      <forward name="success"           path="/jsp/system/groupPolicy/policyAssignment/ListPolicyUser.jsp"/>
+      <forward name="failure"           path="/jsp/system/groupPolicy/policyAssignment/ListPolicyUser.jsp"/>
+    </action>	
+	
+	<action    path="/system/groupPolicy/policyAssignment/removeUserGroupFromPolicyGroup"
+               type="com.ahsay.obs.www.system.groupPolicy.policyAssignment.RemoveUserGroupFromPolicyGroup"
+               name="listPolicyUserForm"
+              scope="session"
+           validate="false">
+      <forward name="success"           path="/system/groupPolicy/policyAssignment/listPolicyUser.do"/>
+      <forward name="failure"           path="/system/groupPolicy/policyAssignment/listPolicyUser.do"/>
+    </action>		
+		
+	<!-- Edit filter -->
+    <action    path="/system/groupPolicy/policyGroup/editGlobalFilter"
+               type="com.ahsay.obs.www.system.groupPolicy.policyGroup.EditGlobalFilter"
+               name="editGlobalFilterForm"
+              scope="session"
+           validate="false">
+      <forward name="success"         path="/jsp/system/groupPolicy/policyGroup/editFilter.jsp"/>
+      <forward name="failure"         path="/jsp/system/groupPolicy/policyGroup/editFilter.jsp"/>
+    </action>
+	
+	<!-- Update filter -->
+    <action    path="/system/groupPolicy/policyGroup/updateGlobalFilter"
+               type="com.ahsay.obs.www.system.groupPolicy.policyGroup.UpdateGlobalFilter"
+               name="editGlobalFilterForm"
+              scope="session"
+           validate="false">
+      <forward name="success"         path="/system/groupPolicy/policyGroup/editGlobalFilter.do"/>
+      <forward name="failure"         path="/system/groupPolicy/policyGroup/editGlobalFilter.do"/>
+    </action>
+	
+	<!-- Add filter -->
+    <action    path="/system/groupPolicy/policyGroup/addGlobalFilter"
+               type="com.ahsay.obs.www.system.groupPolicy.policyGroup.AddGlobalFilter"
+               name="editGlobalFilterForm"
+              scope="session"
+           validate="false">
+      <forward name="success"         path="/system/groupPolicy/policyGroup/editGlobalFilter.do"/>
+      <forward name="failure"         path="/system/groupPolicy/policyGroup/editGlobalFilter.do"/>
+    </action>
+	
+	<!-- Remove filter -->
+    <action    path="/system/groupPolicy/policyGroup/removeGlobalFilter"
+               type="com.ahsay.obs.www.system.groupPolicy.policyGroup.RemoveGlobalFilter"
+               name="editGlobalFilterForm"
+              scope="session"
+           validate="false">
+      <forward name="success"         path="/system/groupPolicy/policyGroup/editGlobalFilter.do"/>
+      <forward name="failure"         path="/system/groupPolicy/policyGroup/editGlobalFilter.do"/>
+    </action>
+	
+	<!-- new filter -->
+	<action    path="/system/groupPolicy/policyGroup/newGlobalFilter"
+               type="com.ahsay.obs.www.system.groupPolicy.policyGroup.NewGlobalFilter"
+               name="editGlobalFilterForm"
+              scope="session"
+           validate="false">
+      <forward name="success"         path="/jsp/system/groupPolicy/policyGroup/newFilter.jsp"/>
+      <forward name="failure"         path="/jsp/system/groupPolicy/policyGroup/newFilter.jsp"/>
+    </action>
+	<!-- Edit filter -->
+    <action    path="/system/groupPolicy/policyGroup/editAcbGlobalFilter"
+               type="com.ahsay.obs.www.system.groupPolicy.policyGroup.EditAcbGlobalFilter"
+               name="editAcbGlobalFilterForm"
+              scope="session"
+           validate="false">
+      <forward name="success"         path="/jsp/system/groupPolicy/policyGroup/editAcbFilter.jsp"/>
+      <forward name="failure"         path="/jsp/system/groupPolicy/policyGroup/editAcbFilter.jsp"/>
+    </action>
+	
+	 <!-- update filter -->
+    <action    path="/system/groupPolicy/policyGroup/updateAcbGlobalFilter"
+               type="com.ahsay.obs.www.system.groupPolicy.policyGroup.UpdateAcbGlobalFilter"
+               name="editAcbGlobalFilterForm"
+              scope="session"
+           validate="false">
+      <forward name="success"         path="/system/groupPolicy/policyGroup/editAcbGlobalFilter.do"/>
+      <forward name="failure"         path="/system/groupPolicy/policyGroup/editAcbGlobalFilter.do"/>
+    </action>
+	
+	<!-- add filter -->
+    <action    path="/system/groupPolicy/policyGroup/addAcbGlobalFilter"
+               type="com.ahsay.obs.www.system.groupPolicy.policyGroup.AddAcbGlobalFilter"
+               name="editAcbGlobalFilterForm"
+              scope="session"
+           validate="false">
+      <forward name="success"         path="/system/groupPolicy/policyGroup/editAcbGlobalFilter.do"/>
+      <forward name="failure"         path="/system/groupPolicy/policyGroup/editAcbGlobalFilter.do"/>
+    </action>
+	
+	<!-- remove filter -->
+    <action    path="/system/groupPolicy/policyGroup/removeAcbGlobalFilter"
+               type="com.ahsay.obs.www.system.groupPolicy.policyGroup.RemoveAcbGlobalFilter"
+               name="editAcbGlobalFilterForm"
+              scope="session"
+           validate="false">
+      <forward name="success"         path="/system/groupPolicy/policyGroup/editAcbGlobalFilter.do"/>
+      <forward name="failure"         path="/system/groupPolicy/policyGroup/editAcbGlobalFilter.do"/>
+    </action>
+	
+	<!-- new filter -->
+	<action    path="/system/groupPolicy/policyGroup/newAcbGlobalFilter"
+               type="com.ahsay.obs.www.system.groupPolicy.policyGroup.NewAcbGlobalFilter"
+               name="editAcbGlobalFilterForm"
+              scope="session"
+           validate="false">
+      <forward name="success"         path="/jsp/system/groupPolicy/policyGroup/newAcbFilter.jsp"/>
+      <forward name="failure"         path="/jsp/system/groupPolicy/policyGroup/newAcbFilter.jsp"/>
+    </action>
+	
+	<!-- recover configuration -->
+    <action    path="/system/config/recoverConfiguration"
+               type="com.ahsay.obs.www.system.config.RecoverConfiguration"
+               name="editServerConfigForm"
+              scope="session"
+           validate="false">
+      <forward name="success"           path="/jsp/system/config/configuration.jsp"/>
+      <forward name="failure"           path="/jsp/system/config/configuration.jsp"/>
+    </action>
+	
+	<!-- refresh archival date list -->
+    <action    path="/system/config/refreshArchivalDateList"
+               type="com.ahsay.obs.www.system.config.RefreshArchivalDateList"
+               name="editServerConfigForm"
+              scope="session"
+           validate="false">
+      <forward name="success"           path="/jsp/system/config/configuration.jsp"/>
+      <forward name="failure"           path="/jsp/system/config/configuration.jsp"/>
+    </action>
+	
+	<!-- Test License Server Connection-->
+    <action    path="/system/config/testLicConn"
+               type="com.ahsay.obs.www.system.config.TestLicConn"
+               name="editLicenseForm"
+              scope="session"
+           validate="false">
+	  <forward name="success"                 path="/system/config/editLicense.do"/>
+	  <forward name="failure"                 path="/system/config/editLicense.do"/>
+    </action>
+	
+	<!-- Test SMTP Server Connection -->
+    <action    path="/system/config/testSmtpConn"
+               type="com.ahsay.obs.www.system.config.TestSmtpConn"
+               name="editServerConfigForm"
+              scope="session"
+           validate="false">
+	  <forward name="success"                 path="/system/config/editServerConfig.do"/>
+	  <forward name="failure"                 path="/system/config/editServerConfig.do"/>
+    </action>
+	
+	<!-- Download Zip File -->
+	<action  path="/system/systemUser/DownloadFile"
+             type="com.ahsay.obs.www.system.systemUser.DownloadFile">
+    </action>
+	
+	<!-- Get Css -->
+    <action    path="/www/getCSS"
+               type="com.ahsay.obs.www.GetCSS" 
+			   scope="session" >
+    </action>
+	
+	<!-- Get Gif -->
+	<action    path="/www/getGif"
+               type="com.ahsay.obs.www.GetGif" 
+			   scope="session" >
+    </action>
+	
+	<!-- Get Logo -->
+	<action    path="/www/getLogo"
+               type="com.ahsay.obs.www.GetLogo" 
+			   scope="session" >
+    </action>
+	
+    <!-- ================================================================== -->
+    <!-- ================ API Action Mapping Definitions ================== -->
+    <!-- ================================================================== -->
+
+    <!-- API to add a user -->
+    <action    path="/api/AddUser"
+               type="com.ahsay.obs.api.user.AddUser" >
+    </action>
+
+    <!-- API to remove a user -->
+    <action    path="/api/RemoveUser"
+               type="com.ahsay.obs.api.user.RemoveUser" >
+    </action>
+
+    <!-- API to modify a user -->
+    <action    path="/api/ModifyUser"
+               type="com.ahsay.obs.api.user.ModifyUser" >
+    </action>
+
+    <!-- API to list all users -->
+    <action    path="/api/ListUsers"
+               type="com.ahsay.obs.api.user.ListUsers" >
+    </action>
+
+    <!-- API to list storage statistics of all  users -->
+	<action    path="/api/ListUsersStorage"
+               type="com.ahsay.obs.api.user.ListUsers" >
+    </action>
+
+    <!-- API to get a single user -->
+    <action    path="/api/GetUser"
+               type="com.ahsay.obs.api.user.GetUser" >
+    </action>
+
+    <!-- API to list all backup set of a given user -->
+    <action    path="/api/ListBackupSets"
+               type="com.ahsay.obs.api.backupSet.ListBackupSets" >
+    </action>
+
+    <!-- API to get a single backup set of a given user and a backup set id -->
+    <action    path="/api/GetBackupSet"
+               type="com.ahsay.obs.api.backupSet.GetBackupSet" >
+    </action>
+
+    <!-- API to add a single backup set of a given user -->
+    <action    path="/api/AddBackupSet"
+               type="com.ahsay.obs.api.backupSet.AddBackupSet" >
+    </action>
+
+    <!-- API to delete a single backup set of a given user and a backup set id -->
+    <action    path="/api/DeleteBackupSet"
+               type="com.ahsay.obs.api.backupSet.DeleteBackupSet" >
+    </action>
+
+    <!-- API to update a single backup set of a given user and a backup set id -->
+    <action    path="/api/UpdateBackupSet"
+               type="com.ahsay.obs.api.backupSet.UpdateBackupSet" >
+    </action>
+
+    <!-- API to get updated files of a given user and a backupSetID and a backupJobID and directory -->
+    <action    path="/api/ListBackupFiles"
+               type="com.ahsay.obs.api.backupSet.ListBackupFiles" >
+    </action>
+
+    <!-- API to get a detail backup job status of a given user and a backupSetID and a backupJobID -->
+    <action    path="/api/GetBackupJobReport"
+               type="com.ahsay.obs.api.report.GetBackupJobReport" >
+    </action>
+
+    <!-- API to get a detail backup job status of a given user and a backupSetID and a backupJobID -->
+    <action    path="/api/GetBackupJobReportSummary"
+               type="com.ahsay.obs.api.report.GetBackupJobReportSummary" >
+    </action>
+
+    <!-- API to get a general backup job status of a given user and a backupSetID -->
+    <action    path="/api/ListBackupJobs"
+               type="com.ahsay.obs.api.backupSet.ListBackupJobs" >
+    </action>
+
+    <!-- API to get the user name, job name, start time, end time, upload size and jobstatus of backup jobs for a given date -->
+    <action    path="/api/ListBackupJobStatus"
+               type="com.ahsay.obs.api.backupSet.ListBackupJobStatus" >
+    </action>
+	
+	<!-- API to get the backup job mode, user name, job name, start time, end time, backup set name of backup jobs for a given date -->
+    <action    path="/api/ListBackupJobMode"
+               type="com.ahsay.obs.api.backupSet.ListBackupJobMode" >
+    </action>
+	
+	<!-- API to get the backup job progress -->
+    <action    path="/api/GetBackupJobProgress"
+               type="com.ahsay.obs.api.backupSet.GetBackupJobProgress" >
+    </action>
+
+	<!-- API to run backup -->
+	<action	   path="/api/RunBackup"
+			   type="com.ahsay.obs.api.backupSet.RunBackup" >
+	</action>
+	
+    <!-- API to get a general backup job statistics of a given user and year month -->
+    <action    path="/api/GetUserStorageStat"
+               type="com.ahsay.obs.api.user.GetUserStorageStat" >
+    </action>
+	
+    <!-- API to authenticate a user of a given user login name and password -->
+    <action    path="/api/AuthUser"
+               type="com.ahsay.obs.api.user.AuthUser" >
+    </action>
+	
+    <!-- API to Set the status of a user to enable / suspended -->
+	<action    path="/api/ModifyUserStatus"
+               type="com.ahsay.obs.api.user.ModifyUserStatus" >
+    </action>
+	
+	<!-- API to Add a new Advertisement -->
+	<action    path="/api/AddAdvertisement"
+			   type="com.ahsay.obs.api.advertisement.AddAdvertisement" >
+	</action>
+	
+	<!-- API to Modify an Advertisement-->
+	<action	   path="/api/ModifyAdvertisement"
+			   type="com.ahsay.obs.api.advertisement.ModifyAdvertisement" >
+	</action>
+	
+	<!-- API to List all Advertisements-->
+	<action	   path="/api/ListAdvertisements"
+			   type="com.ahsay.obs.api.advertisement.ListAdvertisements" >
+	</action>
+	
+	<!-- API to Delete an Advertisements-->
+	<action	   path="/api/DeleteAdvertisement"
+			   type="com.ahsay.obs.api.advertisement.DeleteAdvertisement" >
+	</action>
+	
+	<!-- API to Add a new AdGroup-->
+	<action	   path="/api/AddAdGroup"
+			   type="com.ahsay.obs.api.advertisement.AddAdGroup" >
+	</action>
+	
+	<!-- API to Modify an AdGroup-->
+	<action	   path="/api/ModifyAdGroup"
+			   type="com.ahsay.obs.api.advertisement.ModifyAdGroup" >
+	</action>
+	
+	<!-- API to List all AdGroups-->
+	<action	   path="/api/ListAdGroups"
+			   type="com.ahsay.obs.api.advertisement.ListAdGroups" >
+	</action>
+	
+	<!-- API to Delete an AdGroup-->
+	<action	   path="/api/DeleteAdGroup"
+			   type="com.ahsay.obs.api.advertisement.DeleteAdGroup" >
+	</action>
+	
+	<!-- API to Add a new UserGroup-->
+	<action	   path="/api/AddUserGroup"
+			   type="com.ahsay.obs.api.groupPolicy.AddUserGroup" >
+	</action>
+	
+	<!-- API to Modify an UserGroup-->
+	<action	   path="/api/ModifyUserGroup"
+			   type="com.ahsay.obs.api.groupPolicy.ModifyUserGroup" >
+	</action>
+	
+	<!-- API to List all UserGroup-->
+	<action	   path="/api/ListUserGroups"
+			   type="com.ahsay.obs.api.groupPolicy.ListUserGroups" >
+	</action>
+	
+	<!-- API to Delete an UserGroup-->
+	<action	   path="/api/DeleteUserGroup"
+			   type="com.ahsay.obs.api.groupPolicy.DeleteUserGroup" >
+	</action>
+	
+	<!-- API to Delete UserGroup from PolicyGroup-->
+	<action	   path="/api/DeleteUserGroupFromPolicyGroup"
+			   type="com.ahsay.obs.api.groupPolicy.DeleteUserGroupFromPolicyGroup" >
+	</action>
+	
+	<!-- API to Add UserGroup to PolicyGroup-->
+	<action	   path="/api/AddUserGroupsToPolicyGroup"
+			   type="com.ahsay.obs.api.groupPolicy.AddUserGroupsToPolicyGroup" >
+	</action>
+	
+	<!-- API to list policy groups-->
+	<action	   path="/api/ListPolicyGroups"
+			   type="com.ahsay.obs.api.groupPolicy.ListPolicyGroups" >
+	</action>
+	
+	<!-- Debug API (internal use only) Test UpdateBackupSet module -->
+    <action    path="/debug/dbs/BackupSetTester"
+               type="com.ahsay.obs.api.support.debug.dbs.BackupSetTester" >
+    </action>
+	
+    <!-- Debug API (internal use only) Purge all data within a backup set -->
+    <action    path="/debug/bfs/purge"
+               type="com.ahsay.obs.api.support.debug.bfs.Purge" >
+    </action>
+    <!-- Debug API (internal use only) Add a backup set to a user account -->
+    <action    path="/debug/dbs/addBackupSet"
+               type="com.ahsay.obs.api.support.debug.dbs.AddBackupSet" >
+    </action>
+    <!-- Debug API (internal use only) Flush all pending RPS log files to RPS -->
+    <action    path="/debug/rps/flushPendingLogs"
+               type="com.ahsay.obs.api.support.debug.rps.FlushPendingLogs" >
+    </action>
+    <!-- Debug API (internal use only) Return the current RPS mode  -->
+    <action    path="/debug/rps/getMode"
+               type="com.ahsay.obs.api.support.debug.rps.GetMode" >
+    </action>
+    <!-- Debug API (internal use only) Whether flushPendingLogs has completed or not -->
+    <action    path="/debug/rps/isFlushEnded"
+               type="com.ahsay.obs.api.support.debug.rps.IsFlushEnded" >
+    </action>
+    <!-- Debug API (internal use only) Freeze all I/O activity on OBS -->
+    <action    path="/debug/rps/pauseIO"
+               type="com.ahsay.obs.api.support.debug.rps.PauseIO" >
+    </action>
+    <!-- Debug API (internal use only) Resume from freeze -->
+    <action    path="/debug/rps/resumeIO"
+               type="com.ahsay.obs.api.support.debug.rps.ResumeIO" >
+    </action>
+    <!-- Debug API (internal use only) Force a RPS resync to occur (by restarting RPS module) -->
+    <action    path="/debug/rps/resync"
+               type="com.ahsay.obs.api.support.debug.rps.Resync" >
+    </action>
+    <!-- Debug API (internal use only) Disable/Enable the RPS module -->
+    <action    path="/debug/rps/setEnable"
+               type="com.ahsay.obs.api.support.debug.rps.SetEnable" >
+    </action>
+	
+	<!-- 2007-07-31 Kevin Wong added getBillingInfo API -->
+	<!-- API to get billing information of all  users -->	
+	<action    path="/bill/getBillingInfo"
+               type="com.ahsay.obs.api.support.bill.getBillingInfo" >
+    </action>
+	<!-- End -->	
+	
+    <!-- API to get replication mode -->
+    <action    path="/api/GetReplicationMode"
+               type="com.ahsay.obs.api.replication.GetReplicationMode" >
+    </action>
+    <!-- End -->
+
+    <!-- API to get license information -->
+    <action    path="/api/GetLicense"
+               type="com.ahsay.obs.api.license.GetLicense" >
+    </action>
+    <!-- End -->
+
+    <!-- API to get send forgot password email -->
+    <action    path="/api/SendForgotPwdEmail"
+               type="com.ahsay.obs.api.user.SendForgotPwdEmail" >
+    </action>
+    <!-- End -->
+	
+	<!-- API to get send forgot password email -->
+    <action    path="/api/SendForgotPasswordEmail"
+               type="com.ahsay.obs.api.user.SendForgotPwdEmail" >
+    </action>
+
+    <!-- API to initialize LDAP settings -->
+    <action    path="/init/initLDAP"
+               type="com.ahsay.obs.api.systemSetting.InitLDAP" >
+    </action>
+	
+    <!-- Debug API to set replication keep running in sync mode -->	
+	<action    path="/debug/rps/setKeepSync"
+               type="com.ahsay.obs.api.support.debug.rps.SetKeepSync" >
+    </action>	
+	
+    <!-- Debug API to set duration of unsync and sync mode -->	
+	<action    path="/debug/rps/setDuration"
+               type="com.ahsay.obs.api.support.debug.rps.SetDuration" >
+    </action>		
+	
+	<!-- API to delete backup files -->
+    <action    path="/api/DeleteBackupData"
+               type="com.ahsay.obs.api.backupSet.DeleteBackupData" >
+    </action>
+	
+	<!-- API to delete backup files -->
+	<!-- -Delete single backup file-->
+    <action    path="/api/DeleteBackupFile"
+               type="com.ahsay.obs.api.backupSet.DeleteBackupFile" >
+    </action>
+
+	<!-- API to check duplicated user -->
+    <action    path="/api/CheckDuplicatedUser"
+               type="com.ahsay.obs.api.user.CheckDuplicatedUser" >
+    </action>
+	
+	<!-- API to check duplicated user -->
+    <action    path="/api/ListSystemUsers"
+               type="com.ahsay.obs.api.systemUser.ListSystemUsers" >
+    </action>
+	
+	<!-- API to authenticate a system user of a given login name and password -->
+    <action    path="/api/AuthSystemUser"
+               type="com.ahsay.obs.api.systemUser.AuthSystemUser" >
+    </action>
+
+	<!-- API to get system setting -->
+	<action    path="/api/GetSystemSetting"
+               type="com.ahsay.obs.api.systemSetting.GetSystemSetting" >
+    </action>
+	
+	<!-- API to get server identification -->
+	<action    path="/api/GetServerUid"
+               type="com.ahsay.obs.api.systemSetting.GetServerUid" >
+    </action>
+
+	<!-- ================================================================== -->
+    <!-- =============== Delete Action Definitions ================ -->
+    <!-- ================================================================== -->
+	
+	<!-- delete backup files -->
+    <action    path="/delete/obm5.5/deleteBackupFile"
+               type="com.ahsay.obs.www.delete.DeleteBackupFile">
+    </action>
+	
+	<!-- get the status of deleting backup files -->
+    <action    path="/delete/obm5.5/refreshDeleteBackupFile"
+               type="com.ahsay.obs.www.delete.RefreshDeleteBackupFile">
+    </action>
+	
+	<!-- stop deleting backup files -->
+    <action    path="/delete/obm5.5/stopDeleteBackupFile"
+               type="com.ahsay.obs.www.delete.StopDeleteBackupFile">
+    </action>	
+	
+	<!-- delete backup files -->
+    <action    path="/delete/acb5.5/deleteBackupFile"
+               type="com.ahsay.obs.www.delete.DeleteBackupFile">
+    </action>
+	
+	<!-- get the status of deleting backup files -->
+    <action    path="/delete/acb5.5/refreshDeleteBackupFile"
+               type="com.ahsay.obs.www.delete.RefreshDeleteBackupFile">
+    </action>
+	
+	<!-- stop deleting backup files -->
+    <action    path="/delete/acb5.5/stopDeleteBackupFile"
+               type="com.ahsay.obs.www.delete.StopDeleteBackupFile">
+    </action>
+
+	<!-- delete backup files -->
+    <action    path="/delete/obm6/deleteBackupFile"
+               type="com.ahsay.obs.www.delete.DeleteBackupFile">
+    </action>
+	
+	<!-- get the status of deleting backup files -->
+    <action    path="/delete/obm6/refreshDeleteBackupFile"
+               type="com.ahsay.obs.www.delete.RefreshDeleteBackupFile">
+    </action>
+	
+	<!-- stop deleting backup files -->
+    <action    path="/delete/obm6/stopDeleteBackupFile"
+               type="com.ahsay.obs.www.delete.StopDeleteBackupFile">
+    </action>	
+	
+	<!-- delete backup files -->
+    <action    path="/delete/acb6/deleteBackupFile"
+               type="com.ahsay.obs.www.delete.DeleteBackupFile">
+    </action>
+	
+	<!-- get the status of deleting backup files -->
+    <action    path="/delete/acb6/refreshDeleteBackupFile"
+               type="com.ahsay.obs.www.delete.RefreshDeleteBackupFile">
+    </action>
+	
+	<!-- stop deleting backup files -->
+    <action    path="/delete/acb6/stopDeleteBackupFile"
+               type="com.ahsay.obs.www.delete.StopDeleteBackupFile">
+    </action>
+	
+	<!-- ================================================================== -->
+    <!-- =============== AUA Action Definitions =========================== -->
+    <!-- ================================================================== -->
+	<!-- Get index.xml -->
+    <action    path="/aua/getIndexXml"
+              scope="request"
+               type="com.ahsay.obs.aua.GetIndexXml">
+    </action>
+	
+	
+  </action-mappings>
+
+  <message-resources parameter="obs-jsp" null="false" />
+
+</struts-config>
+
