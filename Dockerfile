@@ -18,13 +18,13 @@ COPY docker-entrypoint.sh /
 #    && rm -f obsr-nix.tar.gz
 
 
-# Alternative to the above, this copies a nearly-the-same file with four
-#  space-saving exclusions (43 MB):
+# Alternative to the above, this copies a nearly-the-same obsr with **only** the
+#  following, space-saving (image reduced by 621 MB), exclusions:
 #  *  java-linux-x86
 #  *  webapps/obs/liveUpdate
 #  *  webapps/obs/doc
 #  *  webapps/obs/download
-ADD obsr-nix-6.29.0.0.tar.xz ./
+ADD obsr/ ./
 
 
 # Create the limited user what will be used to run the OBSR application
