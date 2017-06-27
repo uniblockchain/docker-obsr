@@ -26,4 +26,4 @@ is a proprietary backup service provider.
 
 
 ## Docker-Compose
-For an example of how to run OBSR behind nginx can run `docker-compose -f docker-compose-ngin.yml up`. However, bare in mind the diffie-hellman parameters file AND the default TLS certificates are public knowledge and thereofore offer no security. So, before taking this into production, you will want to create and use your own.
+For an example of how to run OBSR behind nginx can run `docker-compose -f docker-compose-ngin.yml up`. However, bare in mind the diffie-hellman parameters file AND the default TLS certificates are public knowledge and therefore offer no security. So, before taking this into production, you will want to create and use your own.
