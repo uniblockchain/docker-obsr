@@ -25,7 +25,7 @@ COPY docker-entrypoint.sh /
 #  *  webapps/obs/doc
 #  *  webapps/obs/download
 #  *  system/ads/
-ADD obsr/ ./
+COPY obsr/ ./
 
 
 # Create the limited user what will be used to run the OBSR application
