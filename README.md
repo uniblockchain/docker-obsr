@@ -3,7 +3,7 @@ is a proprietary backup service provider.
 
 ### How to:
 + Run: `docker run -p "80:8080" -p "443:8443" yoff/obsr`
-+ Safely stop: `docker exec CONTAINER_NAME ahsay-shutdown`
++ Safely stop: `docker stop --time 60 CONTAINER_NAME`
 
 ### Ports:
 + http listener is on **8080**
