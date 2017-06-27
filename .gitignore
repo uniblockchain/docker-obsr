@@ -10,6 +10,7 @@ obsr/temp/*
 obsr/tomcat/logs/*
 obsr/tomcat/temp/*
 obsr/tomcat/work/*
+obsr/system/ads/*
 
 # Security related
 nginx/certs/*
