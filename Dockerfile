@@ -24,6 +24,7 @@ COPY docker-entrypoint.sh /
 #  *  webapps/obs/liveUpdate
 #  *  webapps/obs/doc
 #  *  webapps/obs/download
+#  *  system/ads/
 ADD obsr/ ./
 
 
