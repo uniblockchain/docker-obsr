@@ -14,7 +14,7 @@ else
 fi
 
 
-# Change catalina.sh to 'run' (prevent deamonizing)
+# Change catalina.sh to 'run' (prevent daemonizing)
 # Remove `nohup` (prevent backgrounding)
 # Change CATALINA_PID path (obsr.pid) to a directory `ahsay` can read/write
 sed -i bin/startup.sh \
