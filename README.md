@@ -19,7 +19,11 @@ is a proprietary backup service provider.
 
 ### Notes:
 + The application runs as the limited user "ahsay" (400:400)
-+ Agents downloads and java-x86 have been removed in favor of java-x64.
++ Agents downloads, Agent liveupdates, docs, and java-x86 have been removed.
 + Catalina is started with the 'run' command to prevent daemonizing. Likewise, `nohup` has been removed from *startup.sh*
-+ SSLv2Hello is enabled to provide backwards compatibity for older OBC agents (<= 6.21.0.0)
++ SSLv2Hello is enabled to provide backwards compatibity for older Ahsay agents (<= 6.21.0.0)
 + `docker stop` (SIGTERM) is caught and redirected at `catalina.sh stop` for a safe shutdown. If your OBS needs more than 10 seconds to stop, be sure to use the `--time n` flag prevent docker from prematurely resorting to `kill`.
+
+
+## Docker-Compose
+For an example of how to run OBSR behind nginx can run `docker-compose -f docker-compose-ngin.yml up`. However, bare in mind the diffie-hellman parameters file AND the default TLS certificates are public knowledge and thereofore offer no security. So, before taking this into production, you will want to create and use your own.
