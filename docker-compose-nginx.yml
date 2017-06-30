@@ -13,6 +13,7 @@ services:
       - "9444-9464"
     environment:
       - TZ=America/Phoenix
+      - PROXIED=True
 
   nginx:
     image: nginx:stable-alpine

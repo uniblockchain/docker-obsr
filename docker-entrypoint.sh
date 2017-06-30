@@ -84,15 +84,17 @@ if [[ $? != 2 ]]; then
 fi
 
 
-# Trust X-Forwarded-IPs from internal addresses
-if (! grep -q "org.apache.catalina.valves.RemoteIpValve" conf/server.xml); then
-  sed -i conf/server.xml \
-      -e 's@</Host>@  \
-        <Valve className="org.apache.catalina.valves.RemoteIpValve" \
-          remoteIpHeader="X-Forwarded-For" \
-          internalProxies="172.1[6-9]\.\d+\.\d+, 172.2[0-9]\.\d+\.\d+, \
-          172.3[0-1]\.\d+\.\d+, 10\.\d+\.\d+\.\d+" /> \
-      </Host>@g'
+# Optionally trust X-Forwarded-IPs from internal addresses
+if [ -n "$PROXIED" ]; then
+  if (! grep -q "apache.catalina.valves.RemoteIpValve" conf/server.xml); then
+    sed -i conf/server.xml \
+        -e 's@</Host>@  \
+          <Valve className="org.apache.catalina.valves.RemoteIpValve" \
+            remoteIpHeader="X-Forwarded-For" \
+            internalProxies="172.1[6-9]\.\d+\.\d+, 172.2[0-9]\.\d+\.\d+, \
+            172.3[0-1]\.\d+\.\d+, 10\.\d+\.\d+\.\d+" /> \
+        </Host>@g'
+  fi
 fi
 
 
