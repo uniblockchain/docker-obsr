@@ -1,7 +1,43 @@
 #!/bin/bash
 # This script is compatible with cbs, obsr, and rdr
 
-# Determine what ahsay product is installed
+
+# Compares major.minor.patch versions
+version_comp () {
+  if [[ $1 == $2 ]]; then
+    return 0
+  fi
+  local IFS=.
+  local i ver1=($1) ver2=($2)
+
+  # fill empty fields in ver1 with zeros
+  for ((i=${#ver1[@]}; i<${#ver2[@]}; i++)); do
+    ver1[i]=0
+  done
+
+  for ((i=0; i<${#ver1[@]}; i++)); do
+    if [[ -z ${ver2[i]} ]]; then
+      # fill empty fields in ver2 with zeros
+      ver2[i]=0
+    fi
+
+    if ((10#${ver1[i]} > 10#${ver2[i]})); then
+      # $1 is greater
+      return 1
+    fi
+
+    if ((10#${ver1[i]} < 10#${ver2[i]})); then
+      # $1 is less
+      return 2
+    fi
+  done
+
+  # versions are equal
+  return 0
+}
+
+
+# Determine what AHSAY_APP is installed
 if [ -d "/cbs" ]; then
     AHSAY_APP=cbs
 elif [ -d "/obsr" ]; then
@@ -12,6 +48,11 @@ else
     echo "/cbs, /obsr, or /rdr folder must exist!"
     exit 1;
 fi
+
+
+# Get product versions
+AHSAY_VERSION=$(cat /$AHSAY_APP/version.txt)
+TOMCAT_VERSION=$(tail -n1 /$AHSAY_APP/tomcat/TOMCAT*)
 
 
 # Change catalina.sh to 'run' (prevent daemonizing)
@@ -27,13 +68,20 @@ sed -i bin/shutdown.sh\
 
 
 # Use ports 8080 and 8443
-# Replace depreciated 'sslProtocols' attribute AND enable SSLv2Hello
 # Add requested hostname ("local server name") to Tomcat access logs
 sed -i conf/server.xml \
     -e 's/port="80"/port="8080"/g' \
     -e 's/port="443"/port="8443"/g' \
-    -e 's/sslProtocols="TLSv1"/sslEnabledProtocols="TLSv1,SSLv2Hello"/g' \
     -e "s/pattern=\"common\"/pattern='%h %l %u %t %v "%r" %s %b'/g"
+
+
+# if tomcat is v6.0.38 or newer, use sslEnabledProtocols instead of
+#    sslProtocols and sslEnabledProtocols
+version_comp $TOMCAT_VERSION "6.0.38"
+if [[ $? != 2 ]]; then
+  sed -i conf/server.xml \
+      -e 's/sslProtocols="TLSv1"/sslEnabledProtocols="TLSv1,SSLv2Hello"/g'
+fi
 
 
 # Trust X-Forwarded-IPs from internal addresses
