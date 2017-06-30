@@ -16,14 +16,14 @@ fi
 
 # Change catalina.sh to 'run' (prevent daemonizing)
 # Remove `nohup` (prevent backgrounding)
-# Change CATALINA_PID path (obsr.pid) to a directory `ahsay` can read/write
+# Change CATALINA_PID path to a directory `ahsay` can read/write
 sed -i bin/startup.sh \
     -e 's/catalina.sh" start.*/catalina.sh" run/g' \
     -e 's/nohup//g' \
-    -e 's@/var/run/obsr\.pid@/obsr/obsr.pid@g'
+    -e "s@/var/run/$AHSAY_APP\.pid@/$AHSAY_APP/$AHSAY_APP.pid@g"
 
 sed -i bin/shutdown.sh\
-    -e 's@/var/run/obsr\.pid@/obsr/obsr.pid@g'
+    -e "s@/var/run/$AHSAY_APP\.pid@/$AHSAY_APP/$AHSAY_APP.pid@g"
 
 
 # Use ports 8080 and 8443
