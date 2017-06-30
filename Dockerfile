@@ -4,11 +4,11 @@ WORKDIR /obsr
 
 
 # 'ifconfig' is a fake tool that simply echos the machines MAC address.
-#     This is necessary for the OBSR licensing.
+#     This is necessary for the AHSAY_APP licensing.
 COPY ifconfig /usr/bin/
 
 
-# Bootstrap OBSR and SIGTERM receiver
+# Bootstrap AHSAY_APP and SIGTERM receiver
 COPY docker-entrypoint.sh /
 
 
@@ -18,8 +18,8 @@ COPY docker-entrypoint.sh /
 #    && rm -f obsr-nix.tar.gz
 
 
-# Alternative to the above, this copies a nearly-the-same obsr with **only** the
-#  following, space-saving (image reduced by 621 MB), exclusions:
+# Alternative to the above, this copies a nearly-the-same AHSAY_APP containing
+#  the following, space-saving (image reduced by 621 MB), exclusions:
 #  *  java-linux-x86
 #  *  webapps/obs/liveUpdate
 #  *  webapps/obs/doc
@@ -28,7 +28,7 @@ COPY docker-entrypoint.sh /
 COPY obsr/ ./
 
 
-# Create the limited user what will be used to run the OBSR application
+# Create the limited user that will be used to run the AHSAY_APP
 #    Note: the userhomes folder needs to be rw for UID/GUID 400
 RUN groupadd --gid 400 ahsay \
     && useradd --uid 400 --gid 400 --no-create-home ahsay \
