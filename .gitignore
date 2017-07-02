@@ -1,7 +1,9 @@
 # Space savers
 obsr/java-linux-x86/*
+obsr/java-linux-x64/man/*
 obsr/webapps/obs/download/*
 obsr/webapps/obs/liveUpdate/*
+obsr/conf/*.original
 
 # Instance specific
 obsr/logs/*
