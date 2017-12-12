@@ -5,11 +5,11 @@ WORKDIR /obsr
 
 # 'ifconfig' is a fake tool that simply echos the machines MAC address.
 #     This is necessary for the AHSAY_APP licensing.
-COPY ifconfig /usr/bin/
+COPY res/ifconfig /usr/bin/
 
 
 # Bootstrap AHSAY_APP and SIGTERM receiver
-COPY docker-entrypoint.sh /
+COPY docker-entrypoint.sh res/redirect.html.template /
 
 
 # Download the *nix installer directly from ahsay.com (600 MB).
