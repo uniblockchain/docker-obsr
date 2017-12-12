@@ -84,7 +84,7 @@ if [[ $? != 2 ]]; then
 fi
 
 
-# Optionally trust X-Forwarded-IPs from internal addresses
+# (Optional) trust X-Forwarded-IPs from internal addresses
 if [ -n "$PROXIED" ]; then
   if (! grep -q "apache.catalina.valves.RemoteIpValve" conf/server.xml); then
     sed -i conf/server.xml \
@@ -95,6 +95,21 @@ if [ -n "$PROXIED" ]; then
             172.3[0-1]\.\d+\.\d+, 10\.\d+\.\d+\.\d+" /> \
         </Host>@g'
   fi
+fi
+
+
+# (Optional) create html redirection for /
+if [ -n "$OBSR_ROOT_REDIRECT" ]; then
+  sed -e "s|DESTINATION_PATH|$OBSR_ROOT_REDIRECT|g" \
+      /redirect.html.template > /obsr/webapps/ROOT/index.html
+fi
+
+
+# (Optional) create html redirection for /download
+if [ -n "$OBSR_DOWNLOAD_REDIRECT" ]; then
+  mkdir -p /obsr/webapps/ROOT/download/
+  sed -e "s|DESTINATION_PATH|$OBSR_DOWNLOAD_REDIRECT|g" \
+      /redirect.html.template > /obsr/webapps/ROOT/download/index.html
 fi
 
 
