@@ -20,6 +20,7 @@ proprietary backup service software
 ### Environment Variables
 + **OBSR_ROOT_REDIRECT**: Redirect web browsers to a different URI (eg: /obs/jsp/user/)
 + **OBSR_DOWNLOAD_REDIRECT**: Redirects /download to a differnt URI (eg: /obs/jsp/user/wizard/install/)
++ **OBSR_MAC**: Feeds OBSR a spoofed MAC address (eg: BE:02:A4:D2:14:7F)
 + **PROXIED**: If true, tomcat will trust "X-Forwarded-For" header
 
 
