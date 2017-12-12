@@ -23,13 +23,13 @@ proprietary backup service software
 + **OBSR_MAC**: Feeds OBSR a spoofed MAC address (eg: BE:02:A4:D2:14:7F)
 + **PROXIED**: If true, tomcat will trust "X-Forwarded-For" header
 
-
 ### Notes
 + The application runs as the limited user "ahsay" (400:400)
 + Agents downloads, Agent liveupdates, docs, and java-x86 have been removed.
 + Catalina is started with the 'run' command to prevent daemonizing. Likewise, `nohup` has been removed from *startup.sh*
 + SSLv2Hello is enabled to provide backwards compatibity for older Ahsay agents (<= 6.21.0.0)
 + `docker stop` (SIGTERM) is caught and redirected at `catalina.sh stop` for a safe shutdown. If your OBS needs more than 10 seconds to stop, be sure to use the `--time n` flag prevent docker from prematurely resorting to `kill`.
++ Agent advertisements are removed
 
 ## Docker-Compose
 To see OBSR run behind nginx check out `docker-compose -f docker-compose-nginx.yml up`. Bare in mind, the diffie-hellman parameters file AND the default TLS certificates are public knowledge and therefore offer no security. So, create your own before taking this into production.

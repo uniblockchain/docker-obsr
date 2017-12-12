@@ -113,6 +113,10 @@ if [ -n "$OBSR_DOWNLOAD_REDIRECT" ]; then
 fi
 
 
+# Remove Advertisements
+sed -e 's|<Advertisement.*timestamp="[0-9]\+"/>||g' -i conf/acb-config.xml
+
+
 # Stop catalina properly to avoid corrupting Profile.xml files and then exit
 #   the container with exitcode 143 (128 + 15)
 catalina_stop () {
