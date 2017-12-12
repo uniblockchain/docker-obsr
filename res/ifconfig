@@ -3,9 +3,14 @@
 # an OBSR requirement in obtaining the MAC address (for licensing)
 
 
-if [ -n "$OBSR_MAC" ]; then
-  echo "    ether $OBSR_MAC"
+if [[ $OBSR_MAC ]]; then
+  if [[ $OBSR_MAC = "RANDOM" ]]; then
+    MAC=$(echo -n "00"; dd bs=1 count=5 if=/dev/random 2>/dev/null | hexdump -v -e '/1 ":%02X"')
+  else
+    MAC=$OBSR_MAC
+  fi
 else
   MAC=$(cat /sys/class/net/eth*/address)
-  echo "    ether $MAC"
 fi
+
+echo "    ether $MAC"
