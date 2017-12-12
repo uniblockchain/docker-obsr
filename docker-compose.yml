@@ -7,11 +7,58 @@ services:
     hostname: obsr.example.com
     restart: on-failure
     mem_limit: 4g
-    #volumes:
-    #  - ./obsr:/obsr
+    volumes:
+      #### Critical paths ####
+      # config
+      - ./obsr/conf:/obsr/conf
+      - ./obsr/system:/obsr/system
+      # logs
+      - ./obsr/logs:/obsr/logs
+      # client data
+      - ./users:/obsr/users
+      - ./users:/users
+      # rps reciever logs and data
+      - ./obsr/rps-system:/obsr/rps-system
+      - ./obsr/rcvshome:/obsr/rcvshome
+
+      #### Branding ####
+      # OBSR landing page
+      - ./obsr/webapps/ROOT/index.html:/obsr/webapps/ROOT/index.html
+      # OBS login images
+      - ./obsr/webapps/obs/jsp/images/OBS_login_big.gif:/obsr/webapps/obs/jsp/images/OBS_login_big.gif
+      - ./obsr/webapps/obs/jsp/images/OBS_login_small.gif:/obsr/webapps/obs/jsp/images/OBS_login_small.gif
+      # OBS "List User" icons
+      - ./obsr/webapps/obs/jsp/icon/acb.gif:/obsr/webapps/obs/jsp/icon/acb.gif
+      - ./obsr/webapps/obs/jsp/icon/obm.gif:/obsr/webapps/obs/jsp/icon/obm.gif
+      # OBS email header graphic and webportal footer images
+      - ./obsr/webapps/obs/logo:/obsr/webapps/obs/logo
+      # OBS strings
+      - ./obsr/webapps/obs/WEB-INF/classes:/obsr/webapps/obs/WEB-INF/classes
+      # OBS agent installers
+      - ./obsr/webapps/obs/download:/obsr/webapps/obs/download
+      # RPS login images
+      - ./obsr/webapps/rps/jsp/images/RPS_login_big.gif:/obsr/webapps/rps/jsp/images/RPS_login_big.gif
+      - ./obsr/webapps/rps/jsp/images/RPS_login_small.gif:/obsr/webapps/rps/jsp/images/RPS_login_small.gif
+      # RPS footer images
+      - ./obsr/webapps/rps/logo:/obsr/webapps/rps/logo
+      # RPS strings
+      - ./obsr/webapps/rps/WEB-INF/classes:/obsr/webapps/rps/WEB-INF/classes
+      - ./obsr/webapps/rps/WEB-INF/web.xml:/obsr/webapps/rps/WEB-INF/web.xml
+
+      #### Advanced ####
+      # ROOT SSL Enforcement and Custom error pages
+      - ./obsr/webapps/ROOT/WEB-INF/web.xml:/obsr/webapps/ROOT/WEB-INF/web.xml
+      # OBS IP restrictions, SSL Enforcement, and Custom error pages
+      - ./obsr/webapps/obs/WEB-INF/web.xml:/obsr/webapps/obs/WEB-INF/web.xml
+      # OBSR Unofficial download page
+      - ./obsr/webapps/ROOT/download:/obsr/webapps/ROOT/download
+      # OBS agent updates
+      - ./obsr/webapps/obs/liveUpdate:/obsr/webapps/obs/liveUpdate
     ports:
       - "80:8080"
       - "443:8443"
       - "9444-9464"
     environment:
       - TZ=America/Phoenix
+      - OBSR_ROOT_REDIRECT=/obs/jsp/user/
+      - OBSR_DOWNLOAD_REDIRECT=/obs/jsp/user/wizard/install/

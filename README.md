@@ -17,6 +17,12 @@ proprietary backup service software
 + RPS System logs: **/obsr/rps-system/**
 + RPS reciever home: **/obsr/rcvshome/**
 
+### Environment Variables
++ **OBSR_ROOT_REDIRECT**: Redirect web browsers to a different URI (eg: /obs/jsp/user/)
++ **OBSR_DOWNLOAD_REDIRECT**: Redirects /download to a differnt URI (eg: /obs/jsp/user/wizard/install/)
++ **PROXIED**: If true, tomcat will trust "X-Forwarded-For" header
+
+
 ### Notes
 + The application runs as the limited user "ahsay" (400:400)
 + Agents downloads, Agent liveupdates, docs, and java-x86 have been removed.
