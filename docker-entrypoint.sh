@@ -37,6 +37,21 @@ version_comp () {
 }
 
 
+# HTML redirect template
+create_html_redirect () {
+
+  cat <<-EOF > $2
+	<!DOCTYPE html>
+	<html>
+	  <head>
+	    <meta http-equiv="refresh" content="0; URL='$1'" />
+	  </head>
+	  <body/>
+	</html>
+	EOF
+}
+
+
 # Determine what AHSAY_APP is installed
 if [ -d "/cbs" ]; then
     AHSAY_APP=cbs
@@ -100,16 +115,14 @@ fi
 
 # (Optional) create html redirection for /
 if [ -n "$OBSR_ROOT_REDIRECT" ]; then
-  sed -e "s|DESTINATION_PATH|$OBSR_ROOT_REDIRECT|g" \
-      /redirect.html.template > /obsr/webapps/ROOT/index.html
+  create_html_redirect "$OBSR_ROOT_REDIRECT" webapps/ROOT/index.html
 fi
 
 
 # (Optional) create html redirection for /download
 if [ -n "$OBSR_DOWNLOAD_REDIRECT" ]; then
   mkdir -p /obsr/webapps/ROOT/download/
-  sed -e "s|DESTINATION_PATH|$OBSR_DOWNLOAD_REDIRECT|g" \
-      /redirect.html.template > /obsr/webapps/ROOT/download/index.html
+  create_html_redirect "$OBSR_DOWNLOAD_REDIRECT" webapps/ROOT/download/index.html
 fi
 
 

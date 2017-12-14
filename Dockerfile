@@ -9,7 +9,7 @@ COPY res/ifconfig /usr/bin/
 
 
 # Bootstrap AHSAY_APP and SIGTERM receiver
-COPY docker-entrypoint.sh res/redirect.html.template /
+COPY docker-entrypoint.sh /
 
 
 # Download the *nix installer directly from ahsay.com (600 MB).
