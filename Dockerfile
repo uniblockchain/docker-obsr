@@ -3,15 +3,6 @@ EXPOSE 8080 8443 9444-9464
 WORKDIR /obsr
 
 
-# 'ifconfig' is a fake tool that simply echos the machines MAC address.
-#     This is necessary for the AHSAY_APP licensing.
-COPY res/ifconfig /usr/bin/
-
-
-# Bootstrap AHSAY_APP and SIGTERM receiver
-COPY docker-entrypoint.sh /
-
-
 # Download the *nix installer directly from ahsay.com (600 MB).
 #ADD http://ahsay-dn.ahsay.com/v6/obsr/62900/obsr-nix.tar.gz ./
 #RUN tar xzf obsr-nix.tar.gz \
@@ -28,18 +19,22 @@ COPY docker-entrypoint.sh /
 COPY obsr/ ./
 
 
-# Include Ahsay's License tool for gauging license use after v7 upgrade
-COPY res/check/ ./check/
+# bootstrap contains Entrypoint (SIGTERM receiver), Ahsay v7 license counter,
+#  pseudo ifconfig, etc
+COPY bootstrap/ /bootstrap
 
 
+# Symlink pseudo ifconfig.
 # Create the limited user that will be used to run the AHSAY_APP
 #    Note: the userhomes folder needs to be rw for UID/GUID 400
-RUN groupadd --gid 400 ahsay \
+RUN ln -sf /bootstrap/ifconfig /usr/bin/ifconfig \
+    && groupadd --gid 400 ahsay \
     && useradd --uid 400 --gid 400 --no-create-home ahsay \
-    && chown -R 400:400 .
+    && chown -R 400:400 . /bootstrap
 
 
 # De-escalate from root
 USER ahsay
 
-CMD ["bash", "/docker-entrypoint.sh"]
+
+CMD ["bash", "/bootstrap/docker-entrypoint.sh"]

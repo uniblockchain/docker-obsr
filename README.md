@@ -30,7 +30,4 @@ proprietary backup service software
 + SSLv2Hello is enabled to provide backwards compatibity for older Ahsay agents (<= 6.21.0.0)
 + `docker stop` (SIGTERM) is caught and redirected at `catalina.sh stop` for a safe shutdown. If your OBS needs more than 10 seconds to stop, be sure to use the `--time n` flag prevent docker from prematurely resorting to `kill`.
 + Agent advertisements are removed
-+ Ahsay's check-v7-license-required.zip has been included. Run it with `docker run --rm yoff/obsr bash check/ShowV7Usage.sh`
-
-## Docker-Compose
-To see OBSR run behind nginx check out `docker-compose -f docker-compose-nginx.yml up`. Bare in mind, the diffie-hellman parameters file AND the default TLS certificates are public knowledge and therefore offer no security. So, create your own before taking this into production.
++ Ahsay's check-v7-license-required.zip has been included. Run against an active OBSR with `docker exec CONTAINER_NAME bash /obsr/check/ShowV7Usage.sh`
