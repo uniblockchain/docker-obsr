@@ -28,6 +28,10 @@ COPY docker-entrypoint.sh /
 COPY obsr/ ./
 
 
+# Include Ahsay's License tool for gauging license use after v7 upgrade
+COPY res/check/ ./check/
+
+
 # Create the limited user that will be used to run the AHSAY_APP
 #    Note: the userhomes folder needs to be rw for UID/GUID 400
 RUN groupadd --gid 400 ahsay \
@@ -38,5 +42,4 @@ RUN groupadd --gid 400 ahsay \
 # De-escalate from root
 USER ahsay
 
-
-ENTRYPOINT ["/docker-entrypoint.sh"]
+CMD ["bash", "/docker-entrypoint.sh"]

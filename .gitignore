@@ -4,6 +4,11 @@ obsr/java-linux-x64/man/*
 obsr/webapps/obs/download/*
 obsr/webapps/obs/liveUpdate/*
 obsr/conf/*.original
+res/check/FbdX*
+res/check/LinX86
+res/check/SosX*
+res/check/WinX*
+res/check/ShowV7Usage.bat
 
 # Instance specific
 obsr/logs/*
